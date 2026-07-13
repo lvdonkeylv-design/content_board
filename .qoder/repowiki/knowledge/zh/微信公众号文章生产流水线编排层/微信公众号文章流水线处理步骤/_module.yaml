@@ -1,0 +1,17 @@
+schema_version: 1
+module_path: pipeline_steps
+title: 微信公众号文章流水线处理步骤
+scope:
+    - step1_1_docx_to_json.py
+    - step1_2_split_long_paragraphs.py
+    - step1_3_bold_paragraphs.py
+    - step2_1_table_to_html.py
+    - step2_2_html_to_image.py
+    - step3_json_to_html.py
+    - step4_upload_clipboard.py
+    - step5_crop_cover.py
+    - step6_push_draft.py
+source_files: []
+depends_on: []
+related_to:
+    - path: board_history

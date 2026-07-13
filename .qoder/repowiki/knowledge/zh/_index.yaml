@@ -1,0 +1,79 @@
+# 知识卡导出索引文件
+schema_version: 1
+locale: zh-CN
+branch: main
+nodes_managed: true
+exported_at: "2026-07-13T16:26:35Z"
+modules:
+    "":
+        dir_name: 微信公众号文章生产流水线编排层
+        title: 微信公众号文章生产流水线编排层
+        scope:
+            - config.py
+            - launch.py
+        source_files: []
+        children:
+            - board_history
+            - content_instance
+            - html_templates
+            - pipeline_steps
+            - tools
+        depends_on: []
+        related_to: []
+    board_history:
+        dir_name: Xiumi 剪贴板历史数据与编辑工具集
+        title: Xiumi 剪贴板历史数据与编辑工具集
+        scope:
+            - board_history/
+        source_files: []
+        children: []
+        depends_on: []
+        related_to:
+            - path: pipeline_steps
+    content_instance:
+        dir_name: 公众号文章素材与中间产物归档
+        title: 公众号文章素材与中间产物归档
+        scope:
+            - content_instance/
+        source_files: []
+        children: []
+        depends_on: []
+        related_to:
+            - path: tools
+    html_templates:
+        dir_name: 微信公众号文章 HTML 模板
+        title: 微信公众号文章 HTML 模板
+        scope:
+            - html_template/
+        source_files: []
+        children: []
+        depends_on: []
+        related_to: []
+    pipeline_steps:
+        dir_name: 微信公众号文章流水线处理步骤
+        title: 微信公众号文章流水线处理步骤
+        scope:
+            - step1_1_docx_to_json.py
+            - step1_2_split_long_paragraphs.py
+            - step1_3_bold_paragraphs.py
+            - step2_1_table_to_html.py
+            - step2_2_html_to_image.py
+            - step3_json_to_html.py
+            - step4_upload_clipboard.py
+            - step5_crop_cover.py
+            - step6_push_draft.py
+        source_files: []
+        children: []
+        depends_on: []
+        related_to:
+            - path: board_history
+    tools:
+        dir_name: 剪贴板内容加工与图片替换工具集
+        title: 剪贴板内容加工与图片替换工具集
+        scope:
+            - tool/
+        source_files: []
+        children: []
+        depends_on: []
+        related_to:
+            - path: content_instance

@@ -1,0 +1,9 @@
+schema_version: 1
+module_path: tools
+title: 剪贴板内容加工与图片替换工具集
+scope:
+    - tool/
+source_files: []
+depends_on: []
+related_to:
+    - path: content_instance

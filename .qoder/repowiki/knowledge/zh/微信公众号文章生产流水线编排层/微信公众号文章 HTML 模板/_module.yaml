@@ -1,0 +1,8 @@
+schema_version: 1
+module_path: html_templates
+title: 微信公众号文章 HTML 模板
+scope:
+    - html_template/
+source_files: []
+depends_on: []
+related_to: []

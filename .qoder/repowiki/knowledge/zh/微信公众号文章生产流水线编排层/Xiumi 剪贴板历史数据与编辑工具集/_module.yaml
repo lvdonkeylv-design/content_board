@@ -1,0 +1,9 @@
+schema_version: 1
+module_path: board_history
+title: Xiumi 剪贴板历史数据与编辑工具集
+scope:
+    - board_history/
+source_files: []
+depends_on: []
+related_to:
+    - path: pipeline_steps

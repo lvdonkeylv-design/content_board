@@ -1,0 +1,9 @@
+schema_version: 1
+module_path: ""
+title: 微信公众号文章生产流水线编排层
+scope:
+    - config.py
+    - launch.py
+source_files: []
+depends_on: []
+related_to: []

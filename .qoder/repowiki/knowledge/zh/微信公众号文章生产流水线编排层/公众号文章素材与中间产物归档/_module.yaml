@@ -1,0 +1,9 @@
+schema_version: 1
+module_path: content_instance
+title: 公众号文章素材与中间产物归档
+scope:
+    - content_instance/
+source_files: []
+depends_on: []
+related_to:
+    - path: tools
