@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>Table Template — caicai green table</title>
+  <style>
+    /* ===== 全局样式 ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Microsoft YaHei', 'PingFang SC', 'Noto Sans SC', sans-serif;
+      background: #fff;
+      padding: 32px;
+      display: inline-block;
+    }
+
+    /* ===== 表格样式 ===== */
+    .table-container {
+      display: inline-block;
+    }
+    table {
+      border-collapse: collapse;
+      width: auto;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* 表头 */
+    th {
+      padding: 12px 16px;
+      text-align: center;
+      font-weight: bold;
+      background-color: #7eb559;
+      color: #fff;
+      border: 1px solid #6da348;
+      white-space: nowrap;
+    }
+
+    /* 表体 */
+    td {
+      padding: 10px 16px;
+      text-align: center;
+      border: 1px solid #e0e0e0;
+      color: #333;
+    }
+    tr:nth-child(even) {
+      background-color: #ebfce5;
+    }
+    tr:nth-child(odd) {
+      background-color: #fff;
+    }
+
+    /* 单元格加粗 */
+    td.bold {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <!-- ====== 表格内容区（由 step2_table_to_html.py 替换 <table> 内容）====== -->
+  <div class="table-container">
+        <table>
+      <thead><tr><th>消金公司</th><th>职位</th><th>批复时间</th><th>新任</th></tr></thead>
+      <tbody>
+      <tr><td>京东消金</td><td>总经理</td><td>2025.4.18</td><td>张含春</td></tr>
+      <tr><td>京东消金</td><td>董事</td><td>2025.8.29</td><td>董晓东</td></tr>
+      <tr><td>京东消金</td><td>董事</td><td>2025.8.29</td><td>李曙光</td></tr>
+      <tr><td>京东消金</td><td>董事</td><td>2025.8.29</td><td>潘朝光</td></tr>
+      <tr><td>京东消金</td><td>董事</td><td>2025.9.8</td><td>李芳芳</td></tr>
+      <tr><td>京东消金</td><td>董事</td><td>2025.9.8</td><td>张素娟</td></tr>
+      <tr><td>京东消金</td><td>董事</td><td>2025.9.8</td><td>刘晓蒙</td></tr>
+      <tr><td>京东消金</td><td>董事长</td><td>2025.10.10</td><td>李波</td></tr>
+      <tr><td>京东消金</td><td>董事</td><td>2025.10.17</td><td>张含春</td></tr>
+      <tr><td>京东消金</td><td>董事</td><td>2025.12.5</td><td>沈建光</td></tr>
+      <tr><td>京东消金</td><td>副总经理</td><td>2026.1.30</td><td>吕齐</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 行高同步：将 tbody 所有行高统一为最高行 -->
+  <script>
+    window.addEventListener('load', function() {
+      document.querySelectorAll('tbody').forEach(function(tbody) {
+        var rows = tbody.querySelectorAll('tr');
+        // 先重置行高，获取自然高度
+        rows.forEach(function(r) { r.style.height = 'auto'; });
+        // 找出最大行高
+        var maxH = 0;
+        rows.forEach(function(r) { maxH = Math.max(maxH, r.offsetHeight); });
+        // 统一设置
+        rows.forEach(function(r) { r.style.height = maxH + 'px'; });
+      });
+    });
+  </script>
+</body>
+</html>

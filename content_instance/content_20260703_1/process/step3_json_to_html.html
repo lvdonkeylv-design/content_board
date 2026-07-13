@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <title>Clipboard Template — caicai green classical</title>
+
+  <style>
+
+    /* ===== 全局样式 (Global Styles) ===== */
+
+    body {
+
+      font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+
+      max-width: 820px;
+
+      margin: 40px auto;
+
+      padding: 0 24px;
+
+      background: #f7f7f7;
+
+      color: #333;
+
+    }
+
+
+
+    /* ===== 元信息栏 (Metadata Bar) ===== */
+
+    .meta-bar {
+
+      background: #fff;
+
+      border: 1px solid #e0e0e0;
+
+      border-radius: 8px;
+
+      padding: 16px 20px;
+
+      margin-bottom: 24px;
+
+      font-size: 13px;
+
+      color: #888;
+
+    }
+
+    .meta-bar h1 {
+
+      font-size: 18px;
+
+      color: #333;
+
+      margin: 0 0 8px 0;
+
+    }
+
+
+
+    /* ===== 内容区域 (Content Area) ===== */
+
+    #clipboard-content {
+
+      background: #fff;
+
+      border: 1px solid #e0e0e0;
+
+      border-radius: 8px;
+
+      padding: 24px;
+
+      margin-bottom: 24px;
+
+      overflow: hidden;
+
+    }
+
+
+
+    /* ===== 格式类型说明 (Format Classes) ===== */
+
+    /* class="title"      — 大标题 (24px, 加粗, 居中) */
+
+    /* class="body"       — 正文 (18px, 两端对齐) */
+
+    /* class="empty-line" — 空行分隔 */
+
+    /* class="hl" (span)  — 内联高亮 (绿色背景 + 加粗) */
+
+
+
+    .title {
+
+      font-size: 24px;
+
+      font-weight: bold;
+
+      text-align: center;
+
+      margin: 16px 0;
+
+    }
+
+    .body {
+
+      font-size: 18px;
+
+      line-height: 2;
+
+      letter-spacing: 1px;
+
+      text-align: justify;
+
+      margin: 4px 0;
+
+    }
+
+    .empty-line {
+
+      height: 1em;
+
+    }
+
+    /* 内联高亮: 绿色背景 + 加粗, 用在 <span class="hl"> 里 */
+
+    .hl {
+
+      background-color: rgb(235, 252, 229);
+
+      font-weight: bold;
+
+    }
+
+
+
+    /* ===== 纯文本预览 (Plain Text Preview) ===== */
+
+    #plain-text-preview {
+
+      background: #fafafa;
+
+      border: 1px solid #eee;
+
+      border-radius: 8px;
+
+      padding: 16px 20px;
+
+      margin-bottom: 24px;
+
+      font-size: 14px;
+
+      line-height: 1.8;
+
+      white-space: pre-wrap;
+
+      max-height: 400px;
+
+      overflow-y: auto;
+
+      color: #555;
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+
+
+<!-- ============ 元信息 (Metadata) ============ -->
+
+<div class="meta-bar">
+
+  <h1>caicai_html_1_green_classical</h1>
+
+  <p>剪贴板模板。编辑 <code>&lt;article id="clipboard-content"&gt;</code> 区域内的内容后，运行 <code>import_html.py</code> 即可将修改后的内容写回剪贴板。</p>
+
+  <p>样式类: <code>.title</code> 大标题 | <code>.body</code> 正文 | <code>.hl</code> 内联高亮 | <code>.empty-line</code> 空行</p>
+
+</div>
+
+
+
+<!-- ============================================================
+
+     内容区域 (CONTENT AREA) — 可直接编辑以下 HTML
+
+     编辑后运行 import_html.py 将内容写回剪贴板
+
+     ============================================================ -->
+
+
+
+<article id="clipboard-content">
+
+
+
+<!-- ====== 外层装饰容器 (保持不变) ====== -->
+<section style="padding: 0px 30px; background-position: 67.2737% 8.352%; background-repeat: repeat; background-size: 20.2182%; background-attachment: scroll; background-image: url(&quot;https://statics.xiumi.us/mat/i/fvId/7327d0ed0097743275838846769faebb_sz-3523.png&quot;); box-sizing: border-box; font-style: normal; font-weight: 400; text-align: justify; font-size: 16px; color: rgb(62, 62, 62);">
+  <p class="empty-line"><br></p>
+  <!-- 头部装饰图案 (保持不变) -->
+  <section style="text-align: right; padding: 0px 30px; box-sizing: border-box;">
+    <p style="margin: 0px; padding: 0px; box-sizing: border-box;">/////////</p>
+  </section>
+  <section style="position: static; transform: rotateZ(9deg); -webkit-transform: rotateZ(9deg); -moz-transform: rotateZ(9deg); -o-transform: rotateZ(9deg); box-sizing: border-box;">
+    <section style="text-align: center; margin-top: 10px; margin-bottom: 10px; line-height: 0; position: static; box-sizing: border-box;">
+      <section style="max-width: 100%; vertical-align: middle; display: inline-block; line-height: 0; box-sizing: border-box;">
+        <img class="raw-image" src="https://statics.xiumi.us/mat/i/fvId/22674e6ea15be99054548e0d0ecc376a_sz-2287.png" style="vertical-align: middle; max-width: 100%; width: 100%; box-sizing: border-box;" data-s="300,640" crossorigin="anonymous">
+      </section>
+    </section>
+  </section>
+  <p class="empty-line"><br></p>
+
+  <!-- ====== 正文内容区 (由 step3_json_to_html.py 替换) ====== -->
+    <section style="font-size: 18px; line-height: 2; letter-spacing: 1px; box-sizing: border-box;">
+    <p class="body">7月3日，国家金融监督管理总局与湖北省人民政府联合发布公告，对武汉众邦银行实施接管，期限一年。</p>
+    <p class="empty-line"><br></p>
+    <p class="body">接管组由湖北省地方金融管理局、武汉市人民政府牵头，会同国家金融监督管理总局湖北监管局、中国人民银行湖北省分行、存款保险基金管理有限责任公司组成。</p>
+    <p class="empty-line"><br></p>
+    <p class="body">接管期间，汉口银行将依法承接众邦银行相关资产、负债、业务和人员。</p>
+    <p class="empty-line"><br></p>
+    <p class="body">众邦银行客户业务照常办理，存款人和其他客户权益依法保障。</p>
+    <p class="empty-line"><br></p>
+    <p class="body">众邦银行是湖北省第一家民营银行，2017年开业，注册资本40亿元。</p>
+    <p class="empty-line"><br></p>
+    <p class="body"><span class="hl">从公开数据看，这家银行2025年的经营数字并不差。</span>截至2025年末，全行资产总额近1300亿元，存款规模站上1100亿元台阶，成为全国第三家“千亿存款民营银行”；全年实现净利润5.11亿元，同比增长26.21%。</p>
+    <p class="empty-line"><br></p>
+    <p class="body">服务客户规模超9300万户，累计投放供应链融资贷款近1500亿元。综合实力一度位居全国民营银行第一梯队。</p>
+    <p class="empty-line"><br></p>
+    <p class="body">2025年，众邦银行提出“AI First”战略，科技人员占比达60%，大数据风控模型将信贷审批时间从数天缩短至最快3分钟。</p>
+    <p class="empty-line"><br></p>
+    <p class="body">不过，2025年5月，众邦银行申请暂缓披露2025年年报。</p>
+    <p class="empty-line"><br></p>
+    <p class="body">股东层面，2025年其第四大股东钰龙集团所持股权多次被司法冻结，第二大股东奥山投资持有的2亿股股权也在2025年1月被法院冻结，实控人一度被限制高消费。</p>
+    <p class="empty-line"><br></p>
+    <p class="body"><span class="hl">民营银行的治理结构天然比国有银行脆弱——股东的信用就是银行的信用。</span>股东出问题，银行的信用评级跟着往下走，融资成本上升，流动性承压。公告里“出现严重信用风险”七个字。</p>
+    <p class="empty-line"><br></p>
+    <p class="body">公告明确，汉口银行将依法依规承接众邦银行相关资产、负债、业务和人员，区域金融稳定至关重要。</p>
+    <p class="empty-line"><br></p>
+    <p class="body">汉口银行是湖北老牌城商行，1997年成立，2025年末资产总额5768.80亿元。全年营业收入99.65亿元，同比增长12.61%；归母净利润11.11亿元，同比增长5.31%。</p>
+    <p class="empty-line"><br></p>
+    <p class="body">众邦银行不是第一家被处置的民营银行，也不会是最后一家。2024年8月，江西裕民银行被国资接盘；2026年以来，村镇银行整合重组明显提速。众邦银行被接管，是中小金融机构“减量提质”进程中的一个节点。</p>
+    <p class="empty-line"><br></p>
+    <p class="body">对存款人和客户来说，业务照常办理，权益依法保障。<span class="hl">对行业而言，这是一次有序的风险出清。</span></p>
+    <p class="empty-line"><br></p>
+  </section>
+  <!-- ====== 正文内容区结束 ====== -->
+
+  <p class="empty-line"><br></p>
+  <p class="empty-line"><br></p>
+  <!--底部分隔线装饰 (保持不变) -->
+  <section style="text-align: left; justify-content: flex-start; display: flex; flex-flow: row; margin: 10px 0px; position: static; box-sizing: border-box;">
+    <section style="display: inline-block; vertical-align: middle; width: auto; align-self: center; flex: 0 0 auto; min-width: 5%; max-width: 100%; height: auto; line-height: 0; box-sizing: border-box;">
+      <section style="margin: 0px; transform: translate3d(1px, 0px, 0px); -webkit-transform: translate3d(1px, 0px, 0px); -moz-transform: translate3d(1px, 0px, 0px); -o-transform: translate3d(1px, 0px, 0px); position: static; box-sizing: border-box;">
+        <section class="group-empty" style="display: inline-block; width: 6px; height: 6px; vertical-align: top; overflow: hidden; background-color: rgb(0, 0, 0); box-sizing: border-box;">
+          <svg viewBox="0 0 1 1" style="float:left;line-height:0;width:0;vertical-align:top;"></svg>
+        </section>
+      </section>
+    </section>
+    <section style="display: inline-block; vertical-align: middle; width: auto; align-self: center; flex: 0 0 auto; min-width: 5%; max-width: 100%; height: auto; line-height: 0; box-sizing: border-box;">
+      <section style="margin: 0px; transform: translate3d(1px, 0px, 0px); -webkit-transform: translate3d(1px, 0px, 0px); -moz-transform: translate3d(1px, 0px, 0px); -o-transform: translate3d(1px, 0px, 0px); position: static; box-sizing: border-box;">
+        <section class="group-empty" style="display: inline-block; width: 6px; height: 6px; vertical-align: top; overflow: hidden; background-color: rgb(0, 0, 0); box-sizing: border-box;">
+          <svg viewBox="0 0 1 1" style="float:left;line-height:0;width:0;vertical-align:top;"></svg>
+        </section>
+      </section>
+    </section>
+    <section style="display: inline-block; vertical-align: middle; width: auto; align-self: center; flex: 0 0 auto; min-width: 5%; max-width: 100%; height: auto; line-height: 0; box-sizing: border-box;">
+      <section style="margin: 0px; transform: translate3d(1px, 0px, 0px); -webkit-transform: translate3d(1px, 0px, 0px); -moz-transform: translate3d(1px, 0px, 0px); -o-transform: translate3d(1px, 0px, 0px); position: static; box-sizing: border-box;">
+        <section class="group-empty" style="display: inline-block; width: 6px; height: 6px; vertical-align: top; overflow: hidden; background-color: rgb(0, 0, 0); box-sizing: border-box;">
+          <svg viewBox="0 0 1 1" style="float:left;line-height:0;width:0;vertical-align:top;"></svg>
+        </section>
+      </section>
+    </section>
+    <section style="display: inline-block; vertical-align: middle; width: auto; align-self: center; flex: 100 100 0%; height: auto; padding: 0px 10px; box-sizing: border-box;">
+      <section style="margin: 0.5em 0px; position: static; box-sizing: border-box;">
+        <section style="background-color: rgb(0, 0, 0); height: 1px; box-sizing: border-box;">
+          <svg viewBox="0 0 1 1" style="float:left;line-height:0;width:0;vertical-align:top;"></svg>
+        </section> 
+      </section>
+    </section>
+    <section style="display: inline-block; vertical-align: middle; width: auto; align-self: center; flex: 0 0 auto; min-width: 5%; max-width: 100%; height: auto; line-height: 0; box-sizing: border-box;">
+      <section style="margin: 0px; transform: translate3d(1px, 0px, 0px); -webkit-transform: translate3d(1px, 0px, 0px); -moz-transform: translate3d(1px, 0px, 0px); -o-transform: translate3d(1px, 0px, 0px); position: static; box-sizing: border-box;">
+        <section class="group-empty" style="display: inline-block; width: 6px; height: 6px; vertical-align: top; overflow: hidden; background-color: rgb(0, 0, 0); box-sizing: border-box;">
+          <svg viewBox="0 0 1 1" style="float:left;line-height:0;width:0;vertical-align:top;"></svg>
+        </section>
+      </section>
+    </section>
+    <section style="display: inline-block; vertical-align: middle; width: auto; align-self: center; flex: 0 0 auto; min-width: 5%; max-width: 100%; height: auto; line-height: 0; box-sizing: border-box;">
+      <section style="margin: 0px; transform: translate3d(1px, 0px, 0px); -webkit-transform: translate3d(1px, 0px, 0px); -moz-transform: translate3d(1px, 0px, 0px); -o-transform: translate3d(1px, 0px, 0px); position: static; box-sizing: border-box;">
+        <section class="group-empty" style="display: inline-block; width: 6px; height: 6px; vertical-align: top; overflow: hidden; background-color: rgb(0, 0, 0); box-sizing: border-box;">
+          <svg viewBox="0 0 1 1" style="float:left;line-height:0;width:0;vertical-align:top;"></svg>
+        </section>
+      </section>
+    </section>
+  </section>
+  <section style="text-align: center; box-sizing: border-box;">
+    <p style="margin: 0px; padding: 0px; box-sizing: border-box;">公众号推送规则调整后</p>
+    <p style="margin: 0px; padding: 0px; box-sizing: border-box;">文章可能会乱序出现</p>
+    <p style="margin: 0px; padding: 0px; box-sizing: border-box;">不想错过「菜菜说金融」的更新</p>
+    <p style="margin: 0px; padding: 0px; box-sizing: border-box;">记得点一下文末的“在看”</p>
+    <p style="margin: 0px; padding: 0px; box-sizing: border-box;">多留言，常来看看</p>
+    <p style="margin: 0px; padding: 0px; box-sizing: border-box;">👇</p>
+    <p style="margin: 0px; padding: 0px; box-sizing: border-box;"><br style="box-sizing: border-box;"></p>
+  </section>
+</section>
+
+</article>
+
+
+
+</body>
+
+</html>
