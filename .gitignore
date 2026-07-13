@@ -1,0 +1,6 @@
+# VS Code 配置
+.vscode/
+
+# Python 缓存
+__pycache__/
+*.pyc
