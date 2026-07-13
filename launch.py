@@ -26,12 +26,12 @@ import time
 
 
 # ===== 跳过控制 =====
-SKIP_STEP1_1 = True  # Word → JSON
-SKIP_STEP1_2 = True  # LLM 拆分过长段落
-SKIP_STEP1_3 = True  # LLM 添加总结性加粗
-SKIP_STEP2_1 = True  # 表格 → HTML
-SKIP_STEP2_2 = True  # HTML → PNG + JSON 替换
-SKIP_STEP3   = True  # JSON → HTML 模板渲染
+SKIP_STEP1_1 = False  # Word → JSON
+SKIP_STEP1_2 = False  # LLM 拆分过长段落
+SKIP_STEP1_3 = False  # LLM 添加总结性加粗
+SKIP_STEP2_1 = False  # 表格 → HTML
+SKIP_STEP2_2 = False  # HTML → PNG + JSON 替换
+SKIP_STEP3   = False  # JSON → HTML 模板渲染
 SKIP_STEP4   = False  # HTML → 剪贴板
 SKIP_STEP5   = False  # 封面图片裁剪 2.35:1
 SKIP_STEP6   = False  # 推送到公众号草稿箱
