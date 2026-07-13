@@ -1,0 +1,44 @@
+[
+  {
+    "format_id": 49393,
+    "format_name": "HTML Format",
+    "file": "49393_HTML Format.bin",
+    "size": 29695
+  },
+  {
+    "format_id": 13,
+    "format_name": "CF_UNICODETEXT",
+    "file": "00013_CF_UNICODETEXT.bin",
+    "size": 6332
+  },
+  {
+    "format_id": 49788,
+    "format_name": "Chromium internal source RFH token",
+    "file": "49788_Chromium internal source RFH token.bin",
+    "size": 24
+  },
+  {
+    "format_id": 49789,
+    "format_name": "Chromium internal source URL",
+    "file": "49789_Chromium internal source URL.bin",
+    "size": 55
+  },
+  {
+    "format_id": 16,
+    "format_name": "CF_LOCALE",
+    "file": "00016_CF_LOCALE.bin",
+    "size": 4
+  },
+  {
+    "format_id": 1,
+    "format_name": "CF_TEXT",
+    "file": "00001_CF_TEXT.bin",
+    "size": 6147
+  },
+  {
+    "format_id": 7,
+    "format_name": "CF_OEMTEXT",
+    "file": "00007_CF_OEMTEXT.bin",
+    "size": 6147
+  }
+]

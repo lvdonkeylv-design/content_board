@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <title>Clipboard Content Export</title>
+
+  <style>
+
+    /* ===== 全局样式 (Global Styles) ===== */
+
+    body {
+
+      font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+
+      max-width: 820px;
+
+      margin: 40px auto;
+
+      padding: 0 24px;
+
+      background: #f7f7f7;
+
+      color: #333;
+
+    }
+
+
+
+    /* ===== 元信息栏 (Metadata Bar) ===== */
+
+    .meta-bar {
+
+      background: #fff;
+
+      border: 1px solid #e0e0e0;
+
+      border-radius: 8px;
+
+      padding: 16px 20px;
+
+      margin-bottom: 24px;
+
+      font-size: 13px;
+
+      color: #888;
+
+    }
+
+    .meta-bar h1 {
+
+      font-size: 18px;
+
+      color: #333;
+
+      margin: 0 0 8px 0;
+
+    }
+
+
+
+    /* ===== 内容区域 (Content Area) ===== */
+
+    #clipboard-content {
+
+      background: #fff;
+
+      border: 1px solid #e0e0e0;
+
+      border-radius: 8px;
+
+      padding: 24px;
+
+      margin-bottom: 24px;
+
+      overflow: hidden;
+
+    }
+
+
+
+    /* ===== 格式类型说明 (Format Classes) ===== */
+
+    /* class="title"      — 大标题 (24px, 加粗, 居中) */
+
+    /* class="body"       — 正文 (18px, 两端对齐) */
+
+    /* class="body-bold"  — 正文加粗 (18px, 加粗, 绿色背景) */
+
+    /* class="empty-line" — 空行分隔 */
+
+
+
+    .title {
+
+      font-size: 24px;
+
+      font-weight: bold;
+
+      text-align: center;
+
+      margin: 16px 0;
+
+    }
+
+    .body {
+
+      font-size: 18px;
+
+      line-height: 2;
+
+      letter-spacing: 1px;
+
+      text-align: justify;
+
+      margin: 4px 0;
+
+    }
+
+    .body-bold {
+
+      font-size: 18px;
+
+      line-height: 2;
+
+      letter-spacing: 1px;
+
+      font-weight: bold;
+
+      background-color: rgb(235, 252, 229);
+
+      text-align: justify;
+
+      margin: 4px 0;
+
+    }
+
+    .empty-line {
+
+      height: 1em;
+
+    }
+
+    /* 内联高亮: 绿色背景 + 加粗, 用在 <span class="hl"> 里 */
+
+    .hl {
+
+      background-color: rgb(235, 252, 229);
+
+      font-weight: bold;
+
+    }
+
+
+
+    /* ===== 纯文本预览 (Plain Text Preview) ===== */
+
+    #plain-text-preview {
+
+      background: #fafafa;
+
+      border: 1px solid #eee;
+
+      border-radius: 8px;
+
+      padding: 16px 20px;
+
+      margin-bottom: 24px;
+
+      font-size: 14px;
+
+      line-height: 1.8;
+
+      white-space: pre-wrap;
+
+      max-height: 400px;
+
+      overflow-y: auto;
+
+      color: #555;
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+
+
+<!-- ============ 元信息 (Metadata) ============ -->
+
+<div class="meta-bar">
+
+  <h1>Clipboard Content Export</h1>
+
+  <p>此文件由 <code>export_html.py</code> 生成。编辑 <code>&lt;article id="clipboard-content"&gt;</code> 区域的内容后，运行 <code>import_html.py</code> 即可将修改后的内容写回剪贴板。</p>
+
+  <p>包含格式: HTML Format (49393), CF_UNICODETEXT (13), Chromium internal source RFH token (49788), Chromium internal source URL (49789), CF_LOCALE (16), CF_TEXT (1), CF_OEMTEXT (7)</p>
+
+</div>
+
+
+
+<!-- ============================================================
+
+     内容区域 (CONTENT AREA) — 可直接编辑以下 HTML
+
+     编辑后运行 import_html.py 将内容写回剪贴板
+
+     ============================================================ -->
+
+
+
+<article id="clipboard-content">
+
+
+
+<section style="padding: 0px 30px; background-position: 67.2737% 8.352%; background-repeat: repeat; background-size: 20.2182%; background-attachment: scroll; background-image: url(&quot;https://statics.xiumi.us/mat/i/fvId/7327d0ed0097743275838846769faebb_sz-3523.png&quot;); box-sizing: border-box; font-style: normal; font-weight: 400; text-align: justify; font-size: 16px; color: rgb(62, 62, 62);">
+  <p class="empty-line"><br></p>
+  <section style="text-align: right; padding: 0px 30px; box-sizing: border-box;">
+    <p style="margin: 0px; padding: 0px; box-sizing: border-box;">/////////
+    </p>
+  </section>
+  <section style="position: static; transform: rotateZ(9deg); -webkit-transform: rotateZ(9deg); -moz-transform: rotateZ(9deg); -o-transform: rotateZ(9deg); box-sizing: border-box;">
+    <section style="text-align: center; margin-top: 10px; margin-bottom: 10px; line-height: 0; position: static; box-sizing: border-box;">
+      <section style="max-width: 100%; vertical-align: middle; display: inline-block; line-height: 0; box-sizing: border-box;">
+        <img class="raw-image" src="https://statics.xiumi.us/mat/i/fvId/22674e6ea15be99054548e0d0ecc376a_sz-2287.png" style="vertical-align: middle; max-width: 100%; width: 100%; box-sizing: border-box;" data-s="300,640" crossorigin="anonymous">
+      </section>
+    </section>
+  </section>
+  <p class="empty-line"><br></p>
+  <section style="font-size: 18px; line-height: 2; letter-spacing: 1px; box-sizing: border-box;">
+    <p class="body">桔子数科的雷，已经不是一家助贷平台的经营事故。</p>
+    <p class="empty-line"><br></p>
+    <p class="body">从2月、3月开始，协商还款失信、争议代扣、融担服务费退费难等投诉陆续出现。到4月，网络仲裁批量发起，<span class="hl">很多用户发现所谓"协商还款"没有书面协议支撑，自己按平台说法还了钱，仲裁却没有同步撤回。</span></p>
+    <p class="empty-line"><br></p>
+    <p class="body">5月以后，问题进一步传导到资金端：还款入账延迟、结清不销账、账单不更新，越来越多用户开始怀疑，线下还款资金并没有进入实际出资机构账户。</p>
+    <p class="empty-line"><br></p>
+    <p class="body"><span class="hl">爆雷出现在6月中下旬。</span>有用户反映，在桔子数科相关人员或渠道引导下完成线下还款后，征信仍异常，实际放款机构继续显示未结清。</p>
+    <p class="empty-line"><br></p>
+    <p class="body">大量用户开始集中拨打监管电话，也开始投诉桔子数科背后的资金合作方。彼时，菜菜亦发布《欠薪、清退、牌照缩水，桔子数科陷危机》，向市场及桔子合作方提示风险。</p>
+    <p class="empty-line"><br></p>
+    <p class="body-bold">此后一周，舆论迅速踩踏，较偏激的说法是：金融机构和桔子数科联合诈骗借款人。</p>
+    <p class="empty-line"><br></p>
+    <p class="body">这个判断需要纠偏。</p>
+    <p class="empty-line"><br></p>
+    <p class="body">从目前已暴露的信息看，并非网传"金融机构联合桔子数科诈骗借款人"。</p>
+    <p class="empty-line"><br></p>
+    <p class="body-bold">而是桔子数科涉嫌在官方还款链路之外，单方引导部分用户线下还款至桔子数科账户，形成资金截留和资金池风险，并把借款人和资金合作方同时拖入对账泥潭。</p>
+    <p class="empty-line"><br></p>
+    <p class="body">资金方不能置身事外，它们需要承担合作管理、消费者保护、账务核验和后续处置责任。但所谓"资方与平台合谋诈骗"的谣言，既不符合目前呈现出来的交易结构，也会误导借款人作出错误选择。</p>
+    <p class="empty-line"><br></p>
+    <p class="body">对借款人来说，最危险的误判，是把平台暴雷理解成"贷款不用还"。</p>
+  </section>
+  <p class="empty-line"><br></p>
+  <p class="title">真正出问题的，是线下还款旁路</p>
+  <p class="empty-line"><br></p>
+  <section style="font-size: 18px; line-height: 2; letter-spacing: 1px; box-sizing: border-box;">
+    <p class="body">这件事首先要把一个边界讲清楚：正常批扣和官方还款通道，使用的是实际出资持牌金融机构及其合作支付机构的通道，资金并不进入桔子数科账户。</p>
+    <p class="empty-line"><br></p>
+    <p class="body">这部分还款实际不是本次截留争议的核心，也不能如部分声音所传，笼统说成"桔子控制全部还款资金"。</p>
+    <p class="empty-line"><br></p>
+    <p class="body-bold">真正的问题，在于桔子数科通过桔小花、宜口袋等入口吸引大量用户参与"借款返佣""借了马上还拿奖励"等返利项目后，又在部分场景中以协商还款、提前结清、代为处理账单等名义，引导用户脱离官方渠道，把钱转入桔子数科或其指定账户。</p>
+    <p class="empty-line"><br></p>
+    <p class="body">很多人以为自己只是做任务，实际却完成了实名、签约、借款和还款动作；很多人以为自己已经结清，资方系统却并未收到对应入账。</p>
+    <p class="empty-line"><br></p>
+    <p class="body">据菜菜目前掌握的信息，这类线下还款截留资金并非全部还款，预估约占整体相关还款流的10%左右。比例不是多数，但放在一个合作机构众多、存量用户庞大的助贷平台里，足以造成大面积对账错位。</p>
+    <p class="empty-line"><br></p>
+    <p class="body">借款人看到的是"我明明还了还背债"，资金方看到的是"借据没有正常回款"，投诉和处置压力则迅速向监管、地方政府和合作金融机构集中。</p>
+    <p class="empty-line"><br></p>
+    <p class="body">所以，桔子数科如今不是普通技术故障、客服失联，也不是官方批扣通道被平台截流，而是<span class="hl">平台在官方链路之外另行搭建线下还款黑箱。</span></p>
+    <p class="empty-line"><br></p>
+    <p class="body">一旦这些资金没有及时、足额回到实际出资机构系统，账单、征信、催收和争议扣款就会全部失序。</p>
+  </section>
+  <p class="empty-line"><br></p>
+  <p class="title">平台涉嫌违法，不等于借据自动失效</p>
+  <p class="empty-line"><br></p>
+  <section style="font-size: 18px; line-height: 2; letter-spacing: 1px; box-sizing: border-box;">
+    <p class="body">很多用户是在桔小花、宜口袋等平台页面上操作的，所以天然认为刷单而已，"我和银行没有关系，我只和平台有关系"。</p>
+    <p class="empty-line"><br></p>
+    <p class="body">但信贷关系并非按用户感觉认定，而是按合同、签约、放款和借据认定。</p>
+    <p class="empty-line"><br></p>
+    <p class="body">如果借款人本人完成实名认证、电子签约，资金由实际出资的持牌金融机构发放，借据也依法生成，那么借款合同原则上具有法律效力。</p>
+    <p class="empty-line"><br></p>
+    <p class="body">无论第三方平台如何诱导，无论它把项目包装成"刷单""任务""返佣"还是"羊毛"，借贷主体仍然是借款人本人。<span class="hl">平台涉嫌违法，不能当然消灭借款合同项下的还本付息义务。</span></p>
+    <p class="empty-line"><br></p>
+    <p class="body">现在已经有黑灰产借桔子数科暴雷煽动用户逃废债，话术无非是"资方也有问题""现在不用还了""投诉就能免债""交钱帮你停催消征信"。这些话是在把借款人推向二次风险。</p>
+    <p class="empty-line"><br></p>
+    <p class="body-bold">如果用户没有继续核对实际资方账单，而是盲目停还，系统层面可能产生逾期、罚息和征信异常。</p>
+    <p class="empty-line"><br></p>
+    <p class="body">平台截留线下还款资金造成的损失，应由平台及相关责任方依法承担；但对借款人而言，维权的前提是呈出事实链条，让实际出资机构能够核账、登记、处置，而不是只在网上喊"我还过了"。</p>
+    <p class="empty-line"><br></p>
+    <p class="body">换言之，已经向桔子数科账户、线下账户或相关第三方账户还过钱，但资方未入账的用户，要拿凭证维权；尚未结清、仍有正常账单的用户，则不能被"平台暴雷"四个字带偏，继续向非官方渠道转账或干脆停止履约。</p>
+  </section>
+  <p class="empty-line"><br></p>
+  <p class="title">止损路径，是回到资金方官方系统</p>
+  <p class="empty-line"><br></p>
+  <section style="font-size: 18px; line-height: 2; letter-spacing: 1px; box-sizing: border-box;">
+    <p class="body">对借款人来说，眼下第一件事是查清实际出资机构。</p>
+    <p class="empty-line"><br></p>
+    <p class="body">打开借款合同、放款短信、银行流水、征信报告，看清楚这笔钱到底是哪家银行或消费金融公司放的。后续所有借据查询、账单核对、还款操作，都应当通过实际出资持牌金融机构官方APP或官方客服确认的通道办理。</p>
+    <p class="empty-line"><br></p>
+    <p class="body-bold">不再通过桔小花、宜口袋等贷款中介平台还款，更不要向私人微信、线下中介、陌生链接、二维码账户转账。</p>
+    <p class="empty-line"><br></p>
+    <p class="body">桔子数科这次暴雷已经说明，第三方线下还款最大的风险，是资金脱离资方系统。钱转进某个第三方账户，不代表资方系统已经销账；平台页面或个人承诺显示“已处理”，也不代表借据真的结清。</p>
+    <p class="empty-line"><br></p>
+    <p class="body-bold">金融借款最终看的不是聊天记录里的承诺，而是实际出资机构系统里的入账和销账结果。</p>
+    <p class="empty-line"><br></p>
+    <p class="body">已经发生入账异常的用户，要立即整理材料：借款合同、借据编号、实际放款机构名称、放款流水、线下转账截图、支付凭证、银行卡扣款记录、交易流水、平台显示结清截图、客服沟通记录，以及当前账单或征信异常截图。</p>
+    <p class="empty-line"><br></p>
+    <p class="body">整理完以后，第一时间拨打实际放款持牌金融机构官方客服热线登记备案，要求生成工单，由后台专人核对账单。</p>
+    <p class="empty-line"><br></p>
+    <p class="body">监管投诉当然是合法权利，但在当前阶段，反复拨打监管电话未必比官方登记更快。</p>
+    <p class="empty-line"><br></p>
+    <p class="body">监管解决的是督促处置和责任边界问题，具体账务核验仍要回到金融机构系统。没有借据号、没有流水、没有凭证，投诉也很难落地。</p>
+    <p class="empty-line"><br></p>
+    <p class="body-bold">据了解，相关持牌金融机构已就桔子数科业务异常向金融监管部门报送情况，并启动专项核账和客户诉求登记。</p>
+    <p class="empty-line"><br></p>
+    <p class="body-bold">地方政府、监管部门及合作金融机构也在推动桔子数科配合核账和处置，涉及监管进展、责任认定和最终处置口径的内容，应以后续官方信息为准。</p>
+    <p class="empty-line"><br></p>
+    <p class="body-bold">对用户来说，现阶段更有效的路径，是通过实际放款机构官方入口登记损失、提交凭证、等待核账，而不是被情绪带着反复冲击投诉渠道。</p>
+    <p class="empty-line"><br></p>
+    <p class="body">还要特别提醒一类人：所谓“代理维权”“征信修复”“停催免债”机构，正在利用桔子数科事件的焦虑再一次收割借款人。</p>
+    <p class="empty-line"><br></p>
+    <p class="body">凡是宣称可以减免利息、消除逾期、停止催收、贷款不用还，但要求先交服务费、提交身份证、银行卡、征信报告、验证码的，大概率都是二次收割。</p>
+    <p class="empty-line"><br></p>
+    <p class="body">另一类更危险，是教唆用户恶意拖欠、集中编造投诉、以监管施压逃废债的金融黑灰产。它们不会承担用户的逾期罚息，也不会承担用户征信污点。</p>
+    <p class="empty-line"><br></p>
+    <p class="body-bold">桔子数科这次事件，对行业最大的警示，是助贷平台不能在官方还款链路之外另搭线下收款通道，更不能把客户线下还款资金变成自身资金调度工具。</p>
+    <p class="empty-line"><br></p>
+    <p class="body">持牌金融机构也必须重新审视合作边界，不能只看流量和资产规模，更要穿透协商还款、线下转账、账务登记和消费者触点。</p>
+    <p class="empty-line"><br></p>
+    <p class="body">桔子数科涉嫌截留线下还款资金、搭建资金池的问题，需要依法查清；暴力催收、违规收费、账单异常、征信争议，也需要逐项核验处理。</p>
+    <p class="empty-line"><br></p>
+    <p class="body">金融机构在合作管理和消费者保护上存在短板的，也要补课。但借款人同样要警醒，贷款不是任务，借据不是游戏，征信不是羊毛成本。</p>
+    <p class="empty-line"><br></p>
+    <p class="body">平台爆雷之后，最重要的是立刻停止向第三方和线下账户转账，回到实际出资机构官方系统，把合同、借据、流水和还款凭证一笔一笔摆清楚。</p>
+    <p class="empty-line"><br></p>
+    <p class="body">只有将还款动作拉回到官方链路里，线下还款黑箱才有可能被真正拆开。</p>
+  </section>
+  <p class="empty-line"><br></p>
+  <p class="empty-line"><br></p>
+  <section style="text-align: left; justify-content: flex-start; display: flex; flex-flow: row; margin: 10px 0px; position: static; box-sizing: border-box;">
+    <section style="display: inline-block; vertical-align: middle; width: auto; align-self: center; flex: 0 0 auto; min-width: 5%; max-width: 100%; height: auto; line-height: 0; box-sizing: border-box;">
+      <section style="margin: 0px; transform: translate3d(1px, 0px, 0px); -webkit-transform: translate3d(1px, 0px, 0px); -moz-transform: translate3d(1px, 0px, 0px); -o-transform: translate3d(1px, 0px, 0px); position: static; box-sizing: border-box;">
+        <section class="group-empty" style="display: inline-block; width: 6px; height: 6px; vertical-align: top; overflow: hidden; background-color: rgb(0, 0, 0); box-sizing: border-box;">
+          <svg viewBox="0 0 1 1" style="float:left;line-height:0;width:0;vertical-align:top;">
+          </svg>
+        </section>
+      </section>
+    </section>
+    <section style="display: inline-block; vertical-align: middle; width: auto; align-self: center; flex: 0 0 auto; min-width: 5%; max-width: 100%; height: auto; line-height: 0; box-sizing: border-box;">
+      <section style="margin: 0px; transform: translate3d(1px, 0px, 0px); -webkit-transform: translate3d(1px, 0px, 0px); -moz-transform: translate3d(1px, 0px, 0px); -o-transform: translate3d(1px, 0px, 0px); position: static; box-sizing: border-box;">
+        <section class="group-empty" style="display: inline-block; width: 6px; height: 6px; vertical-align: top; overflow: hidden; background-color: rgb(0, 0, 0); box-sizing: border-box;">
+          <svg viewBox="0 0 1 1" style="float:left;line-height:0;width:0;vertical-align:top;">
+          </svg>
+        </section>
+      </section>
+    </section>
+    <section style="display: inline-block; vertical-align: middle; width: auto; align-self: center; flex: 0 0 auto; min-width: 5%; max-width: 100%; height: auto; line-height: 0; box-sizing: border-box;">
+      <section style="margin: 0px; transform: translate3d(1px, 0px, 0px); -webkit-transform: translate3d(1px, 0px, 0px); -moz-transform: translate3d(1px, 0px, 0px); -o-transform: translate3d(1px, 0px, 0px); position: static; box-sizing: border-box;">
+        <section class="group-empty" style="display: inline-block; width: 6px; height: 6px; vertical-align: top; overflow: hidden; background-color: rgb(0, 0, 0); box-sizing: border-box;">
+          <svg viewBox="0 0 1 1" style="float:left;line-height:0;width:0;vertical-align:top;">
+          </svg>
+        </section>
+      </section>
+    </section>
+    <section style="display: inline-block; vertical-align: middle; width: auto; align-self: center; flex: 100 100 0%; height: auto; padding: 0px 10px; box-sizing: border-box;">
+      <section style="margin: 0.5em 0px; position: static; box-sizing: border-box;">
+        <section style="background-color: rgb(0, 0, 0); height: 1px; box-sizing: border-box;">
+          <svg viewBox="0 0 1 1" style="float:left;line-height:0;width:0;vertical-align:top;">
+          </svg>
+        </section>
+      </section>
+    </section>
+    <section style="display: inline-block; vertical-align: middle; width: auto; align-self: center; flex: 0 0 auto; min-width: 5%; max-width: 100%; height: auto; line-height: 0; box-sizing: border-box;">
+      <section style="margin: 0px; transform: translate3d(1px, 0px, 0px); -webkit-transform: translate3d(1px, 0px, 0px); -moz-transform: translate3d(1px, 0px, 0px); -o-transform: translate3d(1px, 0px, 0px); position: static; box-sizing: border-box;">
+        <section class="group-empty" style="display: inline-block; width: 6px; height: 6px; vertical-align: top; overflow: hidden; background-color: rgb(0, 0, 0); box-sizing: border-box;">
+          <svg viewBox="0 0 1 1" style="float:left;line-height:0;width:0;vertical-align:top;">
+          </svg>
+        </section>
+      </section>
+    </section>
+    <section style="display: inline-block; vertical-align: middle; width: auto; align-self: center; flex: 0 0 auto; min-width: 5%; max-width: 100%; height: auto; line-height: 0; box-sizing: border-box;">
+      <section style="margin: 0px; transform: translate3d(1px, 0px, 0px); -webkit-transform: translate3d(1px, 0px, 0px); -moz-transform: translate3d(1px, 0px, 0px); -o-transform: translate3d(1px, 0px, 0px); position: static; box-sizing: border-box;">
+        <section class="group-empty" style="display: inline-block; width: 6px; height: 6px; vertical-align: top; overflow: hidden; background-color: rgb(0, 0, 0); box-sizing: border-box;">
+          <svg viewBox="0 0 1 1" style="float:left;line-height:0;width:0;vertical-align:top;">
+          </svg>
+        </section>
+      </section>
+    </section>
+    <section style="display: inline-block; vertical-align: middle; width: auto; align-self: center; flex: 0 0 auto; min-width: 5%; max-width: 100%; height: auto; line-height: 0; box-sizing: border-box;">
+      <section style="margin: 0px; transform: translate3d(1px, 0px, 0px); -webkit-transform: translate3d(1px, 0px, 0px); -moz-transform: translate3d(1px, 0px, 0px); -o-transform: translate3d(1px, 0px, 0px); position: static; box-sizing: border-box;">
+        <section class="group-empty" style="display: inline-block; width: 6px; height: 6px; vertical-align: top; overflow: hidden; background-color: rgb(0, 0, 0); box-sizing: border-box;">
+          <svg viewBox="0 0 1 1" style="float:left;line-height:0;width:0;vertical-align:top;">
+          </svg>
+        </section>
+      </section>
+    </section>
+  </section>
+  <section style="text-align: center; box-sizing: border-box;">
+    <p style="margin: 0px; padding: 0px; box-sizing: border-box;">公众号推送规则调整后
+    </p>
+    <p style="margin: 0px; padding: 0px; box-sizing: border-box;">文章可能会乱序出现
+    </p>
+    <p style="margin: 0px; padding: 0px; box-sizing: border-box;">不想错过「菜菜说金融」的更新
+    </p>
+    <p style="margin: 0px; padding: 0px; box-sizing: border-box;">记得点一下文末的“在看”
+    </p>
+    <p style="margin: 0px; padding: 0px; box-sizing: border-box;">多留言，常来看看
+    </p>
+    <p style="margin: 0px; padding: 0px; box-sizing: border-box;">👇
+    </p>
+    <p style="margin: 0px; padding: 0px; box-sizing: border-box;">
+      <br style="box-sizing: border-box;">
+    </p>
+  </section>
+</section>
+
+
+
+</article>
+
+
+
+<!-- ============ 纯文本预览 (Plain Text Preview) ============ -->
+
+<details>
+
+  <summary>纯文本预览 (点击展开)</summary>
+
+  <div id="plain-text-preview">
+
+    /////////
+
+
+桔子数科的雷，已经不是一家助贷平台的经营事故。
+
+
+从2月、3月开始，协商还款失信、争议代扣、融担服务费退费难等投诉陆续出现。到4月，网络仲裁批量发起，很多用户发现所谓“协商还款”没有书面协议支撑，自己按平台说法还了钱，仲裁却没有同步撤回。
+
+
+5月以后，问题进一步传导到资金端：还款入账延迟、结清不销账、账单不更新，越来越多用户开始怀疑，线下还款资金并没有进入实际出资机构账户。
+
+
+爆雷出现在6月中下旬。有用户反映，在桔子数科相关人员或渠道引导下完成线下还款后，征信仍异常，实际放款机构继续显示未结清。
+
+
+大量用户开始集中拨打监管电话，也开始投诉桔子数科背后的资金合作方。彼时，菜菜亦发布《欠薪、清退、牌照缩水，桔子数科陷危机》，向市场及桔子合作方提示风险。
+
+
+此后一周，舆论迅速踩踏，较偏激的说法是：金融机构和桔子数科联合诈骗借款人。
+
+
+这个判断需要纠偏。
+
+
+从目前已暴露的信息看，并非网传“金融机构联合桔子数科诈骗借款人”。
+
+
+而是桔子数科涉嫌在官方还款链路之外，单方引导部分用户线下还款至桔子数科账户，形成资金截留和资金池风险，并把借款人和资金合作方同时拖入对账泥潭。
+
+
+资金方不能置身事外，它们需要承担合作管理、消费者保护、账务核验和后续处置责任。但所谓“资方与平台合谋诈骗”的谣言，既不符合目前呈现出来的交易结构，也会误导借款人作出错误选择。
+
+
+对借款人来说，最危险的误判，是把平台暴雷理解成“贷款不用还”。
+
+
+真正出问题的，是线下还款旁路
+
+
+这件事首先要把一个边界讲清楚：正常批扣和官方还款通道，使用的是实际出资持牌金融机构及其合作支付机构的通道，资金并不进入桔子数科账户。
+
+
+这部分还款实际不是本次截留争议的核心，也不能如部分声音所传，笼统说成“桔子控制全部还款资金”。
+
+
+真正的问题，在于桔子数科通过桔小花、宜口袋等入口吸引大量用户参与“借款返佣”“借了马上还拿奖励”等返利项目后，又在部分场景中以协商还款、提前结清、代为处理账单等名义，引导用户脱离官方渠道，把钱转入桔子数科或其指定账户。
+
+
+很多人以为自己只是做任务，实际却完成了实名、签约、借款和还款动作；很多人以为自己已经结清，资方系统却并未收到对应入账。
+
+
+据菜菜目前掌握的信息，这类线下还款截留资金并非全部还款，预估约占整体相关还款流的10%左右。比例不是多数，但放在一个合作机构众多、存量用户庞大的助贷平台里，足以造成大面积对账错位。
+
+
+借款人看到的是“我明明还了还背债”，资金方看到的是“借据没有正常回款”，投诉和处置压力则迅速向监管、地方政府和合作金融机构集中。
+
+
+所以，桔子数科如今不是普通技术故障、客服失联，也不是官方批扣通道被平台截流，而是平台在官方链路之外另行搭建线下还款黑箱。
+
+
+一旦这些资金没有及时、足额回到实际出资机构系统，账单、征信、催收和争议扣款就会全部失序。
+
+
+平台涉嫌违法，不等于借据自动失效
+
+
+很多用户是在桔小花、宜口袋等平台页面上操作的，所以天然认为刷单而已，“我和银行没有关系，我只和平台有关系”。
+
+
+但信贷关系并非按用户感觉认定，而是按合同、签约、放款和借据认定。
+
+
+如果借款人本人完成实名认证、电子签约，资金由实际出资的持牌金融机构发放，借据也依法生成，那么借款合同原则上具有法律效力。
+
+
+无论第三方平台如何诱导，无论它把项目包装成“刷单”“任务”“返佣”还是“羊毛”，借贷主体仍然是借款人本人。平台涉嫌违法，不能当然消灭借款合同项下的还本付息义务。
+
+
+现在已经有黑灰产借桔子数科暴雷煽动用户逃废债，话术无非是“资方也有问题”“现在不用还了”“投诉就能免债”“交钱帮你停催消征信”。这些话是在把借款人推向二次风险。
+
+
+如果用户没有继续核对实际资方账单，而是盲目停还，系统层面可能产生逾期、罚息和征信异常。
+
+
+平台截留线下还款资金造成的损失，应由平台及相关责任方依法承担；但对借款人而言，维权的前提是呈出事实链条，让实际出资机构能够核账、登记、处置，而不是只在网上喊“我还过了”。
+
+
+换言之，已经向桔子数科账户、线下账户或相关第三方账户还过钱，但资方未入账的用户，要拿凭证维权；尚未结清、仍有正常账单的用户，则不能被“平台暴雷”四个字带偏，继续向非官方渠道转账或干脆停止履约。
+
+
+止损路径，是回到资金方官方系统
+
+
+对借款人来说，眼下第一件事是查清实际出资机构。
+
+
+打开借款合同、放款短信、银行流水、征信报告，看清楚这笔钱到底是哪家银行或消费金融公司放的。后续所有借据查询、账单核对、还款操作，都应当通过实际出资持牌金融机构官方APP或官方客服确认的通道办理。
+
+
+不再通过桔小花、宜口袋等贷款中介平台还款，更不要向私人微信、线下中介、陌生链接、二维码账户转账。
+
+
+桔子数科这次暴雷已经说明，第三方线下还款最大的风险，是资金脱离资方系统。钱转进某个第三方账户，不代表资方系统已经销账；平台页面或个人承诺显示“已处理”，也不代表借据真的结清。
+
+
+金融借款最终看的不是聊天记录里的承诺，而是实际出资机构系统里的入账和销账结果。
+
+
+已经发生入账异常的用户，要立即整理材料：借款合同、借据编号、实际放款机构名称、放款流水、线下转账截图、支付凭证、银行卡扣款记录、交易流水、平台显示结清截图、客服沟通记录，以及当前账单或征信异常截图。
+
+
+整理完以后，第一时间拨打实际放款持牌金融机构官方客服热线登记备案，要求生成工单，由后台专人核对账单。
+
+
+监管投诉当然是合法权利，但在当前阶段，反复拨打监管电话未必比官方登记更快。
+
+
+监管解决的是督促处置和责任边界问题，具体账务核验仍要回到金融机构系统。没有借据号、没有流水、没有凭证，投诉也很难落地。
+
+
+据了解，相关持牌金融机构已就桔子数科业务异常向金融监管部门报送情况，并启动专项核账和客户诉求登记。
+
+
+地方政府、监管部门及合作金融机构也在推动桔子数科配合核账和处置，涉及监管进展、责任认定和最终处置口径的内容，应以后续官方信息为准。
+
+
+对用户来说，现阶段更有效的路径，是通过实际放款机构官方入口登记损失、提交凭证、等待核账，而不是被情绪带着反复冲击投诉渠道。
+
+
+还要特别提醒一类人：所谓“代理维权”“征信修复”“停催免债”机构，正在利用桔子数科事件的焦虑再一次收割借款人。
+
+
+凡是宣称可以减免利息、消除逾期、停止催收、贷款不用还，但要求先交服务费、提交身份证、银行卡、征信报告、验证码的，大概率都是二次收割。
+
+
+另一类更危险，是教唆用户恶意拖欠、集中编造投诉、以监管施压逃废债的金融黑灰产。它们不会承担用户的逾期罚息，也不会承担用户征信污点。
+
+
+桔子数科这次事件，对行业最大的警示，是助贷平台不能在官方还款链路之外另搭线下收款通道，更不能把客户线下还款资金变成自身资金调度工具。
+
+
+持牌金融机构也必须重新审视合作边界，不能只看流量和资产规模，更要穿透协商还款、线下转账、账务登记和消费者触点。
+
+
+桔子数科涉嫌截留线下还款资金、搭建资金池的问题，需要依法查清；暴力催收、违规收费、账单异常、征信争议，也需要逐项核验处理。
+
+
+金融机构在合作管理和消费者保护上存在短板的，也要补课。但借款人同样要警醒，贷款不是任务，借据不是游戏，征信不是羊毛成本。
+
+
+平台爆雷之后，最重要的是立刻停止向第三方和线下账户转账，回到实际出资机构官方系统，把合同、借据、流水和还款凭证一笔一笔摆清楚。
+
+
+只有将还款动作拉回到官方链路里，线下还款黑箱才有可能被真正拆开。
+
+
+ 
+
+
+公众号推送规则调整后
+
+
+文章可能会乱序出现
+
+
+不想错过「菜菜说金融」的更新
+
+
+记得点一下文末的“在看”
+
+
+多留言，常来看看
+
+
+👇
+
+  </div>
+
+</details>
+
+
+
+<!-- ============================================================
+
+     剪贴板原始数据 (RAW CLIPBOARD DATA) — 请勿手动修改此区域
+
+     import_html.py 从此区域读取数据重建剪贴板
+
+     ============================================================ -->
+
+
+
+<script type="application/json" id="cb-raw-data" style="display:none">
+
+{
+  "version": 3,
+  "source": "export_html.py",
+  "original_fragment": "<section style=\"padding: 0px 30px; background-position: 67.2737% 8.352%; background-repeat: repeat; background-size: 20.2182%; background-attachment: scroll; background-image: url(&quot;https://statics.xiumi.us/mat/i/fvId/7327d0ed0097743275838846769faebb_sz-3523.png&quot;); box-sizing: border-box; font-style: normal; font-weight: 400; text-align: justify; font-size: 16px; color: rgb(62, 62, 62);\"><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><section style=\"text-align: right; padding: 0px 30px; box-sizing: border-box;\"><p style=\"margin: 0px; padding: 0px; box-sizing: border-box;\">/////////</p></section><section style=\"position: static; transform: rotateZ(9deg); -webkit-transform: rotateZ(9deg); -moz-transform: rotateZ(9deg); -o-transform: rotateZ(9deg); box-sizing: border-box;\"><section style=\"text-align: center; margin-top: 10px; margin-bottom: 10px; line-height: 0; position: static; box-sizing: border-box;\"><section style=\"max-width: 100%; vertical-align: middle; display: inline-block; line-height: 0; box-sizing: border-box;\"><img class=\"raw-image\" src=\"https://statics.xiumi.us/mat/i/fvId/22674e6ea15be99054548e0d0ecc376a_sz-2287.png\" style=\"vertical-align: middle; max-width: 100%; width: 100%; box-sizing: border-box;\" data-s=\"300,640\" crossorigin=\"anonymous\"></section></section></section><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><section style=\"font-size: 18px; line-height: 2; letter-spacing: 1px; box-sizing: border-box;\"><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\">桔子数科的雷，已经不是一家助贷平台的经营事故。</p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\">从2月、3月开始，协商还款失信、争议代扣、融担服务费退费难等投诉陆续出现。到4月，网络仲裁批量发起，<span style=\"background-color: rgb(235, 252, 229); box-sizing: border-box;\"><strong style=\"box-sizing: border-box;\">很多用户发现所谓“协商还款”没有书面协议支撑，自己按平台说法还了钱，仲裁却没有同步撤回。</strong></span></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\">5月以后，问题进一步传导到资金端：还款入账延迟、结清不销账、账单不更新，越来越多用户开始怀疑，线下还款资金并没有进入实际出资机构账户。</p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><span style=\"background-color: rgb(235, 252, 229); box-sizing: border-box;\"><strong style=\"box-sizing: border-box;\">爆雷出现在6月中下旬。</strong></span>有用户反映，在桔子数科相关人员或渠道引导下完成线下还款后，征信仍异常，实际放款机构继续显示未结清。</p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\">大量用户开始集中拨打监管电话，也开始投诉桔子数科背后的资金合作方。彼时，菜菜亦发布《欠薪、清退、牌照缩水，桔子数科陷危机》，向市场及桔子合作方提示风险。</p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><span style=\"background-color: rgb(235, 252, 229); box-sizing: border-box;\"><strong style=\"box-sizing: border-box;\">此后一周，舆论迅速踩踏，较偏激的说法是：金融机构和桔子数科联合诈骗借款人。</strong></span></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\">这个判断需要纠偏。</p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\">从目前已暴露的信息看，并非网传“金融机构联合桔子数科诈骗借款人”。</p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><span style=\"background-color: rgb(235, 252, 229); box-sizing: border-box;\"><strong style=\"box-sizing: border-box;\">而是桔子数科涉嫌在官方还款链路之外，单方引导部分用户线下还款至桔子数科账户，形成资金截留和资金池风险，并把借款人和资金合作方同时拖入对账泥潭。</strong></span></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\">资金方不能置身事外，它们需要承担合作管理、消费者保护、账务核验和后续处置责任。但所谓“资方与平台合谋诈骗”的谣言，既不符合目前呈现出来的交易结构，也会误导借款人作出错误选择。</p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\">对借款人来说，最危险的误判，是把平台暴雷理解成“贷款不用还”。</p></section><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><section style=\"font-size: 24px; box-sizing: border-box;\"><p style=\"margin: 0px; padding: 0px; box-sizing: border-box;\"><strong style=\"box-sizing: border-box;\">真正出问题的，是线下还款旁路</strong></p></section><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><section style=\"font-size: 18px; line-height: 2; letter-spacing: 1px; box-sizing: border-box;\"><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\">这件事首先要把一个边界讲清楚：正常批扣和官方还款通道，使用的是实际出资持牌金融机构及其合作支付机构的通道，资金并不进入桔子数科账户。</p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\">这部分还款实际不是本次截留争议的核心，也不能如部分声音所传，笼统说成“桔子控制全部还款资金”。</p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><span style=\"background-color: rgb(235, 252, 229); box-sizing: border-box;\"><strong style=\"box-sizing: border-box;\">真正的问题，在于桔子数科通过桔小花、宜口袋等入口吸引大量用户参与“借款返佣”“借了马上还拿奖励”等返利项目后，又在部分场景中以协商还款、提前结清、代为处理账单等名义，引导用户脱离官方渠道，把钱转入桔子数科或其指定账户。</strong></span></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\">很多人以为自己只是做任务，实际却完成了实名、签约、借款和还款动作；很多人以为自己已经结清，资方系统却并未收到对应入账。</p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\">据菜菜目前掌握的信息，这类线下还款截留资金并非全部还款，预估约占整体相关还款流的10%左右。比例不是多数，但放在一个合作机构众多、存量用户庞大的助贷平台里，足以造成大面积对账错位。</p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\">借款人看到的是“我明明还了还背债”，资金方看到的是“借据没有正常回款”，投诉和处置压力则迅速向监管、地方政府和合作金融机构集中。</p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\">所以，桔子数科如今不是普通技术故障、客服失联，也不是官方批扣通道被平台截流，而是<span style=\"background-color: rgb(235, 252, 229); box-sizing: border-box;\"><strong style=\"box-sizing: border-box;\">平台在官方链路之外另行搭建线下还款黑箱。</strong></span></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\">一旦这些资金没有及时、足额回到实际出资机构系统，账单、征信、催收和争议扣款就会全部失序。</p></section><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><section style=\"font-size: 24px; box-sizing: border-box;\"><p style=\"margin: 0px; padding: 0px; box-sizing: border-box;\"><strong style=\"box-sizing: border-box;\">平台涉嫌违法，不等于借据自动失效</strong></p></section><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><section style=\"font-size: 18px; line-height: 2; letter-spacing: 1px; box-sizing: border-box;\"><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\">很多用户是在桔小花、宜口袋等平台页面上操作的，所以天然认为刷单而已，“我和银行没有关系，我只和平台有关系”。</p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\">但信贷关系并非按用户感觉认定，而是按合同、签约、放款和借据认定。</p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\">如果借款人本人完成实名认证、电子签约，资金由实际出资的持牌金融机构发放，借据也依法生成，那么借款合同原则上具有法律效力。</p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\">无论第三方平台如何诱导，无论它把项目包装成“刷单”“任务”“返佣”还是“羊毛”，借贷主体仍然是借款人本人。<span style=\"background-color: rgb(235, 252, 229); box-sizing: border-box;\"><strong style=\"box-sizing: border-box;\">平台涉嫌违法，不能当然消灭借款合同项下的还本付息义务。</strong></span></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\">现在已经有黑灰产借桔子数科暴雷煽动用户逃废债，话术无非是“资方也有问题”“现在不用还了”“投诉就能免债”“交钱帮你停催消征信”。这些话是在把借款人推向二次风险。</p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><span style=\"background-color: rgb(235, 252, 229); box-sizing: border-box;\"><strong style=\"box-sizing: border-box;\">如果用户没有继续核对实际资方账单，而是盲目停还，系统层面可能产生逾期、罚息和征信异常。</strong></span></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\">平台截留线下还款资金造成的损失，应由平台及相关责任方依法承担；但对借款人而言，维权的前提是呈出事实链条，让实际出资机构能够核账、登记、处置，而不是只在网上喊“我还过了”。</p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\">换言之，已经向桔子数科账户、线下账户或相关第三方账户还过钱，但资方未入账的用户，要拿凭证维权；尚未结清、仍有正常账单的用户，则不能被“平台暴雷”四个字带偏，继续向非官方渠道转账或干脆停止履约。</p></section><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><section style=\"font-size: 24px; box-sizing: border-box;\"><p style=\"margin: 0px; padding: 0px; box-sizing: border-box;\"><strong style=\"box-sizing: border-box;\">止损路径，是回到资金方官方系统</strong></p></section><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><section style=\"font-size: 18px; line-height: 2; letter-spacing: 1px; box-sizing: border-box;\"><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\">对借款人来说，眼下第一件事是查清实际出资机构。</p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\">打开借款合同、放款短信、银行流水、征信报告，看清楚这笔钱到底是哪家银行或消费金融公司放的。后续所有借据查询、账单核对、还款操作，都应当通过实际出资持牌金融机构官方APP或官方客服确认的通道办理。</p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><span style=\"background-color: rgb(235, 252, 229); box-sizing: border-box;\"><strong style=\"box-sizing: border-box;\">不再通过桔小花、宜口袋等贷款中介平台还款，更不要向私人微信、线下中介、陌生链接、二维码账户转账。</strong></span></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\">桔子数科这次暴雷已经说明，第三方线下还款最大的风险，是资金脱离资方系统。钱转进某个第三方账户，不代表资方系统已经销账；平台页面或个人承诺显示“已处理”，也不代表借据真的结清。</p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><span style=\"background-color: rgb(235, 252, 229); box-sizing: border-box;\"><strong style=\"box-sizing: border-box;\">金融借款最终看的不是聊天记录里的承诺，而是实际出资机构系统里的入账和销账结果。</strong></span></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\">已经发生入账异常的用户，要立即整理材料：借款合同、借据编号、实际放款机构名称、放款流水、线下转账截图、支付凭证、银行卡扣款记录、交易流水、平台显示结清截图、客服沟通记录，以及当前账单或征信异常截图。</p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\">整理完以后，第一时间拨打实际放款持牌金融机构官方客服热线登记备案，要求生成工单，由后台专人核对账单。</p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\">监管投诉当然是合法权利，但在当前阶段，反复拨打监管电话未必比官方登记更快。</p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\">监管解决的是督促处置和责任边界问题，具体账务核验仍要回到金融机构系统。没有借据号、没有流水、没有凭证，投诉也很难落地。</p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><span style=\"background-color: rgb(235, 252, 229); box-sizing: border-box;\"><strong style=\"box-sizing: border-box;\">据了解，相关持牌金融机构已就桔子数科业务异常向金融监管部门报送情况，并启动专项核账和客户诉求登记。</strong></span></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><span style=\"background-color: rgb(235, 252, 229); box-sizing: border-box;\"><strong style=\"box-sizing: border-box;\">地方政府、监管部门及合作金融机构也在推动桔子数科配合核账和处置，涉及监管进展、责任认定和最终处置口径的内容，应以后续官方信息为准。</strong></span></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><span style=\"background-color: rgb(235, 252, 229); box-sizing: border-box;\"><strong style=\"box-sizing: border-box;\">对用户来说，现阶段更有效的路径，是通过实际放款机构官方入口登记损失、提交凭证、等待核账，而不是被情绪带着反复冲击投诉渠道。</strong></span></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\">还要特别提醒一类人：所谓“代理维权”“征信修复”“停催免债”机构，正在利用桔子数科事件的焦虑再一次收割借款人。</p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\">凡是宣称可以减免利息、消除逾期、停止催收、贷款不用还，但要求先交服务费、提交身份证、银行卡、征信报告、验证码的，大概率都是二次收割。</p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\">另一类更危险，是教唆用户恶意拖欠、集中编造投诉、以监管施压逃废债的金融黑灰产。它们不会承担用户的逾期罚息，也不会承担用户征信污点。</p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><span style=\"background-color: rgb(235, 252, 229); box-sizing: border-box;\"><strong style=\"box-sizing: border-box;\">桔子数科这次事件，对行业最大的警示，是助贷平台不能在官方还款链路之外另搭线下收款通道，更不能把客户线下还款资金变成自身资金调度工具。</strong></span></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\">持牌金融机构也必须重新审视合作边界，不能只看流量和资产规模，更要穿透协商还款、线下转账、账务登记和消费者触点。</p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\">桔子数科涉嫌截留线下还款资金、搭建资金池的问题，需要依法查清；暴力催收、违规收费、账单异常、征信争议，也需要逐项核验处理。</p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\">金融机构在合作管理和消费者保护上存在短板的，也要补课。但借款人同样要警醒，贷款不是任务，借据不是游戏，征信不是羊毛成本。</p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\">平台爆雷之后，最重要的是立刻停止向第三方和线下账户转账，回到实际出资机构官方系统，把合同、借据、流水和还款凭证一笔一笔摆清楚。</p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\">只有将还款动作拉回到官方链路里，线下还款黑箱才有可能被真正拆开。</p></section><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><p style=\"white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p><section style=\"text-align: left; justify-content: flex-start; display: flex; flex-flow: row; margin: 10px 0px; position: static; box-sizing: border-box;\"><section style=\"display: inline-block; vertical-align: middle; width: auto; align-self: center; flex: 0 0 auto; min-width: 5%; max-width: 100%; height: auto; line-height: 0; box-sizing: border-box;\"><section style=\"margin: 0px; transform: translate3d(1px, 0px, 0px); -webkit-transform: translate3d(1px, 0px, 0px); -moz-transform: translate3d(1px, 0px, 0px); -o-transform: translate3d(1px, 0px, 0px); position: static; box-sizing: border-box;\"><section class=\"group-empty\" style=\"display: inline-block; width: 6px; height: 6px; vertical-align: top; overflow: hidden; background-color: rgb(0, 0, 0); box-sizing: border-box;\"><svg viewBox=\"0 0 1 1\" style=\"float:left;line-height:0;width:0;vertical-align:top;\"></svg></section></section></section><section style=\"display: inline-block; vertical-align: middle; width: auto; align-self: center; flex: 0 0 auto; min-width: 5%; max-width: 100%; height: auto; line-height: 0; box-sizing: border-box;\"><section style=\"margin: 0px; transform: translate3d(1px, 0px, 0px); -webkit-transform: translate3d(1px, 0px, 0px); -moz-transform: translate3d(1px, 0px, 0px); -o-transform: translate3d(1px, 0px, 0px); position: static; box-sizing: border-box;\"><section class=\"group-empty\" style=\"display: inline-block; width: 6px; height: 6px; vertical-align: top; overflow: hidden; background-color: rgb(0, 0, 0); box-sizing: border-box;\"><svg viewBox=\"0 0 1 1\" style=\"float:left;line-height:0;width:0;vertical-align:top;\"></svg></section></section></section><section style=\"display: inline-block; vertical-align: middle; width: auto; align-self: center; flex: 0 0 auto; min-width: 5%; max-width: 100%; height: auto; line-height: 0; box-sizing: border-box;\"><section style=\"margin: 0px; transform: translate3d(1px, 0px, 0px); -webkit-transform: translate3d(1px, 0px, 0px); -moz-transform: translate3d(1px, 0px, 0px); -o-transform: translate3d(1px, 0px, 0px); position: static; box-sizing: border-box;\"><section class=\"group-empty\" style=\"display: inline-block; width: 6px; height: 6px; vertical-align: top; overflow: hidden; background-color: rgb(0, 0, 0); box-sizing: border-box;\"><svg viewBox=\"0 0 1 1\" style=\"float:left;line-height:0;width:0;vertical-align:top;\"></svg></section></section></section><section style=\"display: inline-block; vertical-align: middle; width: auto; align-self: center; flex: 100 100 0%; height: auto; padding: 0px 10px; box-sizing: border-box;\"><section style=\"margin: 0.5em 0px; position: static; box-sizing: border-box;\"><section style=\"background-color: rgb(0, 0, 0); height: 1px; box-sizing: border-box;\"><svg viewBox=\"0 0 1 1\" style=\"float:left;line-height:0;width:0;vertical-align:top;\"></svg></section> </section></section><section style=\"display: inline-block; vertical-align: middle; width: auto; align-self: center; flex: 0 0 auto; min-width: 5%; max-width: 100%; height: auto; line-height: 0; box-sizing: border-box;\"><section style=\"margin: 0px; transform: translate3d(1px, 0px, 0px); -webkit-transform: translate3d(1px, 0px, 0px); -moz-transform: translate3d(1px, 0px, 0px); -o-transform: translate3d(1px, 0px, 0px); position: static; box-sizing: border-box;\"><section class=\"group-empty\" style=\"display: inline-block; width: 6px; height: 6px; vertical-align: top; overflow: hidden; background-color: rgb(0, 0, 0); box-sizing: border-box;\"><svg viewBox=\"0 0 1 1\" style=\"float:left;line-height:0;width:0;vertical-align:top;\"></svg></section></section></section><section style=\"display: inline-block; vertical-align: middle; width: auto; align-self: center; flex: 0 0 auto; min-width: 5%; max-width: 100%; height: auto; line-height: 0; box-sizing: border-box;\"><section style=\"margin: 0px; transform: translate3d(1px, 0px, 0px); -webkit-transform: translate3d(1px, 0px, 0px); -moz-transform: translate3d(1px, 0px, 0px); -o-transform: translate3d(1px, 0px, 0px); position: static; box-sizing: border-box;\"><section class=\"group-empty\" style=\"display: inline-block; width: 6px; height: 6px; vertical-align: top; overflow: hidden; background-color: rgb(0, 0, 0); box-sizing: border-box;\"><svg viewBox=\"0 0 1 1\" style=\"float:left;line-height:0;width:0;vertical-align:top;\"></svg></section></section></section><section style=\"display: inline-block; vertical-align: middle; width: auto; align-self: center; flex: 0 0 auto; min-width: 5%; max-width: 100%; height: auto; line-height: 0; box-sizing: border-box;\"><section style=\"margin: 0px; transform: translate3d(1px, 0px, 0px); -webkit-transform: translate3d(1px, 0px, 0px); -moz-transform: translate3d(1px, 0px, 0px); -o-transform: translate3d(1px, 0px, 0px); position: static; box-sizing: border-box;\"><section class=\"group-empty\" style=\"display: inline-block; width: 6px; height: 6px; vertical-align: top; overflow: hidden; background-color: rgb(0, 0, 0); box-sizing: border-box;\"><svg viewBox=\"0 0 1 1\" style=\"float:left;line-height:0;width:0;vertical-align:top;\"></svg></section></section></section></section><section style=\"text-align: center; box-sizing: border-box;\"><p style=\"margin: 0px; padding: 0px; box-sizing: border-box;\">公众号推送规则调整后</p><p style=\"margin: 0px; padding: 0px; box-sizing: border-box;\">文章可能会乱序出现</p><p style=\"margin: 0px; padding: 0px; box-sizing: border-box;\">不想错过「菜菜说金融」的更新</p><p style=\"margin: 0px; padding: 0px; box-sizing: border-box;\">记得点一下文末的“在看”</p><p style=\"margin: 0px; padding: 0px; box-sizing: border-box;\">多留言，常来看看</p><p style=\"margin: 0px; padding: 0px; box-sizing: border-box;\">👇</p><p style=\"margin: 0px; padding: 0px; box-sizing: border-box;\"><br style=\"box-sizing: border-box;\"></p></section></section>",
+  "original_plain_text": "/////////\n\n\n桔子数科的雷，已经不是一家助贷平台的经营事故。\n\n\n从2月、3月开始，协商还款失信、争议代扣、融担服务费退费难等投诉陆续出现。到4月，网络仲裁批量发起，很多用户发现所谓“协商还款”没有书面协议支撑，自己按平台说法还了钱，仲裁却没有同步撤回。\n\n\n5月以后，问题进一步传导到资金端：还款入账延迟、结清不销账、账单不更新，越来越多用户开始怀疑，线下还款资金并没有进入实际出资机构账户。\n\n\n爆雷出现在6月中下旬。有用户反映，在桔子数科相关人员或渠道引导下完成线下还款后，征信仍异常，实际放款机构继续显示未结清。\n\n\n大量用户开始集中拨打监管电话，也开始投诉桔子数科背后的资金合作方。彼时，菜菜亦发布《欠薪、清退、牌照缩水，桔子数科陷危机》，向市场及桔子合作方提示风险。\n\n\n此后一周，舆论迅速踩踏，较偏激的说法是：金融机构和桔子数科联合诈骗借款人。\n\n\n这个判断需要纠偏。\n\n\n从目前已暴露的信息看，并非网传“金融机构联合桔子数科诈骗借款人”。\n\n\n而是桔子数科涉嫌在官方还款链路之外，单方引导部分用户线下还款至桔子数科账户，形成资金截留和资金池风险，并把借款人和资金合作方同时拖入对账泥潭。\n\n\n资金方不能置身事外，它们需要承担合作管理、消费者保护、账务核验和后续处置责任。但所谓“资方与平台合谋诈骗”的谣言，既不符合目前呈现出来的交易结构，也会误导借款人作出错误选择。\n\n\n对借款人来说，最危险的误判，是把平台暴雷理解成“贷款不用还”。\n\n\n真正出问题的，是线下还款旁路\n\n\n这件事首先要把一个边界讲清楚：正常批扣和官方还款通道，使用的是实际出资持牌金融机构及其合作支付机构的通道，资金并不进入桔子数科账户。\n\n\n这部分还款实际不是本次截留争议的核心，也不能如部分声音所传，笼统说成“桔子控制全部还款资金”。\n\n\n真正的问题，在于桔子数科通过桔小花、宜口袋等入口吸引大量用户参与“借款返佣”“借了马上还拿奖励”等返利项目后，又在部分场景中以协商还款、提前结清、代为处理账单等名义，引导用户脱离官方渠道，把钱转入桔子数科或其指定账户。\n\n\n很多人以为自己只是做任务，实际却完成了实名、签约、借款和还款动作；很多人以为自己已经结清，资方系统却并未收到对应入账。\n\n\n据菜菜目前掌握的信息，这类线下还款截留资金并非全部还款，预估约占整体相关还款流的10%左右。比例不是多数，但放在一个合作机构众多、存量用户庞大的助贷平台里，足以造成大面积对账错位。\n\n\n借款人看到的是“我明明还了还背债”，资金方看到的是“借据没有正常回款”，投诉和处置压力则迅速向监管、地方政府和合作金融机构集中。\n\n\n所以，桔子数科如今不是普通技术故障、客服失联，也不是官方批扣通道被平台截流，而是平台在官方链路之外另行搭建线下还款黑箱。\n\n\n一旦这些资金没有及时、足额回到实际出资机构系统，账单、征信、催收和争议扣款就会全部失序。\n\n\n平台涉嫌违法，不等于借据自动失效\n\n\n很多用户是在桔小花、宜口袋等平台页面上操作的，所以天然认为刷单而已，“我和银行没有关系，我只和平台有关系”。\n\n\n但信贷关系并非按用户感觉认定，而是按合同、签约、放款和借据认定。\n\n\n如果借款人本人完成实名认证、电子签约，资金由实际出资的持牌金融机构发放，借据也依法生成，那么借款合同原则上具有法律效力。\n\n\n无论第三方平台如何诱导，无论它把项目包装成“刷单”“任务”“返佣”还是“羊毛”，借贷主体仍然是借款人本人。平台涉嫌违法，不能当然消灭借款合同项下的还本付息义务。\n\n\n现在已经有黑灰产借桔子数科暴雷煽动用户逃废债，话术无非是“资方也有问题”“现在不用还了”“投诉就能免债”“交钱帮你停催消征信”。这些话是在把借款人推向二次风险。\n\n\n如果用户没有继续核对实际资方账单，而是盲目停还，系统层面可能产生逾期、罚息和征信异常。\n\n\n平台截留线下还款资金造成的损失，应由平台及相关责任方依法承担；但对借款人而言，维权的前提是呈出事实链条，让实际出资机构能够核账、登记、处置，而不是只在网上喊“我还过了”。\n\n\n换言之，已经向桔子数科账户、线下账户或相关第三方账户还过钱，但资方未入账的用户，要拿凭证维权；尚未结清、仍有正常账单的用户，则不能被“平台暴雷”四个字带偏，继续向非官方渠道转账或干脆停止履约。\n\n\n止损路径，是回到资金方官方系统\n\n\n对借款人来说，眼下第一件事是查清实际出资机构。\n\n\n打开借款合同、放款短信、银行流水、征信报告，看清楚这笔钱到底是哪家银行或消费金融公司放的。后续所有借据查询、账单核对、还款操作，都应当通过实际出资持牌金融机构官方APP或官方客服确认的通道办理。\n\n\n不再通过桔小花、宜口袋等贷款中介平台还款，更不要向私人微信、线下中介、陌生链接、二维码账户转账。\n\n\n桔子数科这次暴雷已经说明，第三方线下还款最大的风险，是资金脱离资方系统。钱转进某个第三方账户，不代表资方系统已经销账；平台页面或个人承诺显示“已处理”，也不代表借据真的结清。\n\n\n金融借款最终看的不是聊天记录里的承诺，而是实际出资机构系统里的入账和销账结果。\n\n\n已经发生入账异常的用户，要立即整理材料：借款合同、借据编号、实际放款机构名称、放款流水、线下转账截图、支付凭证、银行卡扣款记录、交易流水、平台显示结清截图、客服沟通记录，以及当前账单或征信异常截图。\n\n\n整理完以后，第一时间拨打实际放款持牌金融机构官方客服热线登记备案，要求生成工单，由后台专人核对账单。\n\n\n监管投诉当然是合法权利，但在当前阶段，反复拨打监管电话未必比官方登记更快。\n\n\n监管解决的是督促处置和责任边界问题，具体账务核验仍要回到金融机构系统。没有借据号、没有流水、没有凭证，投诉也很难落地。\n\n\n据了解，相关持牌金融机构已就桔子数科业务异常向金融监管部门报送情况，并启动专项核账和客户诉求登记。\n\n\n地方政府、监管部门及合作金融机构也在推动桔子数科配合核账和处置，涉及监管进展、责任认定和最终处置口径的内容，应以后续官方信息为准。\n\n\n对用户来说，现阶段更有效的路径，是通过实际放款机构官方入口登记损失、提交凭证、等待核账，而不是被情绪带着反复冲击投诉渠道。\n\n\n还要特别提醒一类人：所谓“代理维权”“征信修复”“停催免债”机构，正在利用桔子数科事件的焦虑再一次收割借款人。\n\n\n凡是宣称可以减免利息、消除逾期、停止催收、贷款不用还，但要求先交服务费、提交身份证、银行卡、征信报告、验证码的，大概率都是二次收割。\n\n\n另一类更危险，是教唆用户恶意拖欠、集中编造投诉、以监管施压逃废债的金融黑灰产。它们不会承担用户的逾期罚息，也不会承担用户征信污点。\n\n\n桔子数科这次事件，对行业最大的警示，是助贷平台不能在官方还款链路之外另搭线下收款通道，更不能把客户线下还款资金变成自身资金调度工具。\n\n\n持牌金融机构也必须重新审视合作边界，不能只看流量和资产规模，更要穿透协商还款、线下转账、账务登记和消费者触点。\n\n\n桔子数科涉嫌截留线下还款资金、搭建资金池的问题，需要依法查清；暴力催收、违规收费、账单异常、征信争议，也需要逐项核验处理。\n\n\n金融机构在合作管理和消费者保护上存在短板的，也要补课。但借款人同样要警醒，贷款不是任务，借据不是游戏，征信不是羊毛成本。\n\n\n平台爆雷之后，最重要的是立刻停止向第三方和线下账户转账，回到实际出资机构官方系统，把合同、借据、流水和还款凭证一笔一笔摆清楚。\n\n\n只有将还款动作拉回到官方链路里，线下还款黑箱才有可能被真正拆开。\n\n\n \n\n\n公众号推送规则调整后\n\n\n文章可能会乱序出现\n\n\n不想错过「菜菜说金融」的更新\n\n\n记得点一下文末的“在看”\n\n\n多留言，常来看看\n\n\n👇",
+  "formats": [
+    {
+      "format_id": 49393,
+      "format_name": "HTML Format",
+      "size": 29695,
+      "data": "VmVyc2lvbjowLjkNClN0YXJ0SFRNTDowMDAwMDAwMTA1DQpFbmRIVE1MOjAwMDAwMjk2OTQNClN0YXJ0RnJhZ21lbnQ6MDAwMDAwMDE0MQ0KRW5kRnJhZ21lbnQ6MDAwMDAyOTY1OA0KPGh0bWw+DQo8Ym9keT4NCjwhLS1TdGFydEZyYWdtZW50LS0+PHNlY3Rpb24gc3R5bGU9InBhZGRpbmc6IDBweCAzMHB4OyBiYWNrZ3JvdW5kLXBvc2l0aW9uOiA2Ny4yNzM3JSA4LjM1MiU7IGJhY2tncm91bmQtcmVwZWF0OiByZXBlYXQ7IGJhY2tncm91bmQtc2l6ZTogMjAuMjE4MiU7IGJhY2tncm91bmQtYXR0YWNobWVudDogc2Nyb2xsOyBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoJnF1b3Q7aHR0cHM6Ly9zdGF0aWNzLnhpdW1pLnVzL21hdC9pL2Z2SWQvNzMyN2QwZWQwMDk3NzQzMjc1ODM4ODQ2NzY5ZmFlYmJfc3otMzUyMy5wbmcmcXVvdDspOyBib3gtc2l6aW5nOiBib3JkZXItYm94OyBmb250LXN0eWxlOiBub3JtYWw7IGZvbnQtd2VpZ2h0OiA0MDA7IHRleHQtYWxpZ246IGp1c3RpZnk7IGZvbnQtc2l6ZTogMTZweDsgY29sb3I6IHJnYig2MiwgNjIsIDYyKTsiPjxwIHN0eWxlPSJ3aGl0ZS1zcGFjZTogbm9ybWFsOyBtYXJnaW46IDBweDsgcGFkZGluZzogMHB4OyBib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PGJyIHN0eWxlPSJib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PC9wPjxzZWN0aW9uIHN0eWxlPSJ0ZXh0LWFsaWduOiByaWdodDsgcGFkZGluZzogMHB4IDMwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48cCBzdHlsZT0ibWFyZ2luOiAwcHg7IHBhZGRpbmc6IDBweDsgYm94LXNpemluZzogYm9yZGVyLWJveDsiPi8vLy8vLy8vLzwvcD48L3NlY3Rpb24+PHNlY3Rpb24gc3R5bGU9InBvc2l0aW9uOiBzdGF0aWM7IHRyYW5zZm9ybTogcm90YXRlWig5ZGVnKTsgLXdlYmtpdC10cmFuc2Zvcm06IHJvdGF0ZVooOWRlZyk7IC1tb3otdHJhbnNmb3JtOiByb3RhdGVaKDlkZWcpOyAtby10cmFuc2Zvcm06IHJvdGF0ZVooOWRlZyk7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48c2VjdGlvbiBzdHlsZT0idGV4dC1hbGlnbjogY2VudGVyOyBtYXJnaW4tdG9wOiAxMHB4OyBtYXJnaW4tYm90dG9tOiAxMHB4OyBsaW5lLWhlaWdodDogMDsgcG9zaXRpb246IHN0YXRpYzsgYm94LXNpemluZzogYm9yZGVyLWJveDsiPjxzZWN0aW9uIHN0eWxlPSJtYXgtd2lkdGg6IDEwMCU7IHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7IGRpc3BsYXk6IGlubGluZS1ibG9jazsgbGluZS1oZWlnaHQ6IDA7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48aW1nIGNsYXNzPSJyYXctaW1hZ2UiIHNyYz0iaHR0cHM6Ly9zdGF0aWNzLnhpdW1pLnVzL21hdC9pL2Z2SWQvMjI2NzRlNmVhMTViZTk5MDU0NTQ4ZTBkMGVjYzM3NmFfc3otMjI4Ny5wbmciIHN0eWxlPSJ2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlOyBtYXgtd2lkdGg6IDEwMCU7IHdpZHRoOiAxMDAlOyBib3gtc2l6aW5nOiBib3JkZXItYm94OyIgZGF0YS1zPSIzMDAsNjQwIiBjcm9zc29yaWdpbj0iYW5vbnltb3VzIj48L3NlY3Rpb24+PC9zZWN0aW9uPjwvc2VjdGlvbj48cCBzdHlsZT0id2hpdGUtc3BhY2U6IG5vcm1hbDsgbWFyZ2luOiAwcHg7IHBhZGRpbmc6IDBweDsgYm94LXNpemluZzogYm9yZGVyLWJveDsiPjxiciBzdHlsZT0iYm94LXNpemluZzogYm9yZGVyLWJveDsiPjwvcD48c2VjdGlvbiBzdHlsZT0iZm9udC1zaXplOiAxOHB4OyBsaW5lLWhlaWdodDogMjsgbGV0dGVyLXNwYWNpbmc6IDFweDsgYm94LXNpemluZzogYm9yZGVyLWJveDsiPjxwIHN0eWxlPSJ3aGl0ZS1zcGFjZTogbm9ybWFsOyBtYXJnaW46IDBweDsgcGFkZGluZzogMHB4OyBib3gtc2l6aW5nOiBib3JkZXItYm94OyI+5qGU5a2Q5pWw56eR55qE6Zu377yM5bey57uP5LiN5piv5LiA5a625Yqp6LS35bmz5Y+w55qE57uP6JCl5LqL5pWF44CCPC9wPjxwIHN0eWxlPSJ3aGl0ZS1zcGFjZTogbm9ybWFsOyBtYXJnaW46IDBweDsgcGFkZGluZzogMHB4OyBib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PGJyIHN0eWxlPSJib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PC9wPjxwIHN0eWxlPSJ3aGl0ZS1zcGFjZTogbm9ybWFsOyBtYXJnaW46IDBweDsgcGFkZGluZzogMHB4OyBib3gtc2l6aW5nOiBib3JkZXItYm94OyI+5LuOMuaciOOAgTPmnIjlvIDlp4vvvIzljY/llYbov5jmrL7lpLHkv6HjgIHkuonorq7ku6PmiaPjgIHono3mi4XmnI3liqHotLnpgIDotLnpmr7nrYnmipXor4npmYbnu63lh7rnjrDjgILliLA05pyI77yM572R57uc5Luy6KOB5om56YeP5Y+R6LW377yMPHNwYW4gc3R5bGU9ImJhY2tncm91bmQtY29sb3I6IHJnYigyMzUsIDI1MiwgMjI5KTsgYm94LXNpemluZzogYm9yZGVyLWJveDsiPjxzdHJvbmcgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij7lvojlpJrnlKjmiLflj5HnjrDmiYDosJPigJzljY/llYbov5jmrL7igJ3msqHmnInkuabpnaLljY/orq7mlK/mkpHvvIzoh6rlt7HmjInlubPlj7Dor7Tms5Xov5jkuobpkrHvvIzku7Loo4HljbTmsqHmnInlkIzmraXmkqTlm57jgII8L3N0cm9uZz48L3NwYW4+PC9wPjxwIHN0eWxlPSJ3aGl0ZS1zcGFjZTogbm9ybWFsOyBtYXJnaW46IDBweDsgcGFkZGluZzogMHB4OyBib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PGJyIHN0eWxlPSJib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PC9wPjxwIHN0eWxlPSJ3aGl0ZS1zcGFjZTogbm9ybWFsOyBtYXJnaW46IDBweDsgcGFkZGluZzogMHB4OyBib3gtc2l6aW5nOiBib3JkZXItYm94OyI+NeaciOS7peWQju+8jOmXrumimOi/m+S4gOatpeS8oOWvvOWIsOi1hOmHkeerr++8mui/mOasvuWFpei0puW7tui/n+OAgee7k+a4heS4jemUgOi0puOAgei0puWNleS4jeabtOaWsO+8jOi2iuadpei2iuWkmueUqOaIt+W8gOWni+aAgOeWke+8jOe6v+S4i+i/mOasvui1hOmHkeW5tuayoeaciei/m+WFpeWunumZheWHuui1hOacuuaehOi0puaIt+OAgjwvcD48cCBzdHlsZT0id2hpdGUtc3BhY2U6IG5vcm1hbDsgbWFyZ2luOiAwcHg7IHBhZGRpbmc6IDBweDsgYm94LXNpemluZzogYm9yZGVyLWJveDsiPjxiciBzdHlsZT0iYm94LXNpemluZzogYm9yZGVyLWJveDsiPjwvcD48cCBzdHlsZT0id2hpdGUtc3BhY2U6IG5vcm1hbDsgbWFyZ2luOiAwcHg7IHBhZGRpbmc6IDBweDsgYm94LXNpemluZzogYm9yZGVyLWJveDsiPjxzcGFuIHN0eWxlPSJiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMjM1LCAyNTIsIDIyOSk7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48c3Ryb25nIHN0eWxlPSJib3gtc2l6aW5nOiBib3JkZXItYm94OyI+54iG6Zu35Ye6546w5ZyoNuaciOS4reS4i+aXrOOAgjwvc3Ryb25nPjwvc3Bhbj7mnInnlKjmiLflj43mmKDvvIzlnKjmoZTlrZDmlbDnp5Hnm7jlhbPkurrlkZjmiJbmuKDpgZPlvJXlr7zkuIvlrozmiJDnur/kuIvov5jmrL7lkI7vvIzlvoHkv6Hku43lvILluLjvvIzlrp7pmYXmlL7mrL7mnLrmnoTnu6fnu63mmL7npLrmnKrnu5PmuIXjgII8L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48YnIgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij7lpKfph4/nlKjmiLflvIDlp4vpm4bkuK3mi6jmiZPnm5HnrqHnlLXor53vvIzkuZ/lvIDlp4vmipXor4nmoZTlrZDmlbDnp5Hog4zlkI7nmoTotYTph5HlkIjkvZzmlrnjgILlvbzml7bvvIzoj5zoj5zkuqblj5HluIPjgIrmrKDolqrjgIHmuIXpgIDjgIHniYznhafnvKnmsLTvvIzmoZTlrZDmlbDnp5HpmbfljbHmnLrjgIvvvIzlkJHluILlnLrlj4rmoZTlrZDlkIjkvZzmlrnmj5DnpLrpo47pmanjgII8L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48YnIgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48c3BhbiBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjogcmdiKDIzNSwgMjUyLCAyMjkpOyBib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PHN0cm9uZyBzdHlsZT0iYm94LXNpemluZzogYm9yZGVyLWJveDsiPuatpOWQjuS4gOWRqO+8jOiIhuiuuui/hemAn+i4qei4j++8jOi+g+WBj+a/gOeahOivtOazleaYr++8mumHkeiejeacuuaehOWSjOahlOWtkOaVsOenkeiBlOWQiOiviOmql+WAn+asvuS6uuOAgjwvc3Ryb25nPjwvc3Bhbj48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48YnIgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij7ov5nkuKrliKTmlq3pnIDopoHnuqDlgY/jgII8L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48YnIgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij7ku47nm67liY3lt7LmmrTpnLLnmoTkv6Hmga/nnIvvvIzlubbpnZ7nvZHkvKDigJzph5Hono3mnLrmnoTogZTlkIjmoZTlrZDmlbDnp5Hor4jpqpflgJ/mrL7kurrigJ3jgII8L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48YnIgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48c3BhbiBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjogcmdiKDIzNSwgMjUyLCAyMjkpOyBib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PHN0cm9uZyBzdHlsZT0iYm94LXNpemluZzogYm9yZGVyLWJveDsiPuiAjOaYr+ahlOWtkOaVsOenkea2ieWrjOWcqOWumOaWuei/mOasvumTvui3r+S5i+Wklu+8jOWNleaWueW8leWvvOmDqOWIhueUqOaIt+e6v+S4i+i/mOasvuiHs+ahlOWtkOaVsOenkei0puaIt++8jOW9ouaIkOi1hOmHkeaIqueVmeWSjOi1hOmHkeaxoOmjjumZqe+8jOW5tuaKiuWAn+asvuS6uuWSjOi1hOmHkeWQiOS9nOaWueWQjOaXtuaLluWFpeWvuei0puazpea9reOAgjwvc3Ryb25nPjwvc3Bhbj48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48YnIgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij7otYTph5HmlrnkuI3og73nva7ouqvkuovlpJbvvIzlroPku6zpnIDopoHmib/mi4XlkIjkvZznrqHnkIbjgIHmtojotLnogIXkv53miqTjgIHotKbliqHmoLjpqozlkozlkI7nu63lpITnva7otKPku7vjgILkvYbmiYDosJPigJzotYTmlrnkuI7lubPlj7DlkIjosIvor4jpqpfigJ3nmoTosKPoqIDvvIzml6LkuI3nrKblkIjnm67liY3lkYjnjrDlh7rmnaXnmoTkuqTmmJPnu5PmnoTvvIzkuZ/kvJror6/lr7zlgJ/mrL7kurrkvZzlh7rplJnor6/pgInmi6njgII8L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48YnIgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij7lr7nlgJ/mrL7kurrmnaXor7TvvIzmnIDljbHpmannmoTor6/liKTvvIzmmK/miorlubPlj7DmmrTpm7fnkIbop6PmiJDigJzotLfmrL7kuI3nlKjov5jigJ3jgII8L3A+PC9zZWN0aW9uPjxwIHN0eWxlPSJ3aGl0ZS1zcGFjZTogbm9ybWFsOyBtYXJnaW46IDBweDsgcGFkZGluZzogMHB4OyBib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PGJyIHN0eWxlPSJib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PC9wPjxzZWN0aW9uIHN0eWxlPSJmb250LXNpemU6IDI0cHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48cCBzdHlsZT0ibWFyZ2luOiAwcHg7IHBhZGRpbmc6IDBweDsgYm94LXNpemluZzogYm9yZGVyLWJveDsiPjxzdHJvbmcgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij7nnJ/mraPlh7rpl67popjnmoTvvIzmmK/nur/kuIvov5jmrL7ml4Hot688L3N0cm9uZz48L3A+PC9zZWN0aW9uPjxwIHN0eWxlPSJ3aGl0ZS1zcGFjZTogbm9ybWFsOyBtYXJnaW46IDBweDsgcGFkZGluZzogMHB4OyBib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PGJyIHN0eWxlPSJib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PC9wPjxzZWN0aW9uIHN0eWxlPSJmb250LXNpemU6IDE4cHg7IGxpbmUtaGVpZ2h0OiAyOyBsZXR0ZXItc3BhY2luZzogMXB4OyBib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij7ov5nku7bkuovpppblhYjopoHmiorkuIDkuKrovrnnlYzorrLmuIXmpZrvvJrmraPluLjmibnmiaPlkozlrpjmlrnov5jmrL7pgJrpgZPvvIzkvb/nlKjnmoTmmK/lrp7pmYXlh7rotYTmjIHniYzph5Hono3mnLrmnoTlj4rlhbblkIjkvZzmlK/ku5jmnLrmnoTnmoTpgJrpgZPvvIzotYTph5HlubbkuI3ov5vlhaXmoZTlrZDmlbDnp5HotKbmiLfjgII8L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48YnIgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij7ov5npg6jliIbov5jmrL7lrp7pmYXkuI3mmK/mnKzmrKHmiKrnlZnkuonorq7nmoTmoLjlv4PvvIzkuZ/kuI3og73lpoLpg6jliIblo7Dpn7PmiYDkvKDvvIznrLznu5/or7TmiJDigJzmoZTlrZDmjqfliLblhajpg6jov5jmrL7otYTph5HigJ3jgII8L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48YnIgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48c3BhbiBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjogcmdiKDIzNSwgMjUyLCAyMjkpOyBib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PHN0cm9uZyBzdHlsZT0iYm94LXNpemluZzogYm9yZGVyLWJveDsiPuecn+ato+eahOmXrumimO+8jOWcqOS6juahlOWtkOaVsOenkemAmui/h+ahlOWwj+iKseOAgeWunOWPo+iii+etieWFpeWPo+WQuOW8leWkp+mHj+eUqOaIt+WPguS4juKAnOWAn+asvui/lOS9o+KAneKAnOWAn+S6humprOS4iui/mOaLv+WlluWKseKAneetiei/lOWIqemhueebruWQju+8jOWPiOWcqOmDqOWIhuWcuuaZr+S4reS7peWNj+WVhui/mOasvuOAgeaPkOWJjee7k+a4heOAgeS7o+S4uuWkhOeQhui0puWNleetieWQjeS5ie+8jOW8leWvvOeUqOaIt+iEseemu+WumOaWuea4oOmBk++8jOaKiumSsei9rOWFpeahlOWtkOaVsOenkeaIluWFtuaMh+Wumui0puaIt+OAgjwvc3Ryb25nPjwvc3Bhbj48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48YnIgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij7lvojlpJrkurrku6XkuLroh6rlt7Hlj6rmmK/lgZrku7vliqHvvIzlrp7pmYXljbTlrozmiJDkuoblrp7lkI3jgIHnrb7nuqbjgIHlgJ/mrL7lkozov5jmrL7liqjkvZzvvJvlvojlpJrkurrku6XkuLroh6rlt7Hlt7Lnu4/nu5PmuIXvvIzotYTmlrnns7vnu5/ljbTlubbmnKrmlLbliLDlr7nlupTlhaXotKbjgII8L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48YnIgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij7mja7oj5zoj5znm67liY3mjozmj6HnmoTkv6Hmga/vvIzov5nnsbvnur/kuIvov5jmrL7miKrnlZnotYTph5HlubbpnZ7lhajpg6jov5jmrL7vvIzpooTkvLDnuqbljaDmlbTkvZPnm7jlhbPov5jmrL7mtYHnmoQxMCXlt6blj7PjgILmr5TkvovkuI3mmK/lpJrmlbDvvIzkvYbmlL7lnKjkuIDkuKrlkIjkvZzmnLrmnoTkvJflpJrjgIHlrZjph4/nlKjmiLflup7lpKfnmoTliqnotLflubPlj7Dph4zvvIzotrPku6XpgKDmiJDlpKfpnaLnp6/lr7notKbplJnkvY3jgII8L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48YnIgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij7lgJ/mrL7kurrnnIvliLDnmoTmmK/igJzmiJHmmI7mmI7ov5jkuobov5jog4zlgLrigJ3vvIzotYTph5HmlrnnnIvliLDnmoTmmK/igJzlgJ/mja7msqHmnInmraPluLjlm57mrL7igJ3vvIzmipXor4nlkozlpITnva7ljovlipvliJnov4XpgJ/lkJHnm5HnrqHjgIHlnLDmlrnmlL/lupzlkozlkIjkvZzph5Hono3mnLrmnoTpm4bkuK3jgII8L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48YnIgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij7miYDku6XvvIzmoZTlrZDmlbDnp5HlpoLku4rkuI3mmK/mma7pgJrmioDmnK/mlYXpmpzjgIHlrqLmnI3lpLHogZTvvIzkuZ/kuI3mmK/lrpjmlrnmibnmiaPpgJrpgZPooqvlubPlj7DmiKrmtYHvvIzogIzmmK88c3BhbiBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjogcmdiKDIzNSwgMjUyLCAyMjkpOyBib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PHN0cm9uZyBzdHlsZT0iYm94LXNpemluZzogYm9yZGVyLWJveDsiPuW5s+WPsOWcqOWumOaWuemTvui3r+S5i+WkluWPpuihjOaQreW7uue6v+S4i+i/mOasvum7keeuseOAgjwvc3Ryb25nPjwvc3Bhbj48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48YnIgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij7kuIDml6bov5nkupvotYTph5HmsqHmnInlj4rml7bjgIHotrPpop3lm57liLDlrp7pmYXlh7rotYTmnLrmnoTns7vnu5/vvIzotKbljZXjgIHlvoHkv6HjgIHlgqzmlLblkozkuonorq7miaPmrL7lsLHkvJrlhajpg6jlpLHluo/jgII8L3A+PC9zZWN0aW9uPjxwIHN0eWxlPSJ3aGl0ZS1zcGFjZTogbm9ybWFsOyBtYXJnaW46IDBweDsgcGFkZGluZzogMHB4OyBib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PGJyIHN0eWxlPSJib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PC9wPjxzZWN0aW9uIHN0eWxlPSJmb250LXNpemU6IDI0cHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48cCBzdHlsZT0ibWFyZ2luOiAwcHg7IHBhZGRpbmc6IDBweDsgYm94LXNpemluZzogYm9yZGVyLWJveDsiPjxzdHJvbmcgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij7lubPlj7Dmtonlq4zov53ms5XvvIzkuI3nrYnkuo7lgJ/mja7oh6rliqjlpLHmlYg8L3N0cm9uZz48L3A+PC9zZWN0aW9uPjxwIHN0eWxlPSJ3aGl0ZS1zcGFjZTogbm9ybWFsOyBtYXJnaW46IDBweDsgcGFkZGluZzogMHB4OyBib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PGJyIHN0eWxlPSJib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PC9wPjxzZWN0aW9uIHN0eWxlPSJmb250LXNpemU6IDE4cHg7IGxpbmUtaGVpZ2h0OiAyOyBsZXR0ZXItc3BhY2luZzogMXB4OyBib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij7lvojlpJrnlKjmiLfmmK/lnKjmoZTlsI/oirHjgIHlrpzlj6PooovnrYnlubPlj7DpobXpnaLkuIrmk43kvZznmoTvvIzmiYDku6XlpKnnhLborqTkuLrliLfljZXogIzlt7LvvIzigJzmiJHlkozpk7booYzmsqHmnInlhbPns7vvvIzmiJHlj6rlkozlubPlj7DmnInlhbPns7vigJ3jgII8L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48YnIgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij7kvYbkv6HotLflhbPns7vlubbpnZ7mjInnlKjmiLfmhJ/op4norqTlrprvvIzogIzmmK/mjInlkIjlkIzjgIHnrb7nuqbjgIHmlL7mrL7lkozlgJ/mja7orqTlrprjgII8L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48YnIgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij7lpoLmnpzlgJ/mrL7kurrmnKzkurrlrozmiJDlrp7lkI3orqTor4HjgIHnlLXlrZDnrb7nuqbvvIzotYTph5HnlLHlrp7pmYXlh7rotYTnmoTmjIHniYzph5Hono3mnLrmnoTlj5HmlL7vvIzlgJ/mja7kuZ/kvp3ms5XnlJ/miJDvvIzpgqPkuYjlgJ/mrL7lkIjlkIzljp/liJnkuIrlhbfmnInms5XlvovmlYjlipvjgII8L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48YnIgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij7ml6DorrrnrKzkuInmlrnlubPlj7DlpoLkvZXor7Hlr7zvvIzml6DorrrlroPmiorpobnnm67ljIXoo4XmiJDigJzliLfljZXigJ3igJzku7vliqHigJ3igJzov5TkvaPigJ3ov5jmmK/igJznvormr5vigJ3vvIzlgJ/otLfkuLvkvZPku43nhLbmmK/lgJ/mrL7kurrmnKzkurrjgII8c3BhbiBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjogcmdiKDIzNSwgMjUyLCAyMjkpOyBib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PHN0cm9uZyBzdHlsZT0iYm94LXNpemluZzogYm9yZGVyLWJveDsiPuW5s+WPsOa2ieWrjOi/neazle+8jOS4jeiDveW9k+eEtua2iOeBreWAn+asvuWQiOWQjOmhueS4i+eahOi/mOacrOS7mOaBr+S5ieWKoeOAgjwvc3Ryb25nPjwvc3Bhbj48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48YnIgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij7njrDlnKjlt7Lnu4/mnInpu5HngbDkuqflgJ/moZTlrZDmlbDnp5HmmrTpm7fnhb3liqjnlKjmiLfpgIPlup/lgLrvvIzor53mnK/ml6DpnZ7mmK/igJzotYTmlrnkuZ/mnInpl67popjigJ3igJznjrDlnKjkuI3nlKjov5jkuobigJ3igJzmipXor4nlsLHog73lhY3lgLrigJ3igJzkuqTpkrHluK7kvaDlgZzlgqzmtojlvoHkv6HigJ3jgILov5nkupvor53mmK/lnKjmiorlgJ/mrL7kurrmjqjlkJHkuozmrKHpo47pmanjgII8L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48YnIgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48c3BhbiBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjogcmdiKDIzNSwgMjUyLCAyMjkpOyBib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PHN0cm9uZyBzdHlsZT0iYm94LXNpemluZzogYm9yZGVyLWJveDsiPuWmguaenOeUqOaIt+ayoeaciee7p+e7reaguOWvueWunumZhei1hOaWuei0puWNle+8jOiAjOaYr+ebsuebruWBnOi/mO+8jOezu+e7n+WxgumdouWPr+iDveS6p+eUn+mAvuacn+OAgee9muaBr+WSjOW+geS/oeW8guW4uOOAgjwvc3Ryb25nPjwvc3Bhbj48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48YnIgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij7lubPlj7DmiKrnlZnnur/kuIvov5jmrL7otYTph5HpgKDmiJDnmoTmjZ/lpLHvvIzlupTnlLHlubPlj7Dlj4rnm7jlhbPotKPku7vmlrnkvp3ms5Xmib/mi4XvvJvkvYblr7nlgJ/mrL7kurrogIzoqIDvvIznu7TmnYPnmoTliY3mj5DmmK/lkYjlh7rkuovlrp7pk77mnaHvvIzorqnlrp7pmYXlh7rotYTmnLrmnoTog73lpJ/moLjotKbjgIHnmbvorrDjgIHlpITnva7vvIzogIzkuI3mmK/lj6rlnKjnvZHkuIrllorigJzmiJHov5jov4fkuobigJ3jgII8L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48YnIgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij7mjaLoqIDkuYvvvIzlt7Lnu4/lkJHmoZTlrZDmlbDnp5HotKbmiLfjgIHnur/kuIvotKbmiLfmiJbnm7jlhbPnrKzkuInmlrnotKbmiLfov5jov4fpkrHvvIzkvYbotYTmlrnmnKrlhaXotKbnmoTnlKjmiLfvvIzopoHmi7/lh63or4Hnu7TmnYPvvJvlsJrmnKrnu5PmuIXjgIHku43mnInmraPluLjotKbljZXnmoTnlKjmiLfvvIzliJnkuI3og73ooqvigJzlubPlj7DmmrTpm7figJ3lm5vkuKrlrZfluKblgY/vvIznu6fnu63lkJHpnZ7lrpjmlrnmuKDpgZPovazotKbmiJblubLohIblgZzmraLlsaXnuqbjgII8L3A+PC9zZWN0aW9uPjxwIHN0eWxlPSJ3aGl0ZS1zcGFjZTogbm9ybWFsOyBtYXJnaW46IDBweDsgcGFkZGluZzogMHB4OyBib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PGJyIHN0eWxlPSJib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PC9wPjxzZWN0aW9uIHN0eWxlPSJmb250LXNpemU6IDI0cHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48cCBzdHlsZT0ibWFyZ2luOiAwcHg7IHBhZGRpbmc6IDBweDsgYm94LXNpemluZzogYm9yZGVyLWJveDsiPjxzdHJvbmcgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij7mraLmjZ/ot6/lvoTvvIzmmK/lm57liLDotYTph5Hmlrnlrpjmlrnns7vnu588L3N0cm9uZz48L3A+PC9zZWN0aW9uPjxwIHN0eWxlPSJ3aGl0ZS1zcGFjZTogbm9ybWFsOyBtYXJnaW46IDBweDsgcGFkZGluZzogMHB4OyBib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PGJyIHN0eWxlPSJib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PC9wPjxzZWN0aW9uIHN0eWxlPSJmb250LXNpemU6IDE4cHg7IGxpbmUtaGVpZ2h0OiAyOyBsZXR0ZXItc3BhY2luZzogMXB4OyBib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij7lr7nlgJ/mrL7kurrmnaXor7TvvIznnLzkuIvnrKzkuIDku7bkuovmmK/mn6XmuIXlrp7pmYXlh7rotYTmnLrmnoTjgII8L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48YnIgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij7miZPlvIDlgJ/mrL7lkIjlkIzjgIHmlL7mrL7nn63kv6HjgIHpk7booYzmtYHmsLTjgIHlvoHkv6HmiqXlkYrvvIznnIvmuIXmpZrov5nnrJTpkrHliLDlupXmmK/lk6rlrrbpk7booYzmiJbmtojotLnph5Hono3lhazlj7jmlL7nmoTjgILlkI7nu63miYDmnInlgJ/mja7mn6Xor6LjgIHotKbljZXmoLjlr7njgIHov5jmrL7mk43kvZzvvIzpg73lupTlvZPpgJrov4flrp7pmYXlh7rotYTmjIHniYzph5Hono3mnLrmnoTlrpjmlrlBUFDmiJblrpjmlrnlrqLmnI3noa7orqTnmoTpgJrpgZPlip7nkIbjgII8L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48YnIgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48c3BhbiBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjogcmdiKDIzNSwgMjUyLCAyMjkpOyBib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PHN0cm9uZyBzdHlsZT0iYm94LXNpemluZzogYm9yZGVyLWJveDsiPuS4jeWGjemAmui/h+ahlOWwj+iKseOAgeWunOWPo+iii+etiei0t+asvuS4reS7i+W5s+WPsOi/mOasvu+8jOabtOS4jeimgeWQkeengeS6uuW+ruS/oeOAgee6v+S4i+S4reS7i+OAgemZjOeUn+mTvuaOpeOAgeS6jOe7tOeggei0puaIt+i9rOi0puOAgjwvc3Ryb25nPjwvc3Bhbj48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48YnIgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij7moZTlrZDmlbDnp5Hov5nmrKHmmrTpm7flt7Lnu4/or7TmmI7vvIznrKzkuInmlrnnur/kuIvov5jmrL7mnIDlpKfnmoTpo47pmanvvIzmmK/otYTph5HohLHnprvotYTmlrnns7vnu5/jgILpkrHovazov5vmn5DkuKrnrKzkuInmlrnotKbmiLfvvIzkuI3ku6PooajotYTmlrnns7vnu5/lt7Lnu4/plIDotKbvvJvlubPlj7DpobXpnaLmiJbkuKrkurrmib/or7rmmL7npLrigJzlt7LlpITnkIbigJ3vvIzkuZ/kuI3ku6PooajlgJ/mja7nnJ/nmoTnu5PmuIXjgII8L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48YnIgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48c3BhbiBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjogcmdiKDIzNSwgMjUyLCAyMjkpOyBib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PHN0cm9uZyBzdHlsZT0iYm94LXNpemluZzogYm9yZGVyLWJveDsiPumHkeiejeWAn+asvuacgOe7iOeci+eahOS4jeaYr+iBiuWkqeiusOW9lemHjOeahOaJv+ivuu+8jOiAjOaYr+WunumZheWHuui1hOacuuaehOezu+e7n+mHjOeahOWFpei0puWSjOmUgOi0pue7k+aenOOAgjwvc3Ryb25nPjwvc3Bhbj48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48YnIgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij7lt7Lnu4/lj5HnlJ/lhaXotKblvILluLjnmoTnlKjmiLfvvIzopoHnq4vljbPmlbTnkIbmnZDmlpnvvJrlgJ/mrL7lkIjlkIzjgIHlgJ/mja7nvJblj7fjgIHlrp7pmYXmlL7mrL7mnLrmnoTlkI3np7DjgIHmlL7mrL7mtYHmsLTjgIHnur/kuIvovazotKbmiKrlm77jgIHmlK/ku5jlh63or4HjgIHpk7booYzljaHmiaPmrL7orrDlvZXjgIHkuqTmmJPmtYHmsLTjgIHlubPlj7DmmL7npLrnu5PmuIXmiKrlm77jgIHlrqLmnI3msp/pgJrorrDlvZXvvIzku6Xlj4rlvZPliY3otKbljZXmiJblvoHkv6HlvILluLjmiKrlm77jgII8L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48YnIgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij7mlbTnkIblrozku6XlkI7vvIznrKzkuIDml7bpl7Tmi6jmiZPlrp7pmYXmlL7mrL7mjIHniYzph5Hono3mnLrmnoTlrpjmlrnlrqLmnI3ng63nur/nmbvorrDlpIfmoYjvvIzopoHmsYLnlJ/miJDlt6XljZXvvIznlLHlkI7lj7DkuJPkurrmoLjlr7notKbljZXjgII8L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48YnIgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij7nm5HnrqHmipXor4nlvZPnhLbmmK/lkIjms5XmnYPliKnvvIzkvYblnKjlvZPliY3pmLbmrrXvvIzlj43lpI3mi6jmiZPnm5HnrqHnlLXor53mnKrlv4Xmr5TlrpjmlrnnmbvorrDmm7Tlv6vjgII8L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48YnIgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij7nm5HnrqHop6PlhrPnmoTmmK/nnaPkv4PlpITnva7lkozotKPku7vovrnnlYzpl67popjvvIzlhbfkvZPotKbliqHmoLjpqozku43opoHlm57liLDph5Hono3mnLrmnoTns7vnu5/jgILmsqHmnInlgJ/mja7lj7fjgIHmsqHmnInmtYHmsLTjgIHmsqHmnInlh63or4HvvIzmipXor4nkuZ/lvojpmr7okL3lnLDjgII8L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48YnIgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48c3BhbiBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjogcmdiKDIzNSwgMjUyLCAyMjkpOyBib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PHN0cm9uZyBzdHlsZT0iYm94LXNpemluZzogYm9yZGVyLWJveDsiPuaNruS6huino++8jOebuOWFs+aMgeeJjOmHkeiejeacuuaehOW3suWwseahlOWtkOaVsOenkeS4muWKoeW8guW4uOWQkemHkeiejeebkeeuoemDqOmXqOaKpemAgeaDheWGte+8jOW5tuWQr+WKqOS4k+mhueaguOi0puWSjOWuouaIt+ivieaxgueZu+iusOOAgjwvc3Ryb25nPjwvc3Bhbj48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48YnIgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48c3BhbiBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjogcmdiKDIzNSwgMjUyLCAyMjkpOyBib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PHN0cm9uZyBzdHlsZT0iYm94LXNpemluZzogYm9yZGVyLWJveDsiPuWcsOaWueaUv+W6nOOAgeebkeeuoemDqOmXqOWPiuWQiOS9nOmHkeiejeacuuaehOS5n+WcqOaOqOWKqOahlOWtkOaVsOenkemFjeWQiOaguOi0puWSjOWkhOe9ru+8jOa2ieWPiuebkeeuoei/m+WxleOAgei0o+S7u+iupOWumuWSjOacgOe7iOWkhOe9ruWPo+W+hOeahOWGheWuue+8jOW6lOS7peWQjue7reWumOaWueS/oeaBr+S4uuWHhuOAgjwvc3Ryb25nPjwvc3Bhbj48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48YnIgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48c3BhbiBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjogcmdiKDIzNSwgMjUyLCAyMjkpOyBib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PHN0cm9uZyBzdHlsZT0iYm94LXNpemluZzogYm9yZGVyLWJveDsiPuWvueeUqOaIt+adpeivtO+8jOeOsOmYtuauteabtOacieaViOeahOi3r+W+hO+8jOaYr+mAmui/h+WunumZheaUvuasvuacuuaehOWumOaWueWFpeWPo+eZu+iusOaNn+WkseOAgeaPkOS6pOWHreivgeOAgeetieW+heaguOi0pu+8jOiAjOS4jeaYr+iiq+aDhee7quW4puedgOWPjeWkjeWGsuWHu+aKleiviea4oOmBk+OAgjwvc3Ryb25nPjwvc3Bhbj48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48YnIgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij7ov5jopoHnibnliKvmj5DphpLkuIDnsbvkurrvvJrmiYDosJPigJzku6PnkIbnu7TmnYPigJ3igJzlvoHkv6Hkv67lpI3igJ3igJzlgZzlgqzlhY3lgLrigJ3mnLrmnoTvvIzmraPlnKjliKnnlKjmoZTlrZDmlbDnp5Hkuovku7bnmoTnhKbomZHlho3kuIDmrKHmlLblibLlgJ/mrL7kurrjgII8L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48YnIgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij7lh6HmmK/lrqPnp7Dlj6/ku6Xlh4/lhY3liKnmga/jgIHmtojpmaTpgL7mnJ/jgIHlgZzmraLlgqzmlLbjgIHotLfmrL7kuI3nlKjov5jvvIzkvYbopoHmsYLlhYjkuqTmnI3liqHotLnjgIHmj5DkuqTouqvku73or4HjgIHpk7booYzljaHjgIHlvoHkv6HmiqXlkYrjgIHpqozor4HnoIHnmoTvvIzlpKfmpoLnjofpg73mmK/kuozmrKHmlLblibLjgII8L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48YnIgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij7lj6bkuIDnsbvmm7TljbHpmanvvIzmmK/mlZnllIbnlKjmiLfmgbbmhI/mi5bmrKDjgIHpm4bkuK3nvJbpgKDmipXor4njgIHku6Xnm5HnrqHmlr3ljovpgIPlup/lgLrnmoTph5Hono3pu5HngbDkuqfjgILlroPku6zkuI3kvJrmib/mi4XnlKjmiLfnmoTpgL7mnJ/nvZrmga/vvIzkuZ/kuI3kvJrmib/mi4XnlKjmiLflvoHkv6HmsaHngrnjgII8L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48YnIgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48c3BhbiBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjogcmdiKDIzNSwgMjUyLCAyMjkpOyBib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PHN0cm9uZyBzdHlsZT0iYm94LXNpemluZzogYm9yZGVyLWJveDsiPuahlOWtkOaVsOenkei/measoeS6i+S7tu+8jOWvueihjOS4muacgOWkp+eahOitpuekuu+8jOaYr+WKqei0t+W5s+WPsOS4jeiDveWcqOWumOaWuei/mOasvumTvui3r+S5i+WkluWPpuaQree6v+S4i+aUtuasvumAmumBk++8jOabtOS4jeiDveaKiuWuouaIt+e6v+S4i+i/mOasvui1hOmHkeWPmOaIkOiHqui6q+i1hOmHkeiwg+W6puW3peWFt+OAgjwvc3Ryb25nPjwvc3Bhbj48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48YnIgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij7mjIHniYzph5Hono3mnLrmnoTkuZ/lv4Xpobvph43mlrDlrqHop4blkIjkvZzovrnnlYzvvIzkuI3og73lj6rnnIvmtYHph4/lkozotYTkuqfop4TmqKHvvIzmm7TopoHnqb/pgI/ljY/llYbov5jmrL7jgIHnur/kuIvovazotKbjgIHotKbliqHnmbvorrDlkozmtojotLnogIXop6bngrnjgII8L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48YnIgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij7moZTlrZDmlbDnp5Hmtonlq4zmiKrnlZnnur/kuIvov5jmrL7otYTph5HjgIHmkK3lu7rotYTph5HmsaDnmoTpl67popjvvIzpnIDopoHkvp3ms5Xmn6XmuIXvvJvmmrTlipvlgqzmlLbjgIHov53op4TmlLbotLnjgIHotKbljZXlvILluLjjgIHlvoHkv6Hkuonorq7vvIzkuZ/pnIDopoHpgJDpobnmoLjpqozlpITnkIbjgII8L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48YnIgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij7ph5Hono3mnLrmnoTlnKjlkIjkvZznrqHnkIblkozmtojotLnogIXkv53miqTkuIrlrZjlnKjnn63mnb/nmoTvvIzkuZ/opoHooaXor77jgILkvYblgJ/mrL7kurrlkIzmoLfopoHorabphpLvvIzotLfmrL7kuI3mmK/ku7vliqHvvIzlgJ/mja7kuI3mmK/muLjmiI/vvIzlvoHkv6HkuI3mmK/nvormr5vmiJDmnKzjgII8L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48YnIgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij7lubPlj7DniIbpm7fkuYvlkI7vvIzmnIDph43opoHnmoTmmK/nq4vliLvlgZzmraLlkJHnrKzkuInmlrnlkoznur/kuIvotKbmiLfovazotKbvvIzlm57liLDlrp7pmYXlh7rotYTmnLrmnoTlrpjmlrnns7vnu5/vvIzmiorlkIjlkIzjgIHlgJ/mja7jgIHmtYHmsLTlkozov5jmrL7lh63or4HkuIDnrJTkuIDnrJTmkYbmuIXmpZrjgII8L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48YnIgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48L3A+PHAgc3R5bGU9IndoaXRlLXNwYWNlOiBub3JtYWw7IG1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij7lj6rmnInlsIbov5jmrL7liqjkvZzmi4nlm57liLDlrpjmlrnpk77ot6/ph4zvvIznur/kuIvov5jmrL7pu5HnrrHmiY3mnInlj6/og73ooqvnnJ/mraPmi4blvIDjgII8L3A+PC9zZWN0aW9uPjxwIHN0eWxlPSJ3aGl0ZS1zcGFjZTogbm9ybWFsOyBtYXJnaW46IDBweDsgcGFkZGluZzogMHB4OyBib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PGJyIHN0eWxlPSJib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PC9wPjxwIHN0eWxlPSJ3aGl0ZS1zcGFjZTogbm9ybWFsOyBtYXJnaW46IDBweDsgcGFkZGluZzogMHB4OyBib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PGJyIHN0eWxlPSJib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PC9wPjxzZWN0aW9uIHN0eWxlPSJ0ZXh0LWFsaWduOiBsZWZ0OyBqdXN0aWZ5LWNvbnRlbnQ6IGZsZXgtc3RhcnQ7IGRpc3BsYXk6IGZsZXg7IGZsZXgtZmxvdzogcm93OyBtYXJnaW46IDEwcHggMHB4OyBwb3NpdGlvbjogc3RhdGljOyBib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PHNlY3Rpb24gc3R5bGU9ImRpc3BsYXk6IGlubGluZS1ibG9jazsgdmVydGljYWwtYWxpZ246IG1pZGRsZTsgd2lkdGg6IGF1dG87IGFsaWduLXNlbGY6IGNlbnRlcjsgZmxleDogMCAwIGF1dG87IG1pbi13aWR0aDogNSU7IG1heC13aWR0aDogMTAwJTsgaGVpZ2h0OiBhdXRvOyBsaW5lLWhlaWdodDogMDsgYm94LXNpemluZzogYm9yZGVyLWJveDsiPjxzZWN0aW9uIHN0eWxlPSJtYXJnaW46IDBweDsgdHJhbnNmb3JtOiB0cmFuc2xhdGUzZCgxcHgsIDBweCwgMHB4KTsgLXdlYmtpdC10cmFuc2Zvcm06IHRyYW5zbGF0ZTNkKDFweCwgMHB4LCAwcHgpOyAtbW96LXRyYW5zZm9ybTogdHJhbnNsYXRlM2QoMXB4LCAwcHgsIDBweCk7IC1vLXRyYW5zZm9ybTogdHJhbnNsYXRlM2QoMXB4LCAwcHgsIDBweCk7IHBvc2l0aW9uOiBzdGF0aWM7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48c2VjdGlvbiBjbGFzcz0iZ3JvdXAtZW1wdHkiIHN0eWxlPSJkaXNwbGF5OiBpbmxpbmUtYmxvY2s7IHdpZHRoOiA2cHg7IGhlaWdodDogNnB4OyB2ZXJ0aWNhbC1hbGlnbjogdG9wOyBvdmVyZmxvdzogaGlkZGVuOyBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMCwgMCwgMCk7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48c3ZnIHZpZXdCb3g9IjAgMCAxIDEiIHN0eWxlPSJmbG9hdDpsZWZ0O2xpbmUtaGVpZ2h0OjA7d2lkdGg6MDt2ZXJ0aWNhbC1hbGlnbjp0b3A7Ij48L3N2Zz48L3NlY3Rpb24+PC9zZWN0aW9uPjwvc2VjdGlvbj48c2VjdGlvbiBzdHlsZT0iZGlzcGxheTogaW5saW5lLWJsb2NrOyB2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlOyB3aWR0aDogYXV0bzsgYWxpZ24tc2VsZjogY2VudGVyOyBmbGV4OiAwIDAgYXV0bzsgbWluLXdpZHRoOiA1JTsgbWF4LXdpZHRoOiAxMDAlOyBoZWlnaHQ6IGF1dG87IGxpbmUtaGVpZ2h0OiAwOyBib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PHNlY3Rpb24gc3R5bGU9Im1hcmdpbjogMHB4OyB0cmFuc2Zvcm06IHRyYW5zbGF0ZTNkKDFweCwgMHB4LCAwcHgpOyAtd2Via2l0LXRyYW5zZm9ybTogdHJhbnNsYXRlM2QoMXB4LCAwcHgsIDBweCk7IC1tb3otdHJhbnNmb3JtOiB0cmFuc2xhdGUzZCgxcHgsIDBweCwgMHB4KTsgLW8tdHJhbnNmb3JtOiB0cmFuc2xhdGUzZCgxcHgsIDBweCwgMHB4KTsgcG9zaXRpb246IHN0YXRpYzsgYm94LXNpemluZzogYm9yZGVyLWJveDsiPjxzZWN0aW9uIGNsYXNzPSJncm91cC1lbXB0eSIgc3R5bGU9ImRpc3BsYXk6IGlubGluZS1ibG9jazsgd2lkdGg6IDZweDsgaGVpZ2h0OiA2cHg7IHZlcnRpY2FsLWFsaWduOiB0b3A7IG92ZXJmbG93OiBoaWRkZW47IGJhY2tncm91bmQtY29sb3I6IHJnYigwLCAwLCAwKTsgYm94LXNpemluZzogYm9yZGVyLWJveDsiPjxzdmcgdmlld0JveD0iMCAwIDEgMSIgc3R5bGU9ImZsb2F0OmxlZnQ7bGluZS1oZWlnaHQ6MDt3aWR0aDowO3ZlcnRpY2FsLWFsaWduOnRvcDsiPjwvc3ZnPjwvc2VjdGlvbj48L3NlY3Rpb24+PC9zZWN0aW9uPjxzZWN0aW9uIHN0eWxlPSJkaXNwbGF5OiBpbmxpbmUtYmxvY2s7IHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7IHdpZHRoOiBhdXRvOyBhbGlnbi1zZWxmOiBjZW50ZXI7IGZsZXg6IDAgMCBhdXRvOyBtaW4td2lkdGg6IDUlOyBtYXgtd2lkdGg6IDEwMCU7IGhlaWdodDogYXV0bzsgbGluZS1oZWlnaHQ6IDA7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48c2VjdGlvbiBzdHlsZT0ibWFyZ2luOiAwcHg7IHRyYW5zZm9ybTogdHJhbnNsYXRlM2QoMXB4LCAwcHgsIDBweCk7IC13ZWJraXQtdHJhbnNmb3JtOiB0cmFuc2xhdGUzZCgxcHgsIDBweCwgMHB4KTsgLW1vei10cmFuc2Zvcm06IHRyYW5zbGF0ZTNkKDFweCwgMHB4LCAwcHgpOyAtby10cmFuc2Zvcm06IHRyYW5zbGF0ZTNkKDFweCwgMHB4LCAwcHgpOyBwb3NpdGlvbjogc3RhdGljOyBib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PHNlY3Rpb24gY2xhc3M9Imdyb3VwLWVtcHR5IiBzdHlsZT0iZGlzcGxheTogaW5saW5lLWJsb2NrOyB3aWR0aDogNnB4OyBoZWlnaHQ6IDZweDsgdmVydGljYWwtYWxpZ246IHRvcDsgb3ZlcmZsb3c6IGhpZGRlbjsgYmFja2dyb3VuZC1jb2xvcjogcmdiKDAsIDAsIDApOyBib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PHN2ZyB2aWV3Qm94PSIwIDAgMSAxIiBzdHlsZT0iZmxvYXQ6bGVmdDtsaW5lLWhlaWdodDowO3dpZHRoOjA7dmVydGljYWwtYWxpZ246dG9wOyI+PC9zdmc+PC9zZWN0aW9uPjwvc2VjdGlvbj48L3NlY3Rpb24+PHNlY3Rpb24gc3R5bGU9ImRpc3BsYXk6IGlubGluZS1ibG9jazsgdmVydGljYWwtYWxpZ246IG1pZGRsZTsgd2lkdGg6IGF1dG87IGFsaWduLXNlbGY6IGNlbnRlcjsgZmxleDogMTAwIDEwMCAwJTsgaGVpZ2h0OiBhdXRvOyBwYWRkaW5nOiAwcHggMTBweDsgYm94LXNpemluZzogYm9yZGVyLWJveDsiPjxzZWN0aW9uIHN0eWxlPSJtYXJnaW46IDAuNWVtIDBweDsgcG9zaXRpb246IHN0YXRpYzsgYm94LXNpemluZzogYm9yZGVyLWJveDsiPjxzZWN0aW9uIHN0eWxlPSJiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMCwgMCwgMCk7IGhlaWdodDogMXB4OyBib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PHN2ZyB2aWV3Qm94PSIwIDAgMSAxIiBzdHlsZT0iZmxvYXQ6bGVmdDtsaW5lLWhlaWdodDowO3dpZHRoOjA7dmVydGljYWwtYWxpZ246dG9wOyI+PC9zdmc+PC9zZWN0aW9uPiA8L3NlY3Rpb24+PC9zZWN0aW9uPjxzZWN0aW9uIHN0eWxlPSJkaXNwbGF5OiBpbmxpbmUtYmxvY2s7IHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7IHdpZHRoOiBhdXRvOyBhbGlnbi1zZWxmOiBjZW50ZXI7IGZsZXg6IDAgMCBhdXRvOyBtaW4td2lkdGg6IDUlOyBtYXgtd2lkdGg6IDEwMCU7IGhlaWdodDogYXV0bzsgbGluZS1oZWlnaHQ6IDA7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48c2VjdGlvbiBzdHlsZT0ibWFyZ2luOiAwcHg7IHRyYW5zZm9ybTogdHJhbnNsYXRlM2QoMXB4LCAwcHgsIDBweCk7IC13ZWJraXQtdHJhbnNmb3JtOiB0cmFuc2xhdGUzZCgxcHgsIDBweCwgMHB4KTsgLW1vei10cmFuc2Zvcm06IHRyYW5zbGF0ZTNkKDFweCwgMHB4LCAwcHgpOyAtby10cmFuc2Zvcm06IHRyYW5zbGF0ZTNkKDFweCwgMHB4LCAwcHgpOyBwb3NpdGlvbjogc3RhdGljOyBib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PHNlY3Rpb24gY2xhc3M9Imdyb3VwLWVtcHR5IiBzdHlsZT0iZGlzcGxheTogaW5saW5lLWJsb2NrOyB3aWR0aDogNnB4OyBoZWlnaHQ6IDZweDsgdmVydGljYWwtYWxpZ246IHRvcDsgb3ZlcmZsb3c6IGhpZGRlbjsgYmFja2dyb3VuZC1jb2xvcjogcmdiKDAsIDAsIDApOyBib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PHN2ZyB2aWV3Qm94PSIwIDAgMSAxIiBzdHlsZT0iZmxvYXQ6bGVmdDtsaW5lLWhlaWdodDowO3dpZHRoOjA7dmVydGljYWwtYWxpZ246dG9wOyI+PC9zdmc+PC9zZWN0aW9uPjwvc2VjdGlvbj48L3NlY3Rpb24+PHNlY3Rpb24gc3R5bGU9ImRpc3BsYXk6IGlubGluZS1ibG9jazsgdmVydGljYWwtYWxpZ246IG1pZGRsZTsgd2lkdGg6IGF1dG87IGFsaWduLXNlbGY6IGNlbnRlcjsgZmxleDogMCAwIGF1dG87IG1pbi13aWR0aDogNSU7IG1heC13aWR0aDogMTAwJTsgaGVpZ2h0OiBhdXRvOyBsaW5lLWhlaWdodDogMDsgYm94LXNpemluZzogYm9yZGVyLWJveDsiPjxzZWN0aW9uIHN0eWxlPSJtYXJnaW46IDBweDsgdHJhbnNmb3JtOiB0cmFuc2xhdGUzZCgxcHgsIDBweCwgMHB4KTsgLXdlYmtpdC10cmFuc2Zvcm06IHRyYW5zbGF0ZTNkKDFweCwgMHB4LCAwcHgpOyAtbW96LXRyYW5zZm9ybTogdHJhbnNsYXRlM2QoMXB4LCAwcHgsIDBweCk7IC1vLXRyYW5zZm9ybTogdHJhbnNsYXRlM2QoMXB4LCAwcHgsIDBweCk7IHBvc2l0aW9uOiBzdGF0aWM7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48c2VjdGlvbiBjbGFzcz0iZ3JvdXAtZW1wdHkiIHN0eWxlPSJkaXNwbGF5OiBpbmxpbmUtYmxvY2s7IHdpZHRoOiA2cHg7IGhlaWdodDogNnB4OyB2ZXJ0aWNhbC1hbGlnbjogdG9wOyBvdmVyZmxvdzogaGlkZGVuOyBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMCwgMCwgMCk7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij48c3ZnIHZpZXdCb3g9IjAgMCAxIDEiIHN0eWxlPSJmbG9hdDpsZWZ0O2xpbmUtaGVpZ2h0OjA7d2lkdGg6MDt2ZXJ0aWNhbC1hbGlnbjp0b3A7Ij48L3N2Zz48L3NlY3Rpb24+PC9zZWN0aW9uPjwvc2VjdGlvbj48c2VjdGlvbiBzdHlsZT0iZGlzcGxheTogaW5saW5lLWJsb2NrOyB2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlOyB3aWR0aDogYXV0bzsgYWxpZ24tc2VsZjogY2VudGVyOyBmbGV4OiAwIDAgYXV0bzsgbWluLXdpZHRoOiA1JTsgbWF4LXdpZHRoOiAxMDAlOyBoZWlnaHQ6IGF1dG87IGxpbmUtaGVpZ2h0OiAwOyBib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PHNlY3Rpb24gc3R5bGU9Im1hcmdpbjogMHB4OyB0cmFuc2Zvcm06IHRyYW5zbGF0ZTNkKDFweCwgMHB4LCAwcHgpOyAtd2Via2l0LXRyYW5zZm9ybTogdHJhbnNsYXRlM2QoMXB4LCAwcHgsIDBweCk7IC1tb3otdHJhbnNmb3JtOiB0cmFuc2xhdGUzZCgxcHgsIDBweCwgMHB4KTsgLW8tdHJhbnNmb3JtOiB0cmFuc2xhdGUzZCgxcHgsIDBweCwgMHB4KTsgcG9zaXRpb246IHN0YXRpYzsgYm94LXNpemluZzogYm9yZGVyLWJveDsiPjxzZWN0aW9uIGNsYXNzPSJncm91cC1lbXB0eSIgc3R5bGU9ImRpc3BsYXk6IGlubGluZS1ibG9jazsgd2lkdGg6IDZweDsgaGVpZ2h0OiA2cHg7IHZlcnRpY2FsLWFsaWduOiB0b3A7IG92ZXJmbG93OiBoaWRkZW47IGJhY2tncm91bmQtY29sb3I6IHJnYigwLCAwLCAwKTsgYm94LXNpemluZzogYm9yZGVyLWJveDsiPjxzdmcgdmlld0JveD0iMCAwIDEgMSIgc3R5bGU9ImZsb2F0OmxlZnQ7bGluZS1oZWlnaHQ6MDt3aWR0aDowO3ZlcnRpY2FsLWFsaWduOnRvcDsiPjwvc3ZnPjwvc2VjdGlvbj48L3NlY3Rpb24+PC9zZWN0aW9uPjwvc2VjdGlvbj48c2VjdGlvbiBzdHlsZT0idGV4dC1hbGlnbjogY2VudGVyOyBib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PHAgc3R5bGU9Im1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij7lhazkvJflj7fmjqjpgIHop4TliJnosIPmlbTlkI48L3A+PHAgc3R5bGU9Im1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij7mlofnq6Dlj6/og73kvJrkubHluo/lh7rnjrA8L3A+PHAgc3R5bGU9Im1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij7kuI3mg7PplJnov4fjgIzoj5zoj5zor7Tph5Hono3jgI3nmoTmm7TmlrA8L3A+PHAgc3R5bGU9Im1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij7orrDlvpfngrnkuIDkuIvmlofmnKvnmoTigJzlnKjnnIvigJ08L3A+PHAgc3R5bGU9Im1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij7lpJrnlZnoqIDvvIzluLjmnaXnnIvnnIs8L3A+PHAgc3R5bGU9Im1hcmdpbjogMHB4OyBwYWRkaW5nOiAwcHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7Ij7wn5GHPC9wPjxwIHN0eWxlPSJtYXJnaW46IDBweDsgcGFkZGluZzogMHB4OyBib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PGJyIHN0eWxlPSJib3gtc2l6aW5nOiBib3JkZXItYm94OyI+PC9wPjwvc2VjdGlvbj48L3NlY3Rpb24+PCEtLUVuZEZyYWdtZW50LS0+DQo8L2JvZHk+DQo8L2h0bWw+AA=="
+    },
+    {
+      "format_id": 13,
+      "format_name": "CF_UNICODETEXT",
+      "size": 6332,
+      "data": "LwAvAC8ALwAvAC8ALwAvAC8ACgAKAAoAVGhQW3Bl0XmEdveWDP/yXc9+DU4vZgBOtlupUjeNc17wU4R2z34lhItORWUCMAoACgAKAM5OMgAIZwEwMwAIZwBfy1kM/09TRlXYjz5rMVnhTwEwiU6ui+NOY2IBMI2HxWINZ6FSOY0AkDmNvpZJe5ViyYtGlu1++lGwcwIwMFI0AAhnDP9Rf9x+8k7BiHliz5HRU3eNDP+IXxpZKHU3YtFTsHNAYhOMHCBPU0ZV2I8+ax0goWwJZ2ZOYpdPU66LL2WRZAz/6oHxXQljc17wU/SL1WzYj4ZOsZQM//JOwYh0U6FsCWcMVGVrpGTeVgIwCgAKAAoANQAIZ+VODlQM/+6VmJjbjwBOZWsgT/xbMFJEjdGR73oa/9iPPmtlUSaN9l7fjwEw034Fbg1OAJUmjQEwJo1VUw1O9GawZQz/io1lZ4qNGlkodTdiAF/LWQBgkXUM/79+C07Yjz5rRI3RkXZeoWwJZ9uPZVGeW0WW+lFEjTpnhGcmjTdiAjAKAAoACgAGcveW+lGwcyhXNgAIZy1OC07sZQIwCWcodTdizVMgZgz/KFdUaFBbcGXRefh2c1G6TlhUFmIgblOQFV/8WwtOjFsQYr9+C07Yjz5rDlQM/4Ff4U/NTgJfOF4M/55bRZY+ZT5rOmeEZ+d+7X4+Zjp5KmfTfgVuAjAKAAoACgAnWc+RKHU3YgBfy1nGli1O6GJTYtF2oXs1dd2LDP9fTgBfy1mVYsmLVGhQW3Bl0XnMgA5UhHZEjdGRCFRcT7llAjB8X/ZlDP/cg9yDpk7RUwNeCjAga6qFATAFbgCQATBMcmdxKX80bAz/VGhQW3Bl0Xl3lnFTOmcLMAz/EVQCXjpXylNUaFBbCFRcT7ll0GM6ec6YaZYCMAoACgAKAGRrDlQATmhUDP8GgrqLxY8fkCmOD44M/4OPT1DAb4R29IvVbC9mGv/RkY2HOmeEZ4xUVGhQW3Bl0XlUgAhUyIuXmh9QPmu6TgIwCgAKAAoA2Y8qTiRSrWUAl4GJoH5PUAIwCgAKAAoAzk7udk1S8l20ZjKXhHbhT29gC3cM/3ZeXpdRfyBPHCDRkY2HOmeEZ1SACFRUaFBbcGXReciLl5ofUD5ruk4dIAIwCgAKAAoADIAvZlRoUFtwZdF5iW3MWihXmFu5ZdiPPmv+lO+NS04WWQz/VVO5ZRVf/FvokAZSKHU3Yr9+C07Yjz5r84FUaFBbcGXReSaNN2IM/2JfEGJEjdGRKmJZdYxURI3RkWBszphplgz/dl6KYh9QPmu6ToxURI3RkQhUXE+5ZQxU9mXWYmVR+VsmjeVsbW8CMAoACgAKAESN0ZG5ZQ1O/YBuf6uOi04WWQz/g1vsTgCXgYl/YsViCFRcT6F7BnQBMIhtOY0FgN1PpGIBMCaNoVI4aIyajFQOVO1+BFlufyON+04CMEZPQGITjBwgRI25ZQ5Oc17wUwhUC4zIi5eaHSCEdiOMAIoM/+JlDU4mewhU7nZNUkhUsHP6UWVnhHakThNm036EZwz/X04aT++L/FsfUD5ruk5cT/pRGZXviwmQ6WICMAoACgAKAPlbH1A+a7pOZWf0iwz/AGdxU2mWhHbviyRSDP8vZopic17wU7Rm95YGdOOJEGIcIDeNPmsNTih12I8dIAIwCgAKAAoAH3dja/pR7pWYmIR2DP8vZr9+C07Yjz5rwWXvjQoACgAKANmP9k6LTpaZSFGBiYpiAE4qTrmPTHWyiwVuWmka/2NrOF55YmNijFSYW7ll2I8+axqQU5AM/39PKHWEdi9mnltFlvpRRI0BY0xy0ZGNhzpnhGfKU3ZRCFRcTy9l2E46Z4RnhHYakFOQDP9EjdGRdl4NTtuPZVFUaFBbcGXReSaNN2ICMAoACgAKANmP6JAGUtiPPmueW0WWDU4vZixnIWsqYll1iU6ui4R2OGjDXwz/X04NTv2AglnokAZS8Fjzl0BiIE8M/zx73370ixBiHCBUaFBbp2M2UmhR6JDYjz5rRI3RkR0gAjAKAAoACgAfd2NrhHbulZiYDP8oV45OVGhQW3Bl0XkakMePVGgPXLGCATCcW+NTi4hJe2VR41M4VBVfJ1nPkSh1N2LCUw5OHCAfUD5r1I9jTx0gHCAfUIZObJoKTtiP/2JWWbFSHSBJe9SPKVJ5mO52DlQM/8hTKFfokAZSOldvZi1O5U5PU0ZV2I8+awEw0GNNUtN+BW4BMONOOk4EWQZ0Jo1VU0l7DVRJTgz/FV/8Wyh1N2Ixgbt5mFu5ZSBuU5AM/4pisZRsj2VRVGhQW3Bl0XkWYnZRB2OaWyaNN2ICMAoACgAKAIhfGlm6TuVOOk7qgfFd6lMvZlpQ+06hUgz/nltFlnRTjFsQYoZOnlsNVAEwfnumfgEwH1A+a4xU2I8+a6hSXE8b/4hfGlm6TuVOOk7qgfFd8l3PftN+BW4M/0SNuWX7fN9+dFN2XipnNmUwUvlblF5lUSaNAjAKAAoACgBuY9yD3IPudk1SjGPhY4R24U9vYAz/2Y97fL9+C07Yjz5rKmJZdUSN0ZF2Xl6XaFHokNiPPmsM/4SYME+mfmBTdGVTT/h2c1HYjz5rQW2EdjEAMAAlAOZd81MCMNRri08NTi9mGllwZQz/Rk8+ZShXAE4qTghUXE86Z4RnF08aWQEwWFvPkSh1N2KeXidZhHapUjeNc17wU8yRDP+zjeVOIJAQYidZYpfveflbJo0ZlU1PAjAKAAoACgAfUD5ruk4LdzBShHYvZhwgEWIOZg5m2I+GTtiPzIA6UB0gDP9EjdGRuWULdzBShHYvZhwgH1BuY6FsCWdjazhe3lY+ax0gDP+VYsmLjFQEWW5/i1ObUhlSxY8fkBFU0XahewEwMFe5ZT9lnF6MVAhUXE/RkY2HOmeEZ8aWLU4CMAoACgAKAEBi5U4M/1RoUFtwZdF5glnKTg1OL2ZuZhqQgGIvZ0VlnJYBMKJbDWcxWVSADP9fTg1OL2aYW7lleWJjYhqQU5CriHNe8FMqYkFtDP8MgC9mc17wUyhXmFu5Zf6U741LThZZ5lNMiC1k+l6/fgtO2I8+a9GesXsCMAoACgAKAABO5mXZj5tORI3RkaFsCWfKU/ZlATCzjZ2Y3lYwUp5bRZb6UUSNOmeEZ/t8334M/yaNVVMBMIFf4U8BMKxQNmWMVIlOrotjYj5rMVwaT2hR6JAxWY9eAjAKAAoACgBzXvBTiW3MWt2P1WwM/w1OSXuOTh9QbmPqgahSMVlIZQoACgAKAIhfGlkodTdiL2YoV1RoD1yxggEwnFvjU4uISXtzXvBTdZhilwpOzWRcT4R2DP9AYuVOKVk2caSLOk43UlVTDIDyXQz/HCARYoxU9pRMiKFsCWdzUft8DP8RYupTjFRzXvBTCWdzUft8HSACMAoACgAKAEZP4U83jXNR+3x2Xl6XCWModTdiH2HJiaSLmlsM/wyAL2YJYwhUDFQBMH57pn4BMD5lPmuMVB9QbmOki5pbAjAKAAoACgCCWZxnH1A+a7pOLGe6ToxbEGKeWw1UpIvBiwEwNXVQW357pn4M/0SN0ZExdZ5bRZb6UUSNhHYBY0xy0ZGNhzpnhGfRUz5lDP8fUG5jX06dT9VsH3UQYgz/o5BITh9QPmsIVAxUn1MZUgpOd1EJZ9Vsi19IZZtSAjAKAAoACgDgZbqLLHsJTrllc17wU4JZVU/xi/xbDP/gZbqLg1uKYnmY7nYFU8WIEGIcIDdSVVMdIBwg+06hUh0gHCDUj2NPHSDYjy9mHCCKf9trHSAM/x9QN407TlNPzU42cS9mH1A+a7pOLGe6TgIwc17wU4ltzFrdj9VsDP8NTv2AU182cYhtbXAfUD5rCFQMVHmYC06EdtiPLGfYTm9gSU6hUgIwCgAKAAoAsHMoV/Jdz34JZ9GecHCnTh9QVGhQW3Bl0Xm0ZveWfXGoUih1N2IDkJ9eOlAM/92LL2fgZV6XL2YcIESNuWVfTgln7pWYmB0gHCCwcyhXDU4oddiPhk4dIBwglWLJizFc/YBNUTpQHSAcIKROsZQuXmBPXFCsUIhtgV/hTx0gAjDZj5tO3YsvZihXimIfUD5ruk6oYxFUjE4ha86YaZYCMAoACgAKAIJZnGcodTdioWwJZ+d+7X44aPlbnltFlkSNuWUmjVVTDP8MgC9m8nbudlxQ2I8M//t8335CXGKX71P9gKdOH3U+kB9nATBaf29gjFSBX+FPAl84XgIwCgAKAAoAc17wUypiWXW/fgtO2I8+a0SN0ZEgkBBihHZfYzFZDP+UXjF1c17wU8pT+HZzUSON+065ZZ1P1Wx/YsViG/9GT/lbH1A+a7pODIAAigz/9H5DZ4R2TVLQYy9mSFT6UYtOnlv+lGFnDP+pi55bRZb6UUSNOmeEZ/2AH1k4aCaNATB7drCLATAEWW5/DP8MgA1OL2bqUyhXUX8KTopVHCARYtiPx4+GTh0gAjAKAAoACgBiYwCKS04M//Jdz34RVFRoUFtwZdF5Jo03YgEwv34LTiaNN2IWYvh2c1EsewlOuWUmjTdi2I/Hj7GUDP9GT0SNuWUqZ2VRJo2Edih1N2IM/4GJ/2LtUcGL9H5DZxv/GlwqZ9N+BW4BMM1OCWdjazheJo1VU4R2KHU3Ygz/GVINTv2Aq4gcIHNe8FO0ZveWHSDbVipOV1smXk9QDP/nfu1+EVRel5hbuWUgblOQbI8mjRZicl4GgVxQYmtlXKZ+AjAKAAoACgBia19j742EXwz/L2beVjBSRI3RkbllmFu5Zft8334KAAoACgD5Wx9QPmu6TmVn9IsM/zx3C04sewBO9k6LTi9m5WcFbp5bRZb6UUSNOmeEZwIwCgAKAAoAU2IAXx9QPmsIVAxUATA+ZT5r7XfhTwEw9pRMiEFtNGwBMIFf4U+lYkpUDP8LdwVuWmnZjxR7sZQwUpVeL2bqVLZb9pRMiBZiiG05jdGRjYdsUfhTPmWEdgIwDlTtfkBiCWcfUG5j5WfiiwEwJo1VUzho+VsBMNiPPmvNZFxPDP/9kJReU18akMePnltFlvpRRI0BY0xy0ZGNhzpnhGeYW7llQQBQAFAAFmKYW7llolsNZ254pIuEdhqQU5CeUgZ0AjAKAAoACgANTo1RGpDHj1RoD1yxggEwnFvjU4uISXs3jT5rLU7LTnNe8FPYjz5rDP/0Zg1OgYkRVMF5uk6uX+FPATC/fgtOLU7LTgEwTJYfdf6UpWMBMIxO9H4BeCaNN2JsjyaNAjAKAAoACgBUaFBbcGXRedmPIWu0ZveW8l3PfvSLDmYM/yx7CU65Zb9+C07Yjz5rAGcnWYR2zphplgz/L2ZEjdGRMYG7eUSNuWX7fN9+AjCxlGyP24/QZypOLHsJTrllJo03Ygz/DU7jTmiIRI25Zft8337yXc9+AJUmjRv/c17wU3WYYpcWYipOuk5/YvqLPmY6eRwg8l0EWQZ0HSAM/19ODU7jTmiIH1BuYx93hHbTfgVuAjAKAAoACgDRkY2HH1A+awBnyH4Ld4R2DU4vZkqAKVmwi1VfzJGEdn9i+osM/wyAL2aeW0WW+lFEjTpnhGf7fN9+zJGEdmVRJo2MVACVJo3TfpxnAjAKAAoACgDyXc9+0VMfdWVRJo0CXzhehHYodTdiDP+Bict6c1N0ZQZ0UGeZZRr/H1A+awhUDFQBMB9QbmMWf/dTATCeW0WWPmU+azpnhGcNVPB5ATA+ZT5rQW00bAEwv34LTmyPJo0qYv5WATAvZdhO7VHBiwEw9pRMiGFTY2I+a7CLVV8BMKROE2ZBbTRsATBzXvBTPmY6edN+BW4qYv5WATCiWw1nn2wakLCLVV8M/+VOylNTX01SJo1VUxZigV/hTwJfOF4qYv5WAjAKAAoACgB0ZQZ0jFvlTg5UDP8sewBO9mX0lehiU2KeW0WWPmU+awFjTHLRkY2HOmeEZ5hbuWWiWw1n7XC/fnt2sIsHWUhoDP+BiUJsH3UQYuVdVVMM/zF1DlTwUxNOuk44aPlbJo1VUwIwCgAKAAoA0Xahe5ViyYtTXzZxL2YIVNVsQ2cpUgz/Rk8oV1NfTVI2lrVrDP/NUw1Z6GJTYtF2oXs1dd2LKmfFX9RrmFu5ZXt2sIv0ZutfAjAKAAoACgDRdqF744mzUYR2L2Zjd8NPBFluf4xUI437TrmPTHXulZiYDP93UVNPJo2hUjhojJrNToGJ3lYwUtGRjYc6Z4Rn+3zffgIwoWwJZx9QbmP3UwEwoWwJZ0FtNGwBMKFsCWftUcGLDP+VYsmLX06IX76WPYQwVwIwCgAKAAoAbmOGTuOJDP/4dnNRAWNMctGRjYc6Z4Rn8l0xXFRoUFtwZdF5Gk6hUgJfOF4RVNGRjYfRdqF76JDolaViAZDFYLVRDP92Xi9UqFITTnmYOGgmjYxUols3YsmLQmx7drCLAjAKAAoACgAwV7llP2WcXgEw0Xahe+iQ6JXKUwhUXE/RkY2HOmeEZ19OKFeoY6hSVGhQW3Bl0XlNkQhUOGgmjYxUBFlufwz/iW3KU9F2oXvbj1VcATAjjftOpIuaW4xUAGfIfgRZbn/jU4RfhHaFUblbDP+UXuVODlTtfphbuWXhT29gOk7GUQIwCgAKAAoA+VsodTdiZWf0iwz/sHM2lrVr9GYJZ0hlhHbvjYRfDP8vZhqQx4+eW0WWPmU+azpnhGeYW7llZVHjU3t2sItfYzFZATDQY6RO7VHBiwEwSXuFXzhoJo0M/wyADU4vZquIxWDqfiZeQHfNUw1ZslH7UZViyYsgblOQAjAKAAoACgDYj4GJeXIrUtBjkpEATnt8uk4a/0BiE4wcIONOBnT0fkNnHSAcIIFf4U/uTw1ZHSAcIFxQrFBNUTpQHSA6Z4RnDP9jayhXKVIodVRoUFtwZdF5i072ToR2JnFRho1RAE4hazZlclIfUD5ruk4CMAoACgAKAOFRL2ajW/B571PlTs9RTVEpUm9gATCIbWSWPpAfZwEwXFBia6xQNmUBMDeNPmsNTih12I8M/0ZPgYlCbEhRpE4NZ6FSOY0BMNBjpE6rjv1OwYsBMPaUTIhhUwEwgV/hT6ViSlQBMIyawYsBeIR2DP8nWYJph3P9kC9mjE4hazZlclICMAoACgAKAOZTAE57fPRmcVNplgz/L2ZZZQZVKHU3YnZgD2HWYiBrATDGli1OFn8gkJViyYsBMOVO0Xahe71li1MDkJ9eOlCEdtGRjYfRnnBwp04CMINb7E4NThpPf2LFYih1N2KEdj6QH2daf29gDP9fTg1OGk9/YsViKHU3YoFf4U9hbLlwAjAKAAoACgBUaFBbcGXRedmPIWuLTvZODP/5W0yIGk4AZydZhHZmizp5DP8vZqlSN41zXvBTDU79gChXmFu5ZdiPPmv+lO+NS04WWeZTLWS/fgtONmU+axqQU5AM//RmDU79gIpiols3Yr9+C07Yjz5rRI3RkdhTEGLqgauORI3RkQOMpl7lXXdRAjAKAAoACgABY0xy0ZGNhzpnhGdfTsVfe5jNkbBloVvGiQhUXE+5j0x1DP8NTv2A6lMLd0Ftz5GMVESNp07EiSFqDP/0ZoGJf3oPkE9TRlXYjz5rATC/fgtObI8mjQEwJo2hUnt2sIuMVIhtOY0FgOaJuXACMAoACgAKAFRoUFtwZdF5iW3MWipiWXW/fgtO2I8+a0SN0ZEBMC1k+l5EjdGRYGyEdu6VmJgM/wCXgYmdT9Vs5WcFbhv/tGabUqxQNmUBMN2PxIk2ZTmNATAmjVVTAl84XgEwgV/hT4lOrosM/19OAJeBiRCQeZg4aIyaBFkGdAIwCgAKAAoA0ZGNhzpnhGcoVwhUXE+hewZ0jFSIbTmNBYDdT6RiCk5YWyhX7Xd/Z4R2DP9fToGJZYj+iwIwRk8fUD5ruk4MVDdogYlmi5KRDP83jT5rDU4vZvtOoVIM/x9QbmMNTi9mOG4PYgz/gV/hTw1OL2aKf9trEGIsZwIwCgAKAAoAc17wUwZy95ZLTg5UDP8AZ82RgYmEdi9my3o7UlxQYmsRVCx7CU65ZYxUv34LTiaNN2JsjyaNDP/eVjBSnltFlvpRRI06Z4RnmFu5Zft8334M/4piCFQMVAEwH1BuYwEwQW00bIxU2I8+a+1RwYsAThR7AE4Ue0ZkBW5aaQIwCgAKAAoA6lMJZwZc2I8+a6hSXE/JYt5WMFKYW7ll/pTvjcyRDP+/fgtO2I8+a9GesXtNYgln71P9gKuIH3dja8ZiAF8CMAoACgAKAAoAbFEXT/dTqGMBkMSJGVIDjHRlDlQKAIdl4HrvU/2AGk9xTo9e+lGwcwoADU7zYBmVx48MMNyD3IP0i9GRjYcNMIR29GawZQoAsIuXX7lwAE4LTodlK2eEdhwgKFcLdx0gCgAaWVl1AIoM/zheZWcLdwt3CgA92EfcAAA="
+    },
+    {
+      "format_id": 49788,
+      "format_name": "Chromium internal source RFH token",
+      "size": 24,
+      "data": "FAAAAGAAAADbji7g5Ql4TgHGPYM0XqPu"
+    },
+    {
+      "format_id": 49789,
+      "format_name": "Chromium internal source URL",
+      "size": 55,
+      "data": "aHR0cHM6Ly94aXVtaS51cy9zdHVkaW8vdjUjL3BhcGVyL2Zvci82OTg3NTMwMDAvY3ViZS8wAA=="
+    },
+    {
+      "format_id": 16,
+      "format_name": "CF_LOCALE",
+      "size": 4,
+      "data": "BAgAAA=="
+    },
+    {
+      "format_id": 1,
+      "format_name": "CF_TEXT",
+      "size": 6147,
+      "data": "Ly8vLy8vLy8vCgoKvdvX08r9v8a1xMDXo6zS0b6tsrvKx9K7vNLW+rT7xr3MqLXEvq3TqsrCucqhowoKCrTTMtTCoaIz1MK/qsq8o6zQrcnMu7m/7sqn0MWhotX50um0+r/boaLI2rWjt/7O8bfRzcu30cTRtcjNtsvfwr3Q+LP2z9aho7W9NNTCo6zN+MLn1tmyw8X6wb+3osbwo6y63Lbg08O7p7eiz9bL+c69obDQrcnMu7m/7qGxw7vT0Mrpw+bQrdLp1qezxaOs19S8urC0xr3MqMu1t6i7ucHLx66jrNbZssPItMO709DNrLK9s7e72KGjCgoKNdTC0tS686OszsrM4r340ruyvbSrtby1vdfKvfC2y6O6u7m/7sjr1cvR07PZoaK94cflsrvP+tXLoaLVy7Wlsru4/NDCo6zUvcC01L224NPDu6e/qsq8u7PSyaOsz9/Pwru5v+7Xyr3wsqLDu9PQvfjI68q1vMqz9tfKu/q5udXLu6ehowoKCrGswNez9s/W1No21MLW0M/C0a6ho9PQ08O7p7e007OjrNTavdvX08r9v8bP4LnYyMvUsbvyx/61wNL9tbzPws3qs8nP38/Cu7m/7rrzo6zV99DFyNTS7LOjo6zKtbzKt8W/7rv6ubm8zND4z9TKvs60veHH5aGjCgoKtPPBv9PDu6e/qsq8vK/W0LKmtPK84Lnctee7sKOs0rK/qsq8zbbL373b19PK/b/GsbO687XE18q98LrP1/e3vaGjscvKsaOsssuyy9Lgt6KyvKG2x7fQvaGix+XNy6GixcbV1cv1y66jrL3b19PK/b/Gz93Oo7v6obejrM/yytCzobywvdvX07rP1/e3vczhyr6358/VoaMKCgq0y7rz0rvW3KOs09/C29G4y9myyMyko6y9z8arvKS1xMu1t6jKx6O6vfDI2rv6ubm6zb3b19PK/b/Gwaq6z9Wpxq296L/uyMuhowoKCtXiuPbF0LbP0OjSqr7AxquhowoKCrTTxL/HsNLRsanCtrXE0MXPor+0o6yyorfHzfi0q6GwvfDI2rv6ubnBqrrPvdvX08r9v8bVqcatvei/7sjLobGhowoKCrb4yse929fTyv2/xsnmz9PU2rnZt727ub/uwbTCt9auzeKjrLWlt73S/bW8sr+31tPDu6fP38/Cu7m/7tbBvdvX08r9v8bVy7uno6zQzrPJ18q98L3YwfS6zdfKvfCz2Lfnz9WjrLKisNG96L/uyMu6zdfKvfC6z9f3t73NrMqxzc/I67bU1cvE4My2oaMKCgrXyr3wt72yu8Tc1sPJ7crCzeKjrMv8w8fQ6NKqs9C1o7rP1/e53MDtoaLP+7fR1d+xo7ukoaLVy87xusvR6brNuvPQ+LSm1sPU8MjOoaO1q8v5zr2hsNfKt73T68a9zKi6z8Sx1anGraGxtcTSpdHUo6y8yLK7t/u6z8S/x7Czys/Ws/bAtLXEvbvS173hubmjrNKyu+HO87W8vei/7sjL1/ez9rTtzvPRodTxoaMKCgq21L3ov+7Iy8C0y7WjrNfuzqPP1bXEzvPF0KOsysew0ca9zKixqcDXwO294rPJobC0+7/usrvTw7u5obGhowoKCtXm1f2z9s7KzOK1xKOsysfP38/Cu7m/7sXUwrcKCgrV4rz+ysLK18/I0qqw0dK7uPax373nvbLH5bP+o7rV/bOjxfq/27rNudm3vbu5v+7NqLXAo6zKudPDtcTKx8q1vMqz9tfKs9bFxr3wyNq7+rm5vLDG5LrP1/fWp7i2u/q5ubXEzai1wKOs18q98LKisru9+MjrvdvX08r9v8bVy7unoaMKCgrV4rK/t9a7ub/uyrW8yrK7ysexvrTOvdjB9NX50um1xLrL0MSjrNKysrvE3Mjnsr+31sn50vTL+bSro6zB/c2zy7WzyaGwvdvX07/Y1sbIq7K/u7m/7tfKvfChsaGjCgoK1ebV/bXEzsrM4qOs1NrT2r3b19PK/b/Gzai5/b3b0KG7qKGi0su/2rT8tcjI67/azvzS/bTzwb/Tw7unss7T66Gwvei/7re107ahsaGwvejBy8Ltyc+7ucTDvbHA+KGxtci3tcD7z+7Ev7rzo6zT1tTasr+31rOhvrDW0NLU0K3JzLu5v+6hoszhx7C94cfloaK0+s6qtKbA7dXLtaW1yMP70uWjrNL9tbzTw7unzdHA67nZt73H/rXAo6yw0ceu16rI673b19PK/b/Gu/LG5Na4tqjVy7unoaMKCgq63LbgyMvS1M6q19S8uta7ysfX9sjOzvGjrMq1vMrItM3qs8nBy8q1w/uhosep1Lyhor3ov+66zbu5v+62r9f3o7u63LbgyMvS1M6q19S8utLRvq294cflo6zXyre9z7XNs8i0sqLOtMrVtb221NOmyOvVy6GjCgoKvt2yy7LLxL/HsNXGztW1xNDFz6KjrNXiwODP38/Cu7m/7r3YwfTXyr3wsqK3x8irsr+7ub/uo6zUpLnA1LzVvNX7zOXP4LnYu7m/7sH3tcQxMCXX89PSoaOxyMD9srvKx7bgyv2jrLWrt8XU2tK7uPa6z9f3u/q5udbatuChorTmwb/Tw7unxdO087XE1vq0+8a9zKjA76Os1+PS1NTss8m088Pmu/221NXLtO3Ou6GjCgoKvei/7sjLv7S1vbXEysehsM7Sw/fD97u5wcu7ubGz1a6hsaOs18q98Le9v7S1vbXEysehsL3ovt3Du9PQ1f2zo7vYv+6hsaOszbbL37rNtKbWw9G5wabU8tG4y9nP8rzgudyhorXYt73V/riuus26z9f3vfDI2rv6ubm8r9bQoaMKCgrL+dLUo6y929fTyv2/xsjnvfGyu8rHxtXNqLy8yvW5ytXPoaK/zbf+yqfBqqOs0rKyu8rHudm3vcX6v9vNqLXAsbvGvcyovdjB96OstvjKx8a9zKjU2rnZt73BtMK31q7N4sHt0NC07r2oz9/Pwru5v+662s/koaMKCgrSu7Wp1eLQqdfKvfDDu9PQvLDKsaGi1+O27rvYtb3KtbzKs/bXyrv6ubnPtc2zo6zVy7WloaLV99DFoaK038rVus3V+dLpv9u/7r7Nu+HIq7K/yqfQ8qGjCgoKxr3MqMnmz9POpbeoo6yyu7XI09q96L7d19S2r8qn0KcKCgq63Lbg08O7p8rH1Nq929Chu6ihotLLv9q0/LXIxr3MqNKzw+bJz7LZ1/e1xKOsy/nS1MzsyLvIz86qy6K1pbb40tGjrKGwztK6zdL40NDDu9PQudjPtaOsztLWu7rNxr3MqNPQudjPtaGxoaMKCgq1q9DFtPu52M+1sqK3x7C008O7p7jQvvXIz7aoo6y2+MrHsLS6z82soaLHqdS8oaK3xb/uus296L7dyM+2qKGjCgoKyOe5+73ov+7Iy7G+yMvN6rPJyrXD+8jP1qShorXn19PHqdS8o6zXyr3w08nKtbzKs/bXyrXEs9bFxr3wyNq7+rm5t6K3xaOsvei+3dKy0sC3qMn6s8mjrMTHw7S96L/uus/NrNSt1PLJz77f09C3qMLJ0KfBpqGjCgoKzt7C27XayP23vca9zKjI57rO09W1vKOszt7C28v8sNHP7sS/sPzXsLPJobDLorWlobGhsMjOzvGhsaGwt7XTtqGxu7nKx6Gw0fLDq6Gxo6y96LT71vfM5cjUyLvKx73ov+7Iy7G+yMuho8a9zKjJ5s/TzqW3qKOssrvE3LWxyLvP+8Pwvei/7rrPzazP7s/CtcS7ubG+uLbPotLlzvGhowoKCs/W1NrS0b6t09C62rvSsvq96L3b19PK/b/GsanA18m/tq/Tw7unzNO3z9Wuo6y7sMr1zt63x8rHobDXyre90rLT0M7KzOKhsaGwz9bU2rK708O7ucHLobGhsM22y9++zcTcw+LVrqGxobC9u8eusO/E482jtN/P+9X30MWhsaGj1eLQqbuwysfU2rDRvei/7sjLzcbP8rb+tM6358/VoaMKCgrI57n708O7p8O709C8zND4usu21Mq1vMrXyre91cu1paOstvjKx8OkxL/No7u5o6zPtc2zsuPD5r/JxNyy+sn60+LG2qGit6PPorrN1ffQxdLss6OhowoKCsa9zKi92MH0z9/Pwru5v+7Xyr3w1OyzybXEy/DKp6Os06bTyca9zKi8sM/gudjU8MjOt73SwLeos9C1o6O7tau21L3ov+7Iy7b40dSjrM6syKi1xMewzOHKx7PKs/bKwsq1wbTM9aOsyMPKtbzKs/bXyrv6ubnE3Lm7usvVy6Gitce8x6GitKbWw6Ostviyu8rH1rvU2s34yc+6sKGwztK7ubn9wcuhsaGjCgoKu7vR1Nauo6zS0b6tz/K929fTyv2/xtXLu6ehos/fz8LVy7unu/LP4LnYtdrI/be91cu7p7u5uf3HrqOstavXyre9zrTI69XLtcTTw7uno6zSqsTDxr7WpM6syKiju8nQzrS94cfloaLI1NPQ1f2zo9XLtaW1xNPDu6ejrNTysrvE3LG7obDGvcyosanA16Gxy8S49tfWtPjGq6OsvMzQ+M/yt8e52be9x/61wNeq1cu78rjJtODNo9a5wsTUvKGjCgoK1rnL8MK3vrajrMrHu9i1vdfKvfC3vbnZt73Ptc2zCgoKttS96L/uyMvAtMu1o6zR28/CtdrSu7z+ysLKx7Lpx+XKtbzKs/bXyrv6ubmhowoKCrTyv6q96L/uus/NrKGit8W/7rbM0MWhotL40NDB98uuoaLV99DFsai45qOsv7TH5bP+1eKxyseutb2118rHxMS80tL40NC78s/7t9G98MjauavLvrfFtcSho7rz0PjL+dPQvei+3bLp0a+hotXLtaW6y7bUoaK7ub/ustnX96OstrzTprWxzai5/cq1vMqz9tfKs9bFxr3wyNq7+rm5udm3vUFQULvyudm3vb/Nt/7It8jPtcTNqLXAsOzA7aGjCgoKsrvU2c2ouf2929Chu6ihotLLv9q0/LXItPu/7tbQvenGvcyou7m/7qOsuPyyu9Kqz/LLvcjLzqLQxaGiz9/PwtbQvemhosSwyfrBtL3ToaK2/s6swuvVy7un16rVy6GjCgoKvdvX08r9v8bV4rTOsanA19LRvq3LtcP3o6y12sj9t73P38/Cu7m/7tfutPO1xLfnz9WjrMrH18q98M3RwOvXyre9z7XNs6Gjx67Xqr34xLO49rXayP23vdXLu6ejrLK7tPqx7dfKt73Ptc2z0tG+rc/61cuju8a9zKjSs8Pmu/K49sjLs9DFtc/Uyr6hsNLRtKbA7aGxo6zSsrK7tPqx7b3ovt3V5rXEveHH5aGjCgoKvfDI2r3ov+7X7tbVv7S1xLK7ysfBxMzsvMfCvMDvtcSz0MW1o6y2+MrHyrW8yrP218q7+rm5z7XNs8DvtcTI69XLus3P+tXLveG5+6GjCgoK0tG+rbeiyfrI69XL0uyzo7XE08O7p6Os0qrBory01fvA7bLEwc+jur3ov+66z82soaK96L7dseC6xaGiyrW8yrfFv+67+rm5w/uzxqGit8W/7sH3y66hos/fz8LXqtXLvdjNvKGi1qe4tsa+1qShotL40NC/qL/bv+68x8K8oaK9u9LXwffLrqGixr3MqM/Uyr694cflvdjNvKGiv823/rm1zai8x8K8o6zS1LywtbHHsNXLtaW78tX30MXS7LOjvdjNvKGjCgoK1fvA7c3q0tS686OstdrSu8qxvOSyprTyyrW8yrfFv+6z1sXGvfDI2rv6ubm52be9v823/sjIz9+1x7zHsbiwuKOs0qrH88n6s8m5pLWlo6zTybrzzKjXqMjLusu21NXLtaWhowoKCrzgudzNtsvftbHIu8rHus+3qMiowPujrLWr1Nq1scewvde2zqOst7S4tLKmtPK84Lnctee7sM60sdixyLnZt721x7zHuPy/7KGjCgoKvOC53L3ivva1xMrHtr202bSm1sO6zdTwyM6x373nzsrM4qOsvt/M5dXLzvG6y9HpyNTSqrvYtb298Mjau/q5uc+1zbOho8O709C96L7dusWhosO709DB98uuoaLDu9PQxr7WpKOszbbL39KyutzE0cLktdihowoKCr7dwcu94qOsz+C52LPWxca98Mjau/q5udLRvs2929fTyv2/xtK1zvHS7LOjz/K98MjavOC53LK/w8WxqMvNx+m/9qOssqLG9Lav16jP7rrL1cu6zb/Nu6fL38fztce8x6GjCgoKtdi3vdX+uK6horzgudyyv8PFvLC6z9f3vfDI2rv6ubnSstTazca2r73b19PK/b/GxeS6z7rL1cu6zbSm1sOjrMnmvLC84LncvfjVuaGi1PDIzsjPtqi6zdfu1tW0ptbDv9q+trXExNrI3aOs06bS1Lrz0Pi52be90MXPos6q17yhowoKCrbU08O7p8C0y7WjrM/Wvde2zrj809DQp7XEwre+tqOsysfNqLn9yrW8yrfFv+67+rm5udm3vcjrv9q1x7zHy/DKp6GizOG9u8a+1qShorXItP26y9XLo6y2+LK7ysexu8fp0Pe0+NfFt7S4tLPlu/fNtsvfx/61wKGjCgoKu7nSqszYsfDM4dDR0rvA4MjLo7rL+c69obC0+sDtzqzIqKGxobDV99DF0N64tKGxobDNo7Tfw+LVrqGxu/q5uaOs1f3U2sD708O929fTyv2/xsrCvP61xL25wsfU2dK7tM7K1bjuvei/7sjLoaMKCgq3ssrH0Puzxr/J0tS89cPiwPvPoqGiz/uz/dPixtqhos2j1rm038rVoaK0+7/usrvTw7u5o6y1q9Kqx/PPyL27t/7O8bfRoaLM4b27ye233dakoaLS+NDQv6ihotX30MWxqLjmoaLR6dakwuu1xKOstPO4xcLKtrzKx7b+tM7K1bjuoaMKCgrB7dK7wOC4/M6jz9WjrMrHvczL9NPDu6e28dLizc/Ht6GivK/W0LHg1OzNtsvfoaLS1LzgudzKqdG5zNO3z9WutcS98Mjautq70rL6oaPL/MPHsru74bPQtaPTw7untcTT4sbat6PPoqOs0rKyu7vhs9C1o9PDu6fV99DFztu146GjCgoKvdvX08r9v8bV4rTOysK8/qOsttTQ0NK11+6087XEvq/KvqOsysfW+rT7xr3MqLK7xNzU2rnZt727ub/uwbTCt9auzeLB7bTuz9/PwsrVv+7NqLXAo6y4/LK7xNyw0b/Nu6fP38/Cu7m/7tfKvfCx5LPJ19TJ7dfKvfC197bIuaS+36GjCgoKs9bFxr3wyNq7+rm50rKx2NDr1tjQwsnzytO6z9f3sd+956OssrvE3Na7v7TB98G/us3XyrL6uebEo6OsuPzSqrSpzbjQrcnMu7m/7qGiz9/Pwteq1cuhotXLzvG1x7zHus3P+7fR1d+0pbXjoaMKCgq929fTyv2/xsnmz9O92MH0z9/Pwru5v+7Xyr3woaK07r2o18q98LPYtcTOyszio6zQ6NKq0sC3qLLpx+Wju7Gpwaa038rVoaLOpbnmytW30aGi1cu1pdLss6OhotX30MXV+dLpo6zSstDo0qrW8M/uusvR6bSmwO2howoKCr3wyNq7+rm51Nq6z9f3udzA7brNz/u30dXfsaO7pMnPtObU2rbMsOW1xKOs0rLSqrK5v86ho7Wrvei/7sjLzazR+dKqvq/Q0aOstPu/7rK7ysfIzs7xo6y96L7dsrvKx9POz7ejrNX30MWyu8rH0fLDq7PJsb6howoKCsa9zKixrMDX1q6686Os1+7W2NKqtcTKx8Giv8zNo9a5z/K12sj9t726zc/fz8LVy7un16rVy6Osu9i1vcq1vMqz9tfKu/q5ubnZt73Ptc2zo6yw0brPzayhor3ovt2hosH3y666zbu5v+7Gvtak0ruxytK7scqw2sfls/6howoKCta709C9q7u5v+62r9f3wK272LW9udm3vcG0wrfA76Osz9/Pwru5v+662s/kssXT0L/JxNyxu9Xm1f2y8L+qoaMKCgoKuavW2rrFzcbLzbnm1PK199X7uvMKzsTVwr/JxNy74cLS0PKz9s/WCrK7z+u07bn9obiyy7LLy7W98Mjaobm1xLj80MIKvMe1w7Xj0rvPws7ExKm1xKGw1Nq/tKGxCrbgwfTR1KOss6PAtL+0v7QKPz8A"
+    },
+    {
+      "format_id": 7,
+      "format_name": "CF_OEMTEXT",
+      "size": 6147,
+      "data": "Ly8vLy8vLy8vCgoKvdvX08r9v8a1xMDXo6zS0b6tsrvKx9K7vNLW+rT7xr3MqLXEvq3TqsrCucqhowoKCrTTMtTCoaIz1MK/qsq8o6zQrcnMu7m/7sqn0MWhotX50um0+r/boaLI2rWjt/7O8bfRzcu30cTRtcjNtsvfwr3Q+LP2z9aho7W9NNTCo6zN+MLn1tmyw8X6wb+3osbwo6y63Lbg08O7p7eiz9bL+c69obDQrcnMu7m/7qGxw7vT0Mrpw+bQrdLp1qezxaOs19S8urC0xr3MqMu1t6i7ucHLx66jrNbZssPItMO709DNrLK9s7e72KGjCgoKNdTC0tS686OszsrM4r340ruyvbSrtby1vdfKvfC2y6O6u7m/7sjr1cvR07PZoaK94cflsrvP+tXLoaLVy7Wlsru4/NDCo6zUvcC01L224NPDu6e/qsq8u7PSyaOsz9/Pwru5v+7Xyr3wsqLDu9PQvfjI68q1vMqz9tfKu/q5udXLu6ehowoKCrGswNez9s/W1No21MLW0M/C0a6ho9PQ08O7p7e007OjrNTavdvX08r9v8bP4LnYyMvUsbvyx/61wNL9tbzPws3qs8nP38/Cu7m/7rrzo6zV99DFyNTS7LOjo6zKtbzKt8W/7rv6ubm8zND4z9TKvs60veHH5aGjCgoKtPPBv9PDu6e/qsq8vK/W0LKmtPK84Lnctee7sKOs0rK/qsq8zbbL373b19PK/b/GsbO687XE18q98LrP1/e3vaGjscvKsaOsssuyy9Lgt6KyvKG2x7fQvaGix+XNy6GixcbV1cv1y66jrL3b19PK/b/Gz93Oo7v6obejrM/yytCzobywvdvX07rP1/e3vczhyr6358/VoaMKCgq0y7rz0rvW3KOs09/C29G4y9myyMyko6y9z8arvKS1xMu1t6jKx6O6vfDI2rv6ubm6zb3b19PK/b/Gwaq6z9Wpxq296L/uyMuhowoKCtXiuPbF0LbP0OjSqr7AxquhowoKCrTTxL/HsNLRsanCtrXE0MXPor+0o6yyorfHzfi0q6GwvfDI2rv6ubnBqrrPvdvX08r9v8bVqcatvei/7sjLobGhowoKCrb4yse929fTyv2/xsnmz9PU2rnZt727ub/uwbTCt9auzeKjrLWlt73S/bW8sr+31tPDu6fP38/Cu7m/7tbBvdvX08r9v8bVy7uno6zQzrPJ18q98L3YwfS6zdfKvfCz2Lfnz9WjrLKisNG96L/uyMu6zdfKvfC6z9f3t73NrMqxzc/I67bU1cvE4My2oaMKCgrXyr3wt72yu8Tc1sPJ7crCzeKjrMv8w8fQ6NKqs9C1o7rP1/e53MDtoaLP+7fR1d+xo7ukoaLVy87xusvR6brNuvPQ+LSm1sPU8MjOoaO1q8v5zr2hsNfKt73T68a9zKi6z8Sx1anGraGxtcTSpdHUo6y8yLK7t/u6z8S/x7Czys/Ws/bAtLXEvbvS173hubmjrNKyu+HO87W8vei/7sjL1/ez9rTtzvPRodTxoaMKCgq21L3ov+7Iy8C0y7WjrNfuzqPP1bXEzvPF0KOsysew0ca9zKixqcDXwO294rPJobC0+7/usrvTw7u5obGhowoKCtXm1f2z9s7KzOK1xKOsysfP38/Cu7m/7sXUwrcKCgrV4rz+ysLK18/I0qqw0dK7uPax373nvbLH5bP+o7rV/bOjxfq/27rNudm3vbu5v+7NqLXAo6zKudPDtcTKx8q1vMqz9tfKs9bFxr3wyNq7+rm5vLDG5LrP1/fWp7i2u/q5ubXEzai1wKOs18q98LKisru9+MjrvdvX08r9v8bVy7unoaMKCgrV4rK/t9a7ub/uyrW8yrK7ysexvrTOvdjB9NX50um1xLrL0MSjrNKysrvE3Mjnsr+31sn50vTL+bSro6zB/c2zy7WzyaGwvdvX07/Y1sbIq7K/u7m/7tfKvfChsaGjCgoK1ebV/bXEzsrM4qOs1NrT2r3b19PK/b/Gzai5/b3b0KG7qKGi0su/2rT8tcjI67/azvzS/bTzwb/Tw7unss7T66Gwvei/7re107ahsaGwvejBy8Ltyc+7ucTDvbHA+KGxtci3tcD7z+7Ev7rzo6zT1tTasr+31rOhvrDW0NLU0K3JzLu5v+6hoszhx7C94cfloaK0+s6qtKbA7dXLtaW1yMP70uWjrNL9tbzTw7unzdHA67nZt73H/rXAo6yw0ceu16rI673b19PK/b/Gu/LG5Na4tqjVy7unoaMKCgq63LbgyMvS1M6q19S8uta7ysfX9sjOzvGjrMq1vMrItM3qs8nBy8q1w/uhosep1Lyhor3ov+66zbu5v+62r9f3o7u63LbgyMvS1M6q19S8utLRvq294cflo6zXyre9z7XNs8i0sqLOtMrVtb221NOmyOvVy6GjCgoKvt2yy7LLxL/HsNXGztW1xNDFz6KjrNXiwODP38/Cu7m/7r3YwfTXyr3wsqK3x8irsr+7ub/uo6zUpLnA1LzVvNX7zOXP4LnYu7m/7sH3tcQxMCXX89PSoaOxyMD9srvKx7bgyv2jrLWrt8XU2tK7uPa6z9f3u/q5udbatuChorTmwb/Tw7unxdO087XE1vq0+8a9zKjA76Os1+PS1NTss8m088Pmu/221NXLtO3Ou6GjCgoKvei/7sjLv7S1vbXEysehsM7Sw/fD97u5wcu7ubGz1a6hsaOs18q98Le9v7S1vbXEysehsL3ovt3Du9PQ1f2zo7vYv+6hsaOszbbL37rNtKbWw9G5wabU8tG4y9nP8rzgudyhorXYt73V/riuus26z9f3vfDI2rv6ubm8r9bQoaMKCgrL+dLUo6y929fTyv2/xsjnvfGyu8rHxtXNqLy8yvW5ytXPoaK/zbf+yqfBqqOs0rKyu8rHudm3vcX6v9vNqLXAsbvGvcyovdjB96OstvjKx8a9zKjU2rnZt73BtMK31q7N4sHt0NC07r2oz9/Pwru5v+662s/koaMKCgrSu7Wp1eLQqdfKvfDDu9PQvLDKsaGi1+O27rvYtb3KtbzKs/bXyrv6ubnPtc2zo6zVy7WloaLV99DFoaK038rVus3V+dLpv9u/7r7Nu+HIq7K/yqfQ8qGjCgoKxr3MqMnmz9POpbeoo6yyu7XI09q96L7d19S2r8qn0KcKCgq63Lbg08O7p8rH1Nq929Chu6ihotLLv9q0/LXIxr3MqNKzw+bJz7LZ1/e1xKOsy/nS1MzsyLvIz86qy6K1pbb40tGjrKGwztK6zdL40NDDu9PQudjPtaOsztLWu7rNxr3MqNPQudjPtaGxoaMKCgq1q9DFtPu52M+1sqK3x7C008O7p7jQvvXIz7aoo6y2+MrHsLS6z82soaLHqdS8oaK3xb/uus296L7dyM+2qKGjCgoKyOe5+73ov+7Iy7G+yMvN6rPJyrXD+8jP1qShorXn19PHqdS8o6zXyr3w08nKtbzKs/bXyrXEs9bFxr3wyNq7+rm5t6K3xaOsvei+3dKy0sC3qMn6s8mjrMTHw7S96L/uus/NrNSt1PLJz77f09C3qMLJ0KfBpqGjCgoKzt7C27XayP23vca9zKjI57rO09W1vKOszt7C28v8sNHP7sS/sPzXsLPJobDLorWlobGhsMjOzvGhsaGwt7XTtqGxu7nKx6Gw0fLDq6Gxo6y96LT71vfM5cjUyLvKx73ov+7Iy7G+yMuho8a9zKjJ5s/TzqW3qKOssrvE3LWxyLvP+8Pwvei/7rrPzazP7s/CtcS7ubG+uLbPotLlzvGhowoKCs/W1NrS0b6t09C62rvSsvq96L3b19PK/b/GsanA18m/tq/Tw7unzNO3z9Wuo6y7sMr1zt63x8rHobDXyre90rLT0M7KzOKhsaGwz9bU2rK708O7ucHLobGhsM22y9++zcTcw+LVrqGxobC9u8eusO/E482jtN/P+9X30MWhsaGj1eLQqbuwysfU2rDRvei/7sjLzcbP8rb+tM6358/VoaMKCgrI57n708O7p8O709C8zND4usu21Mq1vMrXyre91cu1paOstvjKx8OkxL/No7u5o6zPtc2zsuPD5r/JxNyy+sn60+LG2qGit6PPorrN1ffQxdLss6OhowoKCsa9zKi92MH0z9/Pwru5v+7Xyr3w1OyzybXEy/DKp6Os06bTyca9zKi8sM/gudjU8MjOt73SwLeos9C1o6O7tau21L3ov+7Iy7b40dSjrM6syKi1xMewzOHKx7PKs/bKwsq1wbTM9aOsyMPKtbzKs/bXyrv6ubnE3Lm7usvVy6Gitce8x6GitKbWw6Ostviyu8rH1rvU2s34yc+6sKGwztK7ubn9wcuhsaGjCgoKu7vR1Nauo6zS0b6tz/K929fTyv2/xtXLu6ehos/fz8LVy7unu/LP4LnYtdrI/be91cu7p7u5uf3HrqOstavXyre9zrTI69XLtcTTw7uno6zSqsTDxr7WpM6syKiju8nQzrS94cfloaLI1NPQ1f2zo9XLtaW1xNPDu6ejrNTysrvE3LG7obDGvcyosanA16Gxy8S49tfWtPjGq6OsvMzQ+M/yt8e52be9x/61wNeq1cu78rjJtODNo9a5wsTUvKGjCgoK1rnL8MK3vrajrMrHu9i1vdfKvfC3vbnZt73Ptc2zCgoKttS96L/uyMvAtMu1o6zR28/CtdrSu7z+ysLKx7Lpx+XKtbzKs/bXyrv6ubmhowoKCrTyv6q96L/uus/NrKGit8W/7rbM0MWhotL40NDB98uuoaLV99DFsai45qOsv7TH5bP+1eKxyseutb2118rHxMS80tL40NC78s/7t9G98MjauavLvrfFtcSho7rz0PjL+dPQvei+3bLp0a+hotXLtaW6y7bUoaK7ub/ustnX96OstrzTprWxzai5/cq1vMqz9tfKs9bFxr3wyNq7+rm5udm3vUFQULvyudm3vb/Nt/7It8jPtcTNqLXAsOzA7aGjCgoKsrvU2c2ouf2929Chu6ihotLLv9q0/LXItPu/7tbQvenGvcyou7m/7qOsuPyyu9Kqz/LLvcjLzqLQxaGiz9/PwtbQvemhosSwyfrBtL3ToaK2/s6swuvVy7un16rVy6GjCgoKvdvX08r9v8bV4rTOsanA19LRvq3LtcP3o6y12sj9t73P38/Cu7m/7tfutPO1xLfnz9WjrMrH18q98M3RwOvXyre9z7XNs6Gjx67Xqr34xLO49rXayP23vdXLu6ejrLK7tPqx7dfKt73Ptc2z0tG+rc/61cuju8a9zKjSs8Pmu/K49sjLs9DFtc/Uyr6hsNLRtKbA7aGxo6zSsrK7tPqx7b3ovt3V5rXEveHH5aGjCgoKvfDI2r3ov+7X7tbVv7S1xLK7ysfBxMzsvMfCvMDvtcSz0MW1o6y2+MrHyrW8yrP218q7+rm5z7XNs8DvtcTI69XLus3P+tXLveG5+6GjCgoK0tG+rbeiyfrI69XL0uyzo7XE08O7p6Os0qrBory01fvA7bLEwc+jur3ov+66z82soaK96L7dseC6xaGiyrW8yrfFv+67+rm5w/uzxqGit8W/7sH3y66hos/fz8LXqtXLvdjNvKGi1qe4tsa+1qShotL40NC/qL/bv+68x8K8oaK9u9LXwffLrqGixr3MqM/Uyr694cflvdjNvKGiv823/rm1zai8x8K8o6zS1LywtbHHsNXLtaW78tX30MXS7LOjvdjNvKGjCgoK1fvA7c3q0tS686OstdrSu8qxvOSyprTyyrW8yrfFv+6z1sXGvfDI2rv6ubm52be9v823/sjIz9+1x7zHsbiwuKOs0qrH88n6s8m5pLWlo6zTybrzzKjXqMjLusu21NXLtaWhowoKCrzgudzNtsvftbHIu8rHus+3qMiowPujrLWr1Nq1scewvde2zqOst7S4tLKmtPK84Lnctee7sM60sdixyLnZt721x7zHuPy/7KGjCgoKvOC53L3ivva1xMrHtr202bSm1sO6zdTwyM6x373nzsrM4qOsvt/M5dXLzvG6y9HpyNTSqrvYtb298Mjau/q5uc+1zbOho8O709C96L7dusWhosO709DB98uuoaLDu9PQxr7WpKOszbbL39KyutzE0cLktdihowoKCr7dwcu94qOsz+C52LPWxca98Mjau/q5udLRvs2929fTyv2/xtK1zvHS7LOjz/K98MjavOC53LK/w8WxqMvNx+m/9qOssqLG9Lav16jP7rrL1cu6zb/Nu6fL38fztce8x6GjCgoKtdi3vdX+uK6horzgudyyv8PFvLC6z9f3vfDI2rv6ubnSstTazca2r73b19PK/b/GxeS6z7rL1cu6zbSm1sOjrMnmvLC84LncvfjVuaGi1PDIzsjPtqi6zdfu1tW0ptbDv9q+trXExNrI3aOs06bS1Lrz0Pi52be90MXPos6q17yhowoKCrbU08O7p8C0y7WjrM/Wvde2zrj809DQp7XEwre+tqOsysfNqLn9yrW8yrfFv+67+rm5udm3vcjrv9q1x7zHy/DKp6GizOG9u8a+1qShorXItP26y9XLo6y2+LK7ysexu8fp0Pe0+NfFt7S4tLPlu/fNtsvfx/61wKGjCgoKu7nSqszYsfDM4dDR0rvA4MjLo7rL+c69obC0+sDtzqzIqKGxobDV99DF0N64tKGxobDNo7Tfw+LVrqGxu/q5uaOs1f3U2sD708O929fTyv2/xsrCvP61xL25wsfU2dK7tM7K1bjuvei/7sjLoaMKCgq3ssrH0Puzxr/J0tS89cPiwPvPoqGiz/uz/dPixtqhos2j1rm038rVoaK0+7/usrvTw7u5o6y1q9Kqx/PPyL27t/7O8bfRoaLM4b27ye233dakoaLS+NDQv6ihotX30MWxqLjmoaLR6dakwuu1xKOstPO4xcLKtrzKx7b+tM7K1bjuoaMKCgrB7dK7wOC4/M6jz9WjrMrHvczL9NPDu6e28dLizc/Ht6GivK/W0LHg1OzNtsvfoaLS1LzgudzKqdG5zNO3z9WutcS98Mjautq70rL6oaPL/MPHsru74bPQtaPTw7untcTT4sbat6PPoqOs0rKyu7vhs9C1o9PDu6fV99DFztu146GjCgoKvdvX08r9v8bV4rTOysK8/qOsttTQ0NK11+6087XEvq/KvqOsysfW+rT7xr3MqLK7xNzU2rnZt727ub/uwbTCt9auzeLB7bTuz9/PwsrVv+7NqLXAo6y4/LK7xNyw0b/Nu6fP38/Cu7m/7tfKvfCx5LPJ19TJ7dfKvfC197bIuaS+36GjCgoKs9bFxr3wyNq7+rm50rKx2NDr1tjQwsnzytO6z9f3sd+956OssrvE3Na7v7TB98G/us3XyrL6uebEo6OsuPzSqrSpzbjQrcnMu7m/7qGiz9/Pwteq1cuhotXLzvG1x7zHus3P+7fR1d+0pbXjoaMKCgq929fTyv2/xsnmz9O92MH0z9/Pwru5v+7Xyr3woaK07r2o18q98LPYtcTOyszio6zQ6NKq0sC3qLLpx+Wju7Gpwaa038rVoaLOpbnmytW30aGi1cu1pdLss6OhotX30MXV+dLpo6zSstDo0qrW8M/uusvR6bSmwO2howoKCr3wyNq7+rm51Nq6z9f3udzA7brNz/u30dXfsaO7pMnPtObU2rbMsOW1xKOs0rLSqrK5v86ho7Wrvei/7sjLzazR+dKqvq/Q0aOstPu/7rK7ysfIzs7xo6y96L7dsrvKx9POz7ejrNX30MWyu8rH0fLDq7PJsb6howoKCsa9zKixrMDX1q6686Os1+7W2NKqtcTKx8Giv8zNo9a5z/K12sj9t726zc/fz8LVy7un16rVy6Osu9i1vcq1vMqz9tfKu/q5ubnZt73Ptc2zo6yw0brPzayhor3ovt2hosH3y666zbu5v+7Gvtak0ruxytK7scqw2sfls/6howoKCta709C9q7u5v+62r9f3wK272LW9udm3vcG0wrfA76Osz9/Pwru5v+662s/kssXT0L/JxNyxu9Xm1f2y8L+qoaMKCgoKuavW2rrFzcbLzbnm1PK199X7uvMKzsTVwr/JxNy74cLS0PKz9s/WCrK7z+u07bn9obiyy7LLy7W98Mjaobm1xLj80MIKvMe1w7Xj0rvPws7ExKm1xKGw1Nq/tKGxCrbgwfTR1KOss6PAtL+0v7QKPz8A"
+    }
+  ]
+}
+
+</script>
+
+
+
+</body>
+
+</html>
