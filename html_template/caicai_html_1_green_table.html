@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>Table Template — caicai green table</title>
+  <style>
+    /* ===== 全局样式 ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Microsoft YaHei', 'PingFang SC', 'Noto Sans SC', sans-serif;
+      background: #fff;
+      padding: 32px;
+      display: inline-block;
+    }
+
+    /* ===== 表格样式 ===== */
+    .table-container {
+      display: inline-block;
+    }
+    table {
+      border-collapse: collapse;
+      width: auto;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* 表头 */
+    th {
+      padding: 12px 16px;
+      text-align: center;
+      font-weight: bold;
+      background-color: #7eb559;
+      color: #fff;
+      border: 1px solid #6da348;
+      white-space: nowrap;
+    }
+
+    /* 表体 */
+    td {
+      padding: 10px 16px;
+      text-align: center;
+      border: 1px solid #e0e0e0;
+      color: #333;
+    }
+    tr:nth-child(even) {
+      background-color: #ebfce5;
+    }
+    tr:nth-child(odd) {
+      background-color: #fff;
+    }
+
+    /* 单元格加粗 */
+    td.bold {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <!-- ====== 表格内容区（由 step2_table_to_html.py 替换 <table> 内容）====== -->
+  <div class="table-container">
+    {{TABLE_PLACEHOLDER}}
+  </div>
+
+  <!-- 行高同步：将 tbody 所有行高统一为最高行 -->
+  <script>
+    window.addEventListener('load', function() {
+      document.querySelectorAll('tbody').forEach(function(tbody) {
+        var rows = tbody.querySelectorAll('tr');
+        // 先重置行高，获取自然高度
+        rows.forEach(function(r) { r.style.height = 'auto'; });
+        // 找出最大行高
+        var maxH = 0;
+        rows.forEach(function(r) { maxH = Math.max(maxH, r.offsetHeight); });
+        // 统一设置
+        rows.forEach(function(r) { r.style.height = maxH + 'px'; });
+      });
+    });
+  </script>
+</body>
+</html>
