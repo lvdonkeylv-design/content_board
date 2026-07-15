@@ -26,6 +26,8 @@ import time
 
 
 # ===== 跳过控制 =====
+DIR_NAME = 'content_20260715_1'  # ← 修改这里即可切换文章
+
 SKIP_STEP1_1 = False  # Word → JSON
 SKIP_STEP1_2 = False  # LLM 拆分过长段落
 SKIP_STEP1_3 = False  # LLM 添加总结性加粗
@@ -34,19 +36,18 @@ SKIP_STEP2_2 = False  # HTML → PNG + JSON 替换
 SKIP_STEP3   = False  # JSON → HTML 模板渲染
 SKIP_STEP4   = False  # HTML → 剪贴板
 SKIP_STEP5   = False  # 封面图片裁剪 2.35:1
-SKIP_STEP6   = False  # 推送到公众号草稿箱
+SKIP_STEP6   = True  # 推送到公众号草稿箱
 
 TOTAL_STEPS = 9
 
 
 def run_pipeline(input_path):
     """执行完整流水线"""
-    if not os.path.isfile(input_path):
-        print(f"[ERROR] 文件不存在: {input_path}")
-        sys.exit(1)
 
     # 派生所有路径
-    input_dir = os.path.dirname(os.path.abspath(input_path))
+    # 兼容两种入参：文件夹（如 content_instance/xxx）或 .docx 文件路径
+    _abs = os.path.abspath(input_path)
+    input_dir = _abs if os.path.isdir(_abs) else os.path.dirname(_abs)
     process_dir = os.path.join(input_dir, 'process')
     table_dir = os.path.join(process_dir, 'table')
 
@@ -194,7 +195,5 @@ def run_pipeline(input_path):
 
 
 if __name__ == '__main__':
-    # ---- 手动修改 Word 文件路径 ----
-    # input_path = r"content_instance\content_20260703_1\众邦银行被接管_7426.docx"
-    input_path = r"content_instance\content_20260710_1\抵押物变库存，宁夏银行开店卖房_8141.docx"
-    run_pipeline(input_path)
+    content_dir = os.path.join('content_instance', DIR_NAME)
+    run_pipeline(content_dir)

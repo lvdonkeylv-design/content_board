@@ -30,6 +30,8 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 
+from launch import DIR_NAME
+
 # Chrome 截图超时（秒）
 CHROME_TIMEOUT = 60
 
@@ -117,7 +119,24 @@ def _kill_chrome_processes():
 # ---------------------------------------------------------------------------
 # 主函数
 # ---------------------------------------------------------------------------
-def main(table_dir, json_path):
+def main(table_dir=None, json_path=None):
+    # 未传值 → 派生自 DIR_NAME
+    if table_dir is None or json_path is None:
+        process_dir = fr"content_instance\{DIR_NAME}\process"
+        if table_dir is None:
+            table_dir = os.path.join(process_dir, 'table')
+        if json_path is None:
+            # 优先 step1_3，其次 step1_2 / step1_1
+            for name in ('step1_3_bold_paragraphs.json',
+                         'step1_2_split_paragraphs.json',
+                         'step1_1_docx_to_json.json'):
+                candidate = os.path.join(process_dir, name)
+                if os.path.isfile(candidate):
+                    json_path = candidate
+                    break
+            if json_path is None:
+                json_path = os.path.join(process_dir, 'step1_3_bold_paragraphs.json')
+
     if not os.path.isdir(table_dir):
         print(f"[ERROR] 目录不存在: {table_dir}")
         sys.exit(1)
@@ -211,7 +230,5 @@ def replace_tables_in_json(json_path, table_dir, table_count):
 
 
 if __name__ == '__main__':
-    # ---- 手动修改路径 ----
-    json_path = r"content_instance\content_20260708_1\process\step1_3_bold_paragraphs.json"
-    table_dir = r"content_instance\content_20260708_1\process\table"
-    main(table_dir, json_path)
+    # 不传参 → 使用 launch.DIR_NAME 派生的默认路径
+    main()

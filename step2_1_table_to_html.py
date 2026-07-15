@@ -19,6 +19,8 @@ import json
 import os
 import sys
 
+from launch import DIR_NAME
+
 
 # ---------------------------------------------------------------------------
 # 模板路径
@@ -44,6 +46,16 @@ def generate_table_tag(table_data):
 
     header_cells = rows[0]
     body_rows = rows[1:]
+    col_count = len(header_cells)
+
+    # 合并单元格标题（可选，来自 step1_1 检测）
+    title_text = table_data.get('title')
+    title_row_html = ''
+    if title_text:
+        title_row_html = (
+            f'      <tr><th colspan="{col_count}" class="table-title">'
+            f'{title_text}</th></tr>\n'
+        )
 
     # 表头
     th_html = ''.join(
@@ -62,7 +74,10 @@ def generate_table_tag(table_data):
 
     return (
         '    <table>\n'
-        f'      <thead><tr>{th_html}</tr></thead>\n'
+        '      <thead>\n'
+        f'{title_row_html}'
+        f'        <tr>{th_html}</tr>\n'
+        '      </thead>\n'
         f'      <tbody>\n{tbody_html}\n      </tbody>\n'
         '    </table>'
     )
@@ -71,7 +86,20 @@ def generate_table_tag(table_data):
 # ---------------------------------------------------------------------------
 # 主函数
 # ---------------------------------------------------------------------------
-def main(json_path):
+def main(json_path=None):
+    # 未传值 → 派生自 DIR_NAME（优先 step1_3，其次 step1_2 / step1_1）
+    if json_path is None:
+        process_dir = fr"content_instance\{DIR_NAME}\process"
+        for name in ('step1_3_bold_paragraphs.json',
+                     'step1_2_split_paragraphs.json',
+                     'step1_1_docx_to_json.json'):
+            candidate = os.path.join(process_dir, name)
+            if os.path.isfile(candidate):
+                json_path = candidate
+                break
+        if json_path is None:
+            json_path = os.path.join(process_dir, 'step1_3_bold_paragraphs.json')
+
     if not os.path.isfile(json_path):
         print(f"[ERROR] JSON 文件不存在: {json_path}")
         sys.exit(1)
@@ -119,6 +147,5 @@ def main(json_path):
 
 
 if __name__ == '__main__':
-    # ---- 手动修改输入路径 ----
-    json_path = r"content_instance\content_20260708_1\process\step1_3_bold_paragraphs.json"
-    main(json_path)
+    # 不传参 → 使用 launch.DIR_NAME 派生的默认路径
+    main()

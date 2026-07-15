@@ -29,7 +29,7 @@ SPLIT_THRESHOLD = 120  # 单个 text 超过此长度才触发拆分
 WX_APP_ID = 'wx695573645e236c68'        # ← 填写你的 AppID
 WX_APP_SECRET = '74f765478142dde0643604629c38ce57'    # ← 填写你的 AppSecret
 
-WX_API_BASE = 'https://api.weixin.qq.com/cgi-bin'
+WX_API_BASE = 'http://106.14.12.137:5000/wx/cgi-bin'
 
 # 草稿箱推送默认值
 WX_AUTHOR = '菜菜'

@@ -34,6 +34,7 @@ from config import (
     WX_NEED_OPEN_COMMENT, WX_ONLY_FANS_COMMENT,
     API_URL, HEADERS, MAX_RETRIES, MAX_TOKENS,
 )
+from launch import DIR_NAME
 
 
 # ---------------------------------------------------------------------------
@@ -124,7 +125,7 @@ def extract_title(json_path):
                 return title
 
     print("[WARN] 未找到 heading_level=1 的标题")
-    return None
+    return '无标题'
 
 
 # ---------------------------------------------------------------------------
@@ -273,15 +274,19 @@ def push_draft(access_token, article):
 # ---------------------------------------------------------------------------
 # 主函数
 # ---------------------------------------------------------------------------
-def main(input_dir,
+def main(input_dir=None,
          step1_1_json=None,
          process_dir=None):
     """
     推送到公众号草稿箱。
     input_dir:   文章实例目录（如 content_instance/content_20260710_1）
+                 未传值 → 默认 content_instance\\{DIR_NAME}
     step1_1_json: step1_1 JSON 路径（可选，默认自动派生）
     process_dir: process 目录（可选，默认自动派生）
     """
+    if input_dir is None:
+        input_dir = fr"content_instance\{DIR_NAME}"
+
     if not WX_APP_ID or not WX_APP_SECRET:
         print("[ERROR] 请先在 config.py 中填写 WX_APP_ID 和 WX_APP_SECRET")
         sys.exit(1)
@@ -398,6 +403,5 @@ def main(input_dir,
 
 
 if __name__ == '__main__':
-    # ---- 手动修改路径 ----
-    input_dir = r"content_instance\content_20260710_1"
-    main(input_dir)
+    # 不传参 → 使用 launch.DIR_NAME 派生的默认路径
+    main()

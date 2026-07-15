@@ -25,6 +25,7 @@ import time
 import requests
 
 from config import API_URL, HEADERS, MAX_RETRIES, MAX_TOKENS, SPLIT_THRESHOLD
+from launch import DIR_NAME
 
 
 # ---------------------------------------------------------------------------
@@ -195,11 +196,16 @@ def build_split_elements(original_elem, run_idx, split_texts, original_index):
 # ---------------------------------------------------------------------------
 # 主函数
 # ---------------------------------------------------------------------------
-def main(input_json, output_json=None):
+def main(input_json=None, output_json=None):
     """读取 step1_1 JSON，拆分过长段落，写入新文件。
     input_json:  输入文件路径（step1_1_docx_to_json.json）
+                 未传值 → 默认 content_instance\\{DIR_NAME}\\process\\step1_1_docx_to_json.json
     output_json: 输出文件路径，默认为同目录 step1_2_split_paragraphs.json
     """
+    # 未传值 → 派生自 DIR_NAME
+    if input_json is None:
+        input_json = fr"content_instance\{DIR_NAME}\process\step1_1_docx_to_json.json"
+
     if not os.path.isfile(input_json):
         print(f"[ERROR] 文件不存在: {input_json}")
         sys.exit(1)
@@ -302,9 +308,5 @@ def main(input_json, output_json=None):
 
 
 if __name__ == '__main__':
-    # ---- 手动修改输入路径（输出自动存入同目录 step1_2_split_paragraphs.json）----
-    input_json = (
-        r"content_instance\content_20260702_1"
-        r"\process\step1_1_docx_to_json.json"
-    )
-    main(input_json)
+    # 不传参 → 使用 launch.DIR_NAME 派生的默认路径
+    main()

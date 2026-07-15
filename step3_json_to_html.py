@@ -25,6 +25,8 @@ import json
 import os
 import sys
 
+from launch import DIR_NAME
+
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 TEMPLATE_PATH = os.path.join(SCRIPT_DIR, 'html_template', 'caicai_html_1_green_classical.html')
 
@@ -118,7 +120,11 @@ def generate_body_html(elements):
 # ---------------------------------------------------------------------------
 # 主函数
 # ---------------------------------------------------------------------------
-def main(json_path):
+def main(json_path=None):
+    # 未传值 → 派生自 DIR_NAME
+    if json_path is None:
+        json_path = fr"content_instance\{DIR_NAME}\process\step2_table_to_image.json"
+
     if not os.path.isfile(json_path):
         print(f"[ERROR] JSON 文件不存在: {json_path}")
         sys.exit(1)
@@ -143,6 +149,5 @@ def main(json_path):
 
 
 if __name__ == '__main__':
-    # ---- 手动修改输入路径 ----
-    json_path = r"content_instance\content_20260702_1\process\step2_table_to_image.json"
-    main(json_path)
+    # 不传参 → 使用 launch.DIR_NAME 派生的默认路径
+    main()

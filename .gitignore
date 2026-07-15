@@ -4,3 +4,6 @@
 # Python 缓存
 __pycache__/
 *.pyc
+
+# 文章实例
+content_instance/

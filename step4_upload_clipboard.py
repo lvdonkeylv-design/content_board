@@ -26,6 +26,8 @@ import struct
 import ctypes
 import ctypes.wintypes as wt
 
+from launch import DIR_NAME
+
 # ---------------------------------------------------------------------------
 # Windows API (64-bit safe)
 # ---------------------------------------------------------------------------
@@ -433,7 +435,11 @@ def write_clipboard(formats):
 # ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
-def main(html_path):
+def main(html_path=None):
+    # 未传值 → 派生自 DIR_NAME
+    if html_path is None:
+        html_path = fr"content_instance\{DIR_NAME}\process\step3_json_to_html.html"
+
     if not os.path.isfile(html_path):
         print(f"[ERROR] File not found: {html_path}")
         sys.exit(1)
@@ -476,4 +482,5 @@ def main(html_path):
 
 
 if __name__ == "__main__":
-    main(r"content_instance\content_20260703_1\process\step3_json_to_html.html")
+    # 不传参 → 使用 launch.DIR_NAME 派生的默认路径
+    main()

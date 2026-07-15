@@ -26,7 +26,7 @@ from docx import Document
 from docx.oxml.ns import qn
 from docx.text.paragraph import Paragraph
 from docx.table import Table
-
+from launch import DIR_NAME
 
 # ---------------------------------------------------------------------------
 # 辅助函数
@@ -113,30 +113,64 @@ def build_paragraph(paragraph):
     }
 
 
+def _is_row_merged_title(row):
+    """判断该行是否是横向合并跨越全部列的合并单元格标题行。
+
+    python-docx 对于横向合并的行，row.cells 会把同一个底层 <w:tc> 重复返回。
+    因此当该行所有 cell._tc 指向同一个元素时，即为跨全列合并的标题行。
+    """
+    cells = row.cells
+    if len(cells) < 2:
+        return False
+    first_tc = cells[0]._tc
+    return all(c._tc is first_tc for c in cells)
+
+
+def _cell_bold(cell):
+    """检测单元格首个非空 run 是否加粗"""
+    for p in cell.paragraphs:
+        for run in p.runs:
+            if run.text and run.text.strip():
+                return is_run_bold(run)
+    return False
+
+
 def build_table(table):
-    """解析表格元素，返回结构化 dict"""
+    """解析表格元素，返回结构化 dict。
+    若首行是跨全列合并的单元格，会作为 title 字段单独提取（不进入 data）。
+    """
+    rows = list(table.rows)
+
+    title = None
+    title_bold = False
+    # 检测首行是否为合并标题
+    if rows and _is_row_merged_title(rows[0]):
+        first_cell = rows[0].cells[0]
+        title_text = (first_cell.text or '').strip()
+        if title_text:
+            title = title_text
+            title_bold = _cell_bold(first_cell)
+            rows = rows[1:]  # 剩余行作为常规表格
+
     data = []
-    for row in table.rows:
+    for row in rows:
         row_data = []
         for cell in row.cells:
             cell_text = cell.text or ''
-            cell_bold = False
-            for p in cell.paragraphs:
-                for run in p.runs:
-                    if run.text and run.text.strip():
-                        cell_bold = is_run_bold(run)
-                        break
-                if cell_bold:
-                    break
+            cell_bold = _cell_bold(cell)
             row_data.append({'text': cell_text, 'bold': cell_bold})
         data.append(row_data)
 
-    return {
+    result = {
         'type': 'table',
         'row_count': len(data),
         'col_count': len(data[0]) if data else 0,
         'data': data,
     }
+    if title:
+        result['title'] = title
+        result['title_bold'] = title_bold
+    return result
 
 
 # ---------------------------------------------------------------------------
@@ -187,7 +221,21 @@ def parse_docx(docx_path, images_dir):
 # ---------------------------------------------------------------------------
 # 主函数
 # ---------------------------------------------------------------------------
-def main(input_path):
+def main(input_path=None):
+    # 未传值 → 默认 content_instance\{DIR_NAME}
+    if input_path is None:
+        input_path = fr"content_instance\{DIR_NAME}"
+    # 如果传入的是文件夹，自动找第一个 .docx 文件
+    if os.path.isdir(input_path):
+        docx_files = sorted([
+            f for f in os.listdir(input_path)
+            if f.lower().endswith('.docx') and not f.startswith('~')
+        ])
+        if not docx_files:
+            print(f"[ERROR] 文件夹中没有找到 .docx 文件: {input_path}")
+            sys.exit(1)
+        input_path = os.path.join(input_path, docx_files[0])
+        print(f"[INFO] 自动选择: {docx_files[0]}")
     if not os.path.isfile(input_path):
         print(f"[ERROR] 文件不存在: {input_path}")
         sys.exit(1)
@@ -227,6 +275,6 @@ def main(input_path):
 
 
 if __name__ == '__main__':
-    # ---- 手动修改输入路径（输出自动存入同目录 process 文件夹）----
-    input_path = r"content_instance\content_20260702_1\银行股的下一页，什么时候翻？_7881.docx"
-    main(input_path)
+    # 不传参 → 使用 launch.DIR_NAME 派生的默认路径；也可传入文件夹或 .docx 路径
+    # input_path = fr"content_instance\{DIR_NAME}"
+    main()
