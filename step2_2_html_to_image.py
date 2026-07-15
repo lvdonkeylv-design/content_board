@@ -230,5 +230,10 @@ def replace_tables_in_json(json_path, table_dir, table_count):
 
 
 if __name__ == '__main__':
-    # 不传参 → 使用 launch.DIR_NAME 派生的默认路径
-    main()
+    # 默认让 main() 自行派生（table_dir 与 json_path 都从 DIR_NAME 派生）
+    # 若要指定别的目录/文件：保留下面两行并改路径；不需要覆盖时把它们注释掉即可
+    table_dir = None
+    json_path = None
+    table_dir = fr"content_instance\content_20260715_1\process\table"
+    json_path = fr"content_instance\content_20260715_1\process\step1_3_bold_paragraphs.json"
+    main(table_dir, json_path)

@@ -428,10 +428,14 @@ def postprocess_html(html_str):
 # ---------------------------------------------------------------------------
 # 主函数
 # ---------------------------------------------------------------------------
-def main(input_dir):
+def main(input_dir=None):
     """
     input_dir: 文章实例目录，如 content_instance\\content_20260702_1
+               未传值 → 默认 content_instance\\{DIR_NAME}
     """
+    if input_dir is None:
+        input_dir = fr"content_instance\{DIR_NAME}"
+
     # 验证路径
     if not os.path.isdir(input_dir):
         print(f"[ERROR] 目录不存在: {input_dir}")
@@ -523,4 +527,8 @@ def main(input_dir):
 
 
 if __name__ == '__main__':
-    main(fr"content_instance\{DIR_NAME}")
+    # 默认让 main() 自行派生（fr"content_instance\{DIR_NAME}"）
+    # 若要指定别的目录：保留 531 行并改路径；不需要覆盖时，把 531 行注释掉即可
+    input_dir = None
+    input_dir = fr"content_instance\content_20260715_1"
+    main(input_dir)

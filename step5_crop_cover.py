@@ -323,5 +323,8 @@ def main(content_dir: Optional[str] = None):
 
 
 if __name__ == '__main__':
-    # 不传参 → 使用 launch.DIR_NAME 派生的默认路径
-    main()
+    # 默认让 main() 自行派生（fr"content_instance\{DIR_NAME}"）
+    # 若要指定别的目录：保留下面显式行并改路径；不需要覆盖时把它注释掉即可
+    content_dir = None
+    content_dir = fr"content_instance\content_20260715_1"
+    main(content_dir)

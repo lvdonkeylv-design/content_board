@@ -147,5 +147,8 @@ def main(json_path=None):
 
 
 if __name__ == '__main__':
-    # 不传参 → 使用 launch.DIR_NAME 派生的默认路径
-    main()
+    # 默认让 main() 自行派生（优先 step1_3 → step1_2 → step1_1 存在的 JSON）
+    # 若要指定别的目录/文件：保留下面显式行并改路径；不需要覆盖时把它注释掉即可
+    json_path = None
+    json_path = fr"content_instance\content_20260715_1\process\step1_3_bold_paragraphs.json"
+    main(json_path)

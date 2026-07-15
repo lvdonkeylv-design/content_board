@@ -275,6 +275,8 @@ def main(input_path=None):
 
 
 if __name__ == '__main__':
-    # 不传参 → 使用 launch.DIR_NAME 派生的默认路径；也可传入文件夹或 .docx 路径
-    # input_path = fr"content_instance\{DIR_NAME}"
-    main()
+    # 默认让 main() 自行派生（fr"content_instance\{DIR_NAME}"）
+    # 若要指定别的目录/文件：保留下面显式行并改路径；不需要覆盖时把它注释掉即可
+    input_path = None
+    input_path = fr"content_instance\content_20260715_1"
+    main(input_path)
