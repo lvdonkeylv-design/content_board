@@ -27,6 +27,12 @@ import re
 import struct
 import sys
 import time
+
+# 本文件位于 tool/ 子目录，独立运行时需要把上层目录加入 sys.path 才能 import launch
+_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if _ROOT not in sys.path:
+    sys.path.insert(0, _ROOT)
+
 from launch import DIR_NAME
 
 # ---------------------------------------------------------------------------
@@ -340,16 +346,21 @@ def replace_images_in_html(html_str, image_list, base_dir):
 # ---------------------------------------------------------------------------
 # HTML 后处理：清理剪贴板 HTML 中的冗余样式和结构
 # ---------------------------------------------------------------------------
-def postprocess_html(html_str):
+def postprocess_html(html_str, heading_level=1):
     """
     对剪贴板 HTML 做六项后处理：
       1. 去除所有 background-color 声明
       2. 将所有 margin 相关属性归零为 0px
       3. 去除 <p> 内包裹 <br> 的冗余 <span> 标签
       4. 清理标签之间冗余的不可见空格（&nbsp; 实体 或 U+00A0）
-      5. 将 font-size:24px 的 section 内的 <p> 转为 <h1>
+      5. 将 font-size:24px 的 section 内的 <p> 转为 <hN>（N=heading_level，1 或 2）
       6. 在末尾追加 add_html.html 中的尾部内容（声明信息等）
+
+    参数 heading_level：24px 标题块升级到的标题级别，仅支持 1 或 2。
     """
+    if heading_level not in (1, 2):
+        raise ValueError(f"heading_level 仅支持 1 或 2，收到: {heading_level}")
+    heading_tag = f'h{heading_level}'
     result = html_str
 
     # 1) 去除 background-color
@@ -397,7 +408,7 @@ def postprocess_html(html_str):
     if total:
         print(f"[后处理] 去除冗余不可见空格 ({total} 处)")
 
-    # 5) 将 font-size:24px 的 <section> 内的 <p> 转为 <h1>
+    # 5) 将 font-size:24px 的 <section> 内的 <p> 转为 <h1> 或 <h2>
     #    秀米中 24px 的标题块结构：<section ...24px...><p ...>标题</p></section>
     h1_pattern = re.compile(
         r'<section[^>]*font-size:\s*24px[^>]*>\s*'
@@ -409,8 +420,8 @@ def postprocess_html(html_str):
     if h1_matches:
         for m in reversed(h1_matches):
             inner_content = m.group(1).strip()
-            result = result[:m.start()] + f'<h1>{inner_content}</h1>' + result[m.end():]
-        print(f"[后处理] 24px 标题 <p> → <h1> ({len(h1_matches)} 处)")
+            result = result[:m.start()] + f'<{heading_tag}>{inner_content}</{heading_tag}>' + result[m.end():]
+        print(f"[后处理] 24px 标题 <p> → <{heading_tag}> ({len(h1_matches)} 处)")
 
     # 6) 在末尾追加 add_html.html 的尾部内容
     add_html_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'add_html.html')
@@ -428,10 +439,12 @@ def postprocess_html(html_str):
 # ---------------------------------------------------------------------------
 # 主函数
 # ---------------------------------------------------------------------------
-def main(input_dir=None):
+def main(input_dir=None, heading_level=1, douban=0):
     """
     input_dir: 文章实例目录，如 content_instance\\content_20260702_1
                未传值 → 默认 content_instance\\{DIR_NAME}
+    heading_level: 24px 标题块升级到的标题级别，1 → <h1>，2 → <h2>
+    douban: 1 → 跳过换图片的步骤（适合发布到豆瓣等无需替换图片的平台）；0 → 正常替换
     """
     if input_dir is None:
         input_dir = fr"content_instance\{DIR_NAME}"
@@ -441,36 +454,50 @@ def main(input_dir=None):
         print(f"[ERROR] 目录不存在: {input_dir}")
         sys.exit(1)
 
-    json_path = os.path.join(input_dir, 'process', 'step2_table_to_image.json')
-    if not os.path.isfile(json_path):
-        print(f"[ERROR] JSON 文件不存在: {json_path}")
-        sys.exit(1)
-
     print(f"[INFO] 输入目录: {input_dir}")
-    print(f"[INFO] JSON 文件: {json_path}")
 
-    # 1. 读取 JSON 图片列表
-    image_list = get_image_list_from_json(json_path)
-    print(f"[INFO] JSON 中图片数量: {len(image_list)}")
-    for i, (path, name) in enumerate(image_list):
-        print(f"  [{i+1}] {name} → {path}")
+    # 1. 读取 JSON 图片列表（douban 模式下跳过）
+    if douban:
+        print(f"[INFO] DOUBAN=1，跳过换图片步骤（不加载 JSON 图片列表）")
+        image_list = []
+    else:
+        json_path = os.path.join(input_dir, 'process', 'step2_table_to_image.json')
+        if not os.path.isfile(json_path):
+            print(f"[ERROR] JSON 文件不存在: {json_path}")
+            sys.exit(1)
+        print(f"[INFO] JSON 文件: {json_path}")
+        image_list = get_image_list_from_json(json_path)
+        print(f"[INFO] JSON 中图片数量: {len(image_list)}")
+        for i, (path, name) in enumerate(image_list):
+            print(f"  [{i+1}] {name} → {path}")
 
     # 2. 读取剪贴板 HTML
-    print(f"\n{'─'*60}")
-    print("[INFO] 读取剪贴板 HTML...")
-    try:
-        html_fragment = read_clipboard_html()
-    except Exception as e:
-        print(f"[ERROR] 读取剪贴板失败: {e}")
-        sys.exit(1)
-    print(f"[INFO] 剪贴板 HTML: {len(html_fragment):,} chars")
-
-    # 调试：保存原始剪贴板 HTML 到文件以便检查
+    #    若 _debug_clipboard_before.html 已存在，跳过剪贴板读取，直接复用磁盘缓存
     debug_dir = os.path.join(input_dir, 'process')
     debug_before = os.path.join(debug_dir, '_debug_clipboard_before.html')
-    with open(debug_before, 'w', encoding='utf-8') as f:
-        f.write(html_fragment)
-    print(f"[DEBUG] 原始剪贴板 HTML 已保存: {debug_before}")
+
+    if os.path.isfile(debug_before):
+        print(f"\n{'─'*60}")
+        print(f"[INFO] 检测到已生成的 before 文件，跳过剪贴板读取")
+        print(f"[INFO] 直接复用: {debug_before}")
+        with open(debug_before, 'r', encoding='utf-8') as f:
+            html_fragment = f.read()
+        print(f"[INFO] 磁盘 HTML: {len(html_fragment):,} chars")
+    else:
+        print(f"\n{'─'*60}")
+        print("[INFO] 读取剪贴板 HTML...")
+        try:
+            html_fragment = read_clipboard_html()
+        except Exception as e:
+            print(f"[ERROR] 读取剪贴板失败: {e}")
+            sys.exit(1)
+        print(f"[INFO] 剪贴板 HTML: {len(html_fragment):,} chars")
+
+        # 调试：保存原始剪贴板 HTML 到文件以便检查
+        os.makedirs(debug_dir, exist_ok=True)
+        with open(debug_before, 'w', encoding='utf-8') as f:
+            f.write(html_fragment)
+        print(f"[DEBUG] 原始剪贴板 HTML 已保存: {debug_before}")
 
     # 调试：显示剪贴板中找到的 img 标签
     img_debug = re.findall(r'<img[^>]+src="([^"]{0,80})', html_fragment, re.IGNORECASE)
@@ -479,16 +506,20 @@ def main(input_dir=None):
         label = 'base64' if src.startswith('data:') else 'url'
         print(f"  [{i+1}] ({label}) {src[:60]}...")
 
-    # 3. 替换图片
+    # 3. 替换图片（douban 模式下跳过）
     print(f"\n{'─'*60}")
-    result = replace_images_in_html(html_fragment, image_list, input_dir)
-    if result is None:
-        sys.exit(1)
+    if douban:
+        print(f"[INFO] DOUBAN=1，跳过图片替换步骤")
+        result = html_fragment
+    else:
+        result = replace_images_in_html(html_fragment, image_list, input_dir)
+        if result is None:
+            sys.exit(1)
 
     # 3.5 后处理
     print(f"\n{'─'*60}")
     print("[INFO] HTML 后处理...")
-    result = postprocess_html(result)
+    result = postprocess_html(result, heading_level=heading_level)
 
     # 4. 写回剪贴板
     print(f"\n{'─'*60}")
@@ -500,8 +531,11 @@ def main(input_dir=None):
         sys.exit(1)
 
     print(f"\n{'='*60}")
-    print(f"  图片替换完成!")
-    print(f"  共替换 {len(image_list)} 张图片")
+    if douban:
+        print(f"  剪贴板已更新（DOUBAN 模式，未替换图片）")
+    else:
+        print(f"  图片替换完成!")
+        print(f"  共替换 {len(image_list)} 张图片")
     print(f"{'='*60}")
 
     # 验证：回读剪贴板检查图片是否真的替换了
@@ -518,7 +552,9 @@ def main(input_dir=None):
             f.write(verify_html)
         print(f"[DEBUG] 回读 HTML 已保存: {debug_after}")
 
-        if b64_count == len(image_list):
+        if douban:
+            print(f"[OK] 剪贴板已写入（DOUBAN 模式，跳过图片替换校验）")
+        elif b64_count == len(image_list):
             print(f"[OK] 验证通过！剪贴板图片已替换。")
         else:
             print(f"[WARN] 验证失败！期望 {len(image_list)} 张 base64，实际 {b64_count} 张")
@@ -528,7 +564,18 @@ def main(input_dir=None):
 
 if __name__ == '__main__':
     # 默认让 main() 自行派生（fr"content_instance\{DIR_NAME}"）
-    # 若要指定别的目录：保留 531 行并改路径；不需要覆盖时，把 531 行注释掉即可
+    # 若要指定别的目录：保留下面显式行并改路径；不需要覆盖时把它注释掉即可
     input_dir = None
-    input_dir = fr"content_instance\content_20260715_1"
-    main(input_dir)
+    input_dir = fr"content_instance\content_20260702_1"
+
+    # 24px 标题块升级级别：1 → <h1>（默认），2 → <h2>
+    # 想改成 h2 就把下面这行改成 2；想保持 h1 可直接注释掉这行
+    heading_level = 1
+    # heading_level = 2
+
+    # DOUBAN：1 → 跳过换图片的步骤（豆瓣等无需图片替换的平台）；0 → 正常替换
+    # 想启用跳过 → 把下面这行改成 1；想保持默认（0）→ 可注释掉
+    DOUBAN = 0
+    # DOUBAN = 1
+
+    main(input_dir, heading_level=heading_level, douban=DOUBAN)
