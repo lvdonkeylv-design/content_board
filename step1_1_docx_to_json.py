@@ -177,10 +177,13 @@ def build_table(table):
 # 核心解析：按文档顺序遍历所有元素
 # ---------------------------------------------------------------------------
 def parse_docx(docx_path, images_dir):
-    """按文档原始顺序遍历段落、表格、图片，返回 elements 列表"""
+    """按文档原始顺序遍历段落、表格、图片，返回 (elements, titles)。
+    titles 为顺序汇总的大标题（heading_level == 1）文本列表。
+    """
     doc = Document(docx_path)
     image_counter = [0]
     elements = []
+    titles = []
     index = 0
 
     for child in doc.element.body:
@@ -196,8 +199,12 @@ def parse_docx(docx_path, images_dir):
                     'file_name': img_name,
                     'image_path': os.path.join('process', 'images', img_name),
                 })
-                with open(os.path.join(images_dir, img_name), 'wb') as f:
-                    f.write(img_blob)
+                img_out = os.path.join(images_dir, img_name)
+                if os.path.exists(img_out):
+                    print(f"[SKIP] 图片已存在，不覆盖: {img_name}")
+                else:
+                    with open(img_out, 'wb') as f:
+                        f.write(img_blob)
                 index += 1
 
             # 再处理段落本身
@@ -207,6 +214,11 @@ def parse_docx(docx_path, images_dir):
             elem['index'] = index
             elements.append(elem)
             index += 1
+            # 顺手收集大标题（heading_level == 1）
+            if elem.get('heading_level') == 1:
+                title_text = ''.join(r['text'] for r in elem['runs']).strip()
+                if title_text:
+                    titles.append(title_text)
 
         # ---- 表格 ----
         elif tag == qn('w:tbl'):
@@ -215,7 +227,7 @@ def parse_docx(docx_path, images_dir):
             elements.append(elem)
             index += 1
 
-    return elements
+    return elements, titles
 
 
 # ---------------------------------------------------------------------------
@@ -253,7 +265,7 @@ def main(input_path=None):
     os.makedirs(images_dir, exist_ok=True)
 
     print(f"[INFO] 解析文档: {input_path}")
-    elements = parse_docx(input_path, images_dir)
+    elements, titles = parse_docx(input_path, images_dir)
 
     result = {
         'file_name': os.path.basename(input_path),
@@ -263,6 +275,17 @@ def main(input_path=None):
 
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(result, f, ensure_ascii=False, indent=2)
+
+    # 大标题写入 txt，每行一个（titles 已在 parse_docx 中收集）
+    # 若 titles 为空，回退使用文件名（去掉 .docx 后缀）作为标题
+    if not titles:
+        fallback_title = os.path.splitext(os.path.basename(input_path))[0]
+        titles = [fallback_title]
+        print(f"[INFO] 未提取到大标题，回退使用文件名: {fallback_title}")
+    titles_path = os.path.join(process_dir, 'step1_1_titles.txt')
+    with open(titles_path, 'w', encoding='utf-8') as f:
+        f.write('\n'.join(titles))
+    print(f"[INFO] 提取大标题 {len(titles)} 条 → {titles_path}")
 
     # 统计各类型数量
     stats = {}
@@ -278,5 +301,5 @@ if __name__ == '__main__':
     # 默认让 main() 自行派生（fr"content_instance\{DIR_NAME}"）
     # 若要指定别的目录/文件：保留下面显式行并改路径；不需要覆盖时把它注释掉即可
     input_path = None
-    input_path = fr"content_instance\content_20260715_1"
+    input_path = fr"content_instance\content_20260710_1"
     main(input_path)

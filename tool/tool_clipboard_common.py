@@ -344,94 +344,187 @@ def replace_images_in_html(html_str, image_list, base_dir):
 
 
 # ---------------------------------------------------------------------------
-# HTML 后处理：清理剪贴板 HTML 中的冗余样式和结构
+# HTML 后处理：剪贴板 HTML “白名单极简化”
 # ---------------------------------------------------------------------------
-def postprocess_html(html_str, heading_level=1):
+def postprocess_html(html_str, heading_level=1, douban=0):
     """
-    对剪贴板 HTML 做六项后处理：
-      1. 去除所有 background-color 声明
-      2. 将所有 margin 相关属性归零为 0px
-      3. 去除 <p> 内包裹 <br> 的冗余 <span> 标签
-      4. 清理标签之间冗余的不可见空格（&nbsp; 实体 或 U+00A0）
-      5. 将 font-size:24px 的 section 内的 <p> 转为 <hN>（N=heading_level，1 或 2）
-      6. 在末尾追加 add_html.html 中的尾部内容（声明信息等）
+    将剪贴板 HTML 清洗到只保留以下信号的极简结构：
+      文字、<strong>加粗、<img>图片、<p>段落、<h1>/<h2>标题、<br>换行
+    其他一律扫除。
 
-    参数 heading_level：24px 标题块升级到的标题级别，仅支持 1 或 2。
+    步骤（默认全量执行）：
+      1. font-size:24px 的 <section> → <hN>（内部只取纯文字）
+      2. <b> → <strong>；剪掉 em/i/u/s/small/font/mark 等非加粗强调标签
+      3. 解包 span/section/div/a（只删标签，保留内容）
+      4. 剥掉所有属性；<img> 特殊：data-src 只放原 URL，src 只放 base64
+      5. 全局删除所有 &nbsp; / U+00A0（不限位置）
+      6. 删除所有 <br>，以及只含 <br>/空白的 <p>/<h1>/<h2>；清完后剥掉因此成为空壳的 <strong></strong> 及 <p></p>
+      7. 在每个 </p>、</h1>、</h2>、<img ...> 之后插入一个 <br>（统一段间距）
+      8. 末尾原样拼接 add_html.html（不做任何处理）
+
+    参数 heading_level：仅支持 1、2 或 3。
+    参数 douban：1 → 只执行步骤 1 与 8，步骤 2～7 全部跳过（适合发到豆瓣等只需高亮标题、保留原样式的平台）
     """
-    if heading_level not in (1, 2):
-        raise ValueError(f"heading_level 仅支持 1 或 2，收到: {heading_level}")
+    if heading_level not in (1, 2, 3, 5):
+        raise ValueError(f"heading_level 仅支持 1,2,3,5 收到: {heading_level}")
     heading_tag = f'h{heading_level}'
+
     result = html_str
 
-    # 1) 去除 background-color
-    bg_pattern = re.compile(r'background-color:\s*[^;"]+;\s*', re.IGNORECASE)
-    bg_count = len(bg_pattern.findall(result))
-    result = bg_pattern.sub('', result)
-    if bg_count:
-        print(f"[后处理] 去除 background-color ({bg_count} 处)")
-
-    # 2) 所有 margin 归零（含 margin-top/right/bottom/left）
-    margin_pattern = re.compile(r'margin(?:-(?:top|right|bottom|left))?:\s*[^;"]+;', re.IGNORECASE)
-    margin_count = len(margin_pattern.findall(result))
-
-    def _zero_margin(m):
-        prop = m.group(0).split(':')[0]
-        return f'{prop}: 0px;'
-
-    result = margin_pattern.sub(_zero_margin, result)
-    if margin_count:
-        print(f"[后处理] margin → 0px ({margin_count} 处)")
-
-    # 3) 去除 <p> 内包裹 <br> 的 <span>：
-    #    <p ...><span ...><br ...></span></p>  →  <p ...><br ...></p>
-    span_br_pattern = re.compile(
-        r'(<p[^>]*>)\s*<span[^>]*>\s*(<br[^>]*?>)\s*</span>\s*(</p>)',
+    # 1) 24px section → <hN>（只取纯文字，避免标题中衍生冗余 <strong>/<span>）
+    heading_pattern = re.compile(
+        r'<section[^>]*font-size:\s*24px[^>]*>(.*?)</section>',
         re.IGNORECASE | re.DOTALL
     )
-    span_br_count = len(span_br_pattern.findall(result))
-    result = span_br_pattern.sub(r'\1\2\3', result)
-    if span_br_count:
-        print(f"[后处理] 去除 <span> 包裹 <br> ({span_br_count} 处)")
 
-    # 4) 清理标签之间冗余的不可见空格（&nbsp; 实体 或 U+00A0 字符）
-    #    只去除标签之间的独立空格，保留文字中间有意的空格
-    NBSP = '(?:&nbsp;|\u00a0)'  # 匹配 HTML 实体或 Unicode 字符
-    nbsp_between_tags = re.compile(r'(?<=>)\s*' + NBSP + r'\s*(?=<)', re.IGNORECASE)
-    nbsp_standalone = re.compile(r'<p[^>]*>\s*' + NBSP + r'\s*</p>', re.IGNORECASE)
-    count1 = len(nbsp_between_tags.findall(result))
-    count2 = len(nbsp_standalone.findall(result))
-    if count1:
-        result = nbsp_between_tags.sub(lambda m: '', result)
-    if count2:
-        result = nbsp_standalone.sub('', result)
-    total = count1 + count2
-    if total:
-        print(f"[后处理] 去除冗余不可见空格 ({total} 处)")
+    def _to_heading(match):
+        raw_inner = match.group(1)
+        text = re.sub(r'<[^>]*>', '', raw_inner)             # 剥掉所有内部标签
+        text = text.replace('&nbsp;', ' ').replace('\u00a0', ' ')
+        text = text.strip()
+        return f'<{heading_tag}>{text}</{heading_tag}>' if text else ''
 
-    # 5) 将 font-size:24px 的 <section> 内的 <p> 转为 <h1> 或 <h2>
-    #    秀米中 24px 的标题块结构：<section ...24px...><p ...>标题</p></section>
-    h1_pattern = re.compile(
-        r'<section[^>]*font-size:\s*24px[^>]*>\s*'
-        r'<p[^>]*>(.*?)</p>\s*'
-        r'</section>',
-        re.IGNORECASE | re.DOTALL
-    )
-    h1_matches = list(h1_pattern.finditer(result))
-    if h1_matches:
-        for m in reversed(h1_matches):
-            inner_content = m.group(1).strip()
-            result = result[:m.start()] + f'<{heading_tag}>{inner_content}</{heading_tag}>' + result[m.end():]
-        print(f"[后处理] 24px 标题 <p> → <{heading_tag}> ({len(h1_matches)} 处)")
+    result, n_head = heading_pattern.subn(_to_heading, result)
+    if n_head:
+        print(f"[后处理] 24px section → <{heading_tag}> ({n_head} 处)")
 
-    # 6) 在末尾追加 add_html.html 的尾部内容
-    add_html_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'add_html.html')
+    if douban:
+        print(f"[后处理] DOUBAN=1，跳过步骤 2～7（仅保留 24px → <{heading_tag}> 与末尾拼接）")
+    else:
+        # 2) <b> → <strong>；剪掉非加粗强调标签（保留内部文字）
+        result, n_b = re.subn(r'<(/?)b\b([^>]*)>', r'<\1strong\2>', result, flags=re.IGNORECASE)
+        if n_b:
+            print(f"[后处理] <b> → <strong> ({n_b} 处)")
+
+        _NON_BOLD_INLINE = (
+            r'(?:em|i|u|s|strike|small|big|sub|sup|font|mark|ins|del|'
+            r'code|kbd|samp|var|abbr|cite|q|dfn|tt)'
+        )
+        result, n_nb = re.subn(
+            r'</?' + _NON_BOLD_INLINE + r'\b[^>]*/?>', '', result,
+            flags=re.IGNORECASE
+        )
+        if n_nb:
+            print(f"[后处理] 剥掉非加粗强调标签 ({n_nb} 处)")
+
+        # 3) 解包 span/section/div/a（标签删掉，内容保留）
+        result, n_uw = re.subn(
+            r'</?(?:span|section|div|a)\b[^>]*/?>', '', result,
+            flags=re.IGNORECASE
+        )
+        if n_uw:
+            print(f"[后处理] 解包 span/section/div/a ({n_uw} 处)")
+
+        # 4) 剥掉所有属性：<img> 特殊处理，其他全部裸标签
+        #    <img> 规则：data-src 仅放原 URL，src 仅放 base64；缺哪个不输出哪个
+        _attr_count = [0]
+        def _strip_attrs(m):
+            slash = m.group(1)                # '' 或 '/'
+            tag = m.group(2).lower()
+            attrs_str = m.group(3)
+            if slash == '/':
+                return f'</{tag}>'
+            if tag == 'img':
+                # 注意：`\bsrc\b` 会误匹配 `data-src` 里的 src（因为 `-` 与 `s` 之间有词边界）
+                # 用负向回看排除 字母/数字/下划线/连字符，保证只匹配独立的 src=
+                src_match = re.search(r'(?<![\w\-])src\s*=\s*"([^"]*)"', attrs_str, re.IGNORECASE)
+                dsrc_match = re.search(r'\bdata-src\s*=\s*"([^"]*)"', attrs_str, re.IGNORECASE)
+                in_src = src_match.group(1) if src_match else ''
+                in_dsrc = dsrc_match.group(1) if dsrc_match else ''
+
+                # base64 候选：任一属性以 data: 开头就取为 base64
+                base64_val = ''
+                if in_src.startswith('data:'):
+                    base64_val = in_src
+                elif in_dsrc.startswith('data:'):
+                    base64_val = in_dsrc
+
+                # 原 URL 候选：优先用 data-src 的非 base64 值，其次用 src 的非 base64 值
+                url_val = ''
+                if in_dsrc and not in_dsrc.startswith('data:'):
+                    url_val = in_dsrc
+                elif in_src and not in_src.startswith('data:'):
+                    url_val = in_src
+
+                if attrs_str.strip():
+                    _attr_count[0] += 1
+
+                parts = ['<img']
+                if base64_val:
+                    parts.append(f'src="{base64_val}"')
+                if url_val:
+                    parts.append(f'data-src="{url_val}"')
+                return ' '.join(parts) + '>'
+            if attrs_str.strip():
+                _attr_count[0] += 1
+            return f'<{tag}>'
+ 
+        tag_re = re.compile(r'<(/?)([a-zA-Z][a-zA-Z0-9]*)([^>]*)>')
+        result = tag_re.sub(_strip_attrs, result)
+        if _attr_count[0]:
+            print(f"[后处理] 剥掉冗余属性 ({_attr_count[0]} 处标签)")
+
+        # 5) 全局删除所有 &nbsp; / U+00A0（不限位置）
+        nbsp_pattern = re.compile(r'&nbsp;|\u00a0', re.IGNORECASE)
+        n_nbsp = len(nbsp_pattern.findall(result))
+        if n_nbsp:
+            result = nbsp_pattern.sub('', result)
+            print(f"[后处理] 删除所有 &nbsp;/U+00A0 ({n_nbsp} 处)")
+
+        # 6) 删除所有 <br>，以及只含 <br>/空白的 <p>/<h1>/<h2>
+        #    先删只包 <br>/空白的块级元素（避免丢掉有文字的段落），再删剩下的 <br>
+        empty_block_pattern = re.compile(
+            r'<(p|h1|h2)>\s*(?:<br>\s*)*</\1>',
+            re.IGNORECASE
+        )
+        total_empty = 0
+        while True:
+            new_result, n = empty_block_pattern.subn('', result)
+            if n == 0:
+                break
+            total_empty += n
+            result = new_result
+        if total_empty:
+            print(f"[后处理] 删除只含 <br>/空白的 <p>/<h1>/<h2> ({total_empty} 处)")
+
+        result, n_br = re.subn(r'<br>', '', result, flags=re.IGNORECASE)
+        if n_br:
+            print(f"[后处理] 删除剩余 <br> ({n_br} 处)")
+
+        # 6.5) 删除空壳 <strong></strong>（上一步删掉被包裹的 <br> 后可能留下空强调）
+        empty_strong_pattern = re.compile(r'<strong>\s*</strong>', re.IGNORECASE)
+        total_es = 0
+        while True:
+            new_result, n = empty_strong_pattern.subn('', result)
+            if n == 0:
+                break
+            total_es += n
+            result = new_result
+        if total_es:
+            print(f"[后处理] 删除空壳 <strong></strong> ({total_es} 处)")
+
+        # 6.6) 删除因上面清理新产生的只含空白的 <p></p>/<h1></h1>/<h2></h2>
+        empty_block_pattern2 = re.compile(r'<(p|h1|h2)>\s*</\1>', re.IGNORECASE)
+        result, n_eb2 = empty_block_pattern2.subn('', result)
+        if n_eb2:
+            print(f"[后处理] 删除新产生的空 <p>/<h1>/<h2> ({n_eb2} 处)")
+
+        # 7) 在每个 </p>、</h1>、</h2>、<img ...> 之后插入一个 <br>（统一段间距）
+        trailing_br_pattern = re.compile(r'(</p>|</h1>|</h2>|</h3>|</h5>|<img\b[^>]*>)', re.IGNORECASE)
+        result, n_add = trailing_br_pattern.subn(r'\1<p><br></p>', result)
+        if n_add:
+            print(f"[后处理] 在 </p>/</h1>/</h2>/<img> 后注入 <br> ({n_add} 处)")
+    
+    # 8) 末尾原样拼接 add_html.html（不做任何处理）
+    
+    add_html_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'add_html_douban.html' if douban else 'add_html.html')   
     if os.path.isfile(add_html_path):
         with open(add_html_path, 'r', encoding='utf-8') as f:
             add_content = f.read()
         result = result + add_content
-        print(f"[后处理] 追加尾部内容 (add_html.html)")
+        print(f"[后处理] 末尾原样拼接 ({add_html_path})")
     else:
-        print(f"[WARN] add_html.html 不存在: {add_html_path}")
+        print(f"[WARN] html 不存在: {add_html_path}")
 
     return result
 
@@ -443,7 +536,7 @@ def main(input_dir=None, heading_level=1, douban=0):
     """
     input_dir: 文章实例目录，如 content_instance\\content_20260702_1
                未传值 → 默认 content_instance\\{DIR_NAME}
-    heading_level: 24px 标题块升级到的标题级别，1 → <h1>，2 → <h2>
+    heading_level: 24px 标题块升级到的标题级别，1 → <h1>，2 → <h2>，3 → <h3>
     douban: 1 → 跳过换图片的步骤（适合发布到豆瓣等无需替换图片的平台）；0 → 正常替换
     """
     if input_dir is None:
@@ -456,20 +549,21 @@ def main(input_dir=None, heading_level=1, douban=0):
 
     print(f"[INFO] 输入目录: {input_dir}")
 
-    # 1. 读取 JSON 图片列表（douban 模式下跳过）
+    # 1. 读取 JSON 图片列表（douban 模式下跳过；无 JSON / 无图片 亦视为合法情况）
     if douban:
         print(f"[INFO] DOUBAN=1，跳过换图片步骤（不加载 JSON 图片列表）")
         image_list = []
     else:
         json_path = os.path.join(input_dir, 'process', 'step2_table_to_image.json')
         if not os.path.isfile(json_path):
-            print(f"[ERROR] JSON 文件不存在: {json_path}")
-            sys.exit(1)
-        print(f"[INFO] JSON 文件: {json_path}")
-        image_list = get_image_list_from_json(json_path)
-        print(f"[INFO] JSON 中图片数量: {len(image_list)}")
-        for i, (path, name) in enumerate(image_list):
-            print(f"  [{i+1}] {name} → {path}")
+            print(f"[INFO] 未找到 JSON 图片列表（{json_path}），按“无图片”处理")
+            image_list = []
+        else:
+            print(f"[INFO] JSON 文件: {json_path}")
+            image_list = get_image_list_from_json(json_path)
+            print(f"[INFO] JSON 中图片数量: {len(image_list)}")
+            for i, (path, name) in enumerate(image_list):
+                print(f"  [{i+1}] {name} → {path}")
 
     # 2. 读取剪贴板 HTML
     #    若 _debug_clipboard_before.html 已存在，跳过剪贴板读取，直接复用磁盘缓存
@@ -506,10 +600,19 @@ def main(input_dir=None, heading_level=1, douban=0):
         label = 'base64' if src.startswith('data:') else 'url'
         print(f"  [{i+1}] ({label}) {src[:60]}...")
 
-    # 3. 替换图片（douban 模式下跳过）
+    # 3. 替换图片（douban 模式 或 无图片时跳过）
     print(f"\n{'─'*60}")
     if douban:
         print(f"[INFO] DOUBAN=1，跳过图片替换步骤")
+        result = html_fragment
+    elif not image_list:
+        # 文章无图片（如纯文字文章）：JSON 未生成 或 JSON 中 image 元素为 0
+        # 预期剪贴板中也没有 <img>，直接跳到后处理
+        clip_img_count = len(re.findall(r'<img\b', html_fragment, re.IGNORECASE))
+        if clip_img_count == 0:
+            print(f"[INFO] 无图片可替换（JSON=0, 剪贴板=0），跳过替换直接进入后处理")
+        else:
+            print(f"[WARN] JSON 图片列表为空，但剪贴板中发现 {clip_img_count} 个 <img> 标签；本次不做替换，直接进入后处理")
         result = html_fragment
     else:
         result = replace_images_in_html(html_fragment, image_list, input_dir)
@@ -519,7 +622,7 @@ def main(input_dir=None, heading_level=1, douban=0):
     # 3.5 后处理
     print(f"\n{'─'*60}")
     print("[INFO] HTML 后处理...")
-    result = postprocess_html(result, heading_level=heading_level)
+    result = postprocess_html(result, heading_level=heading_level, douban=douban)
 
     # 4. 写回剪贴板
     print(f"\n{'─'*60}")
@@ -533,6 +636,8 @@ def main(input_dir=None, heading_level=1, douban=0):
     print(f"\n{'='*60}")
     if douban:
         print(f"  剪贴板已更新（DOUBAN 模式，未替换图片）")
+    elif not image_list:
+        print(f"  剪贴板已更新（无图片，未执行替换）")
     else:
         print(f"  图片替换完成!")
         print(f"  共替换 {len(image_list)} 张图片")
@@ -554,6 +659,8 @@ def main(input_dir=None, heading_level=1, douban=0):
 
         if douban:
             print(f"[OK] 剪贴板已写入（DOUBAN 模式，跳过图片替换校验）")
+        elif not image_list:
+            print(f"[OK] 剪贴板已写入（无图片，无需校验）")
         elif b64_count == len(image_list):
             print(f"[OK] 验证通过！剪贴板图片已替换。")
         else:
@@ -561,21 +668,36 @@ def main(input_dir=None, heading_level=1, douban=0):
     except Exception as e:
         print(f"[WARN] 回读验证失败: {e}")
 
+    # 打印 step1_1_titles.txt 内容（方便发布时直接复制标题）
+    titles_path = os.path.join(input_dir, 'process', 'step1_1_titles.txt')
+    print(f"\n{'='*60}")
+    if os.path.isfile(titles_path):
+        with open(titles_path, 'r', encoding='utf-8') as f:
+            titles_content = f.read()
+        print(f"[大标题] {titles_path}")
+        print(f"{'─'*60}")
+        print(titles_content)
+    else:
+        print(f"[INFO] 未找到大标题文件: {titles_path}")
+    print(f"{'='*60}")
+
 
 if __name__ == '__main__':
     # 默认让 main() 自行派生（fr"content_instance\{DIR_NAME}"）
     # 若要指定别的目录：保留下面显式行并改路径；不需要覆盖时把它注释掉即可
     input_dir = None
-    input_dir = fr"content_instance\content_20260702_1"
+    input_dir = fr"content_instance\content_20260710_1"
 
-    # 24px 标题块升级级别：1 → <h1>（默认），2 → <h2>
-    # 想改成 h2 就把下面这行改成 2；想保持 h1 可直接注释掉这行
-    heading_level = 1
-    # heading_level = 2
+    # # 正常
+    # DOUBAN = 0
+    # heading_level = 1
 
-    # DOUBAN：1 → 跳过换图片的步骤（豆瓣等无需图片替换的平台）；0 → 正常替换
-    # 想启用跳过 → 把下面这行改成 1；想保持默认（0）→ 可注释掉
-    DOUBAN = 0
+    # # 豆瓣
     # DOUBAN = 1
+    # heading_level = 3
+
+    # 网易
+    DOUBAN = 0
+    heading_level = 5
 
     main(input_dir, heading_level=heading_level, douban=DOUBAN)
